@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# Cleaques
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend for Cleaques Limited.
 
-Currently, two official plugins are available:
+### Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Setup](#setup)
+1. [Project Organization](#project-organization)
 
-## Expanding the ESLint configuration
+## 📦 Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project was bootstraped with [Vite](https://vitejs.dev/).
+Make sure you have Node v14+ or latest LTS installed.
 
-- Configure the top-level `parserOptions` property like this:
+### Install
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```sh
+npm install
+# or
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Development
+
+```sh
+npm run dev
+# or
+yarn run dev
+```
+
+### 🖥️ Project organization
+
+```
+src/
+  ├── assets/
+  ├── components/
+  ├── features/
+  ├── routes/
+  ├── theme/
+```
+
+## Main Packages
+
+- CSS(`CSS-in-JS`): [Chakra UI](https://chakra-ui.com/) is used as the UI system.
+- JS Framework: [React](https://reactjs.org/)
+- Type Checking: [TypeScript](https://www.typescriptlang.org/)
+- State Management: [Redux Toolkit](https://redux-toolkit.js.org/)
+- Icons: [react-icons](https://react-icons.github.io/react-icons/)
