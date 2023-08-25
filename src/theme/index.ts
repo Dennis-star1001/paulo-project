@@ -1,8 +1,8 @@
 import { extendTheme } from '@chakra-ui/react';
-import { button, input, link } from './components';
+import { button, input, link, hr } from './components';
 import { typography } from './foundations';
 import { globalStyles } from './styles';
 
-const theme = extendTheme(globalStyles, button, input, link, typography);
+const theme = extendTheme(globalStyles, button, hr, input, link, typography);
 
 export default theme;
