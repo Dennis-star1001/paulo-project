@@ -13,7 +13,8 @@ export const globalStyles = {
       700: '#0075a2',
       800: '#00587a',
       900: '#003b51'
-    }
+    },
+    gray: { 400: '#4D4D4D' }
   },
   styles: {
     global: () => ({
@@ -26,7 +27,7 @@ export const globalStyles = {
         color: '#000'
       },
       '*::placeholder': {
-        color: '#ADA8AB'
+        color: '#4D4D4D'
       },
       html: {
         fontFamily: '"Open Sans", sans-serif'

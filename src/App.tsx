@@ -1,5 +1,14 @@
+import { useDisclosure } from '@chakra-ui/react';
+import { SignupModal } from './features/auth';
+
 const App = () => {
-  return <h1>Welcome to Cleaques</h1>;
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <SignupModal />
+    </>
+  );
 };
 
 export default App;
