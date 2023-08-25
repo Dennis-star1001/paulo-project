@@ -2,16 +2,15 @@ import { FormInput } from '@/components';
 import { Modal } from '@/components/auth';
 import { Button, Link, Stack, Text, UseDisclosureProps } from '@chakra-ui/react';
 
-export const ForgotPassword = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
+export const ForgotPasswordModal = ({
+  isOpen = true,
+  onClose = () => null
+}: UseDisclosureProps) => {
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      modalHeader={
-        <Text mt={3} textStyle='body'>
-          Forogot Password
-        </Text>
-      }
+      modalHeader={<Text textStyle='body'>Forgot Password</Text>}
     >
       <FormInput label='Email Address' placeholder='johndoe@email.com' />
       <Link href='#' textStyle='body' fontWeight={400} mt={2}>

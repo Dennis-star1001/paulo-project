@@ -26,7 +26,7 @@ export const Modal = ({ children, modalHeader, ...rest }: ModalProps) => {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader textAlign='center'>
-          <Flex justifyContent='center'>
+          <Flex justifyContent='center' mb={3}>
             <Image src={Logo} />
           </Flex>
 

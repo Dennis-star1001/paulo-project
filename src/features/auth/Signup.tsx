@@ -33,7 +33,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
         isOpen={isOpen}
         onClose={onClose}
         modalHeader={
-          <Stack mt={3} spacing={2}>
+          <Stack spacing={2}>
             <Text textStyle='body'>Welcome to Cleaques</Text>
             <Text textStyle='body' fontWeight={400}>
               Connect with your diaspora
