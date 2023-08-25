@@ -1,19 +1,15 @@
-import React, { ReactNode } from 'react';
+import Logo from '@/assets/logo.svg';
 import {
   Modal as ChakraModal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
   Flex,
   Image,
-  Stack,
-  Text,
-  ModalBodyProps as ChakraModalBodyProps,
-  UseDisclosureProps,
+  ModalBody,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   UseModalProps
 } from '@chakra-ui/react';
-import Logo from '@/assets/logo.svg';
+import { ReactNode } from 'react';
 
 interface ModalProps extends UseModalProps {
   // modal: UseModalProps;
