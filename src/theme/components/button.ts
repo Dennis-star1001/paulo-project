@@ -15,12 +15,26 @@ export const button: ThemeProps = {
           fontSize: '14px',
           fontWeight: 700,
           px: '11px',
-          py: '6px',
-          backgroundColor: 'primary'
+          py: '6px'
         }
       },
 
-      variants: {},
+      variants: {
+        primary: {
+          bg: 'primary',
+          color: 'white',
+          _hover: {
+            bg: '#0077c2'
+          }
+        },
+        text: {
+          bg: 'transparent',
+          color: 'primary',
+          _hover: {
+            color: '#0077c2'
+          }
+        }
+      },
 
       defaultProps: {
         size: 'md',
