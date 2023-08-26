@@ -1,4 +1,4 @@
-import { EmailVerificationModal } from './features/auth';
+import { InterestSelectionModal } from './features/auth/InterestSelection';
 
 const App = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
@@ -7,7 +7,8 @@ const App = () => {
     <>
       {/* <SignupModal /> */}
       {/* <ForgotPasswordModal /> */}
-      <EmailVerificationModal />
+      {/* <EmailVerificationModal /> */}
+      <InterestSelectionModal />
     </>
   );
 };
