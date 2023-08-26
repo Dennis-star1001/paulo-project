@@ -3,7 +3,7 @@ import { ReactComponent as UserCartWhite } from '@/assets/user-cart-white.svg';
 import { ReactComponent as UserOctagonBlack } from '@/assets/user-octagon-black.svg';
 import { ReactComponent as UserOctagonWhite } from '@/assets/user-octagon-white.svg';
 import { FormInput, FormLeftAddonInput, PasswordInput } from '@/components';
-import { Modal } from '@/components/auth';
+import { AuthButton, Modal } from '@/components/auth';
 import {
   Button,
   Link as ChakraLink,
@@ -78,7 +78,8 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
 
           <TabPanels>
             <TabPanel>
-              <Text textAlign='center'>Use Clerk here</Text>
+              <AuthButton />
+
               <Divider my={8} />
 
               <Stack spacing={4}>
@@ -111,7 +112,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
               </Flex>
             </TabPanel>
             <TabPanel>
-              <Text textAlign='center'>Use Clerk here</Text>
+              <AuthButton />
               <Divider my={8} />
               <Grid templateColumns='repeat(2, 1fr)' rowGap={4} columnGap={5}>
                 <GridItem colSpan={2}>

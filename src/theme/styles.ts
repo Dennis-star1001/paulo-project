@@ -12,18 +12,39 @@ export const globalStyles = {
       600: '#0093cb',
       700: '#0075a2',
       800: '#00587a',
-      900: '#003b51'
+      900: '#003b51',
+      hover: '#0077c2'
+    },
+    neutral: {
+      100: '#F1F5F9',
+      900: '#0F172A',
+      300: '#D2D8E2'
     },
     gray: { 100: '#ADA8AB', 400: '#4D4D4D' }
   },
   styles: {
     global: () => ({
-      heading: {
+      h1: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h2: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h3: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h4: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h5: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h6: {
         fontFamily: '"Lato", sans-serif'
       },
       body: {
         background: { base: '#fff' },
-        fontFamily: '"Open Sans", sans-serif',
+        fontFamily: 'Open Sans, sans-serif',
         color: '#000'
       },
       '*::placeholder': {
