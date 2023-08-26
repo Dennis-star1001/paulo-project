@@ -24,14 +24,14 @@ export const button: ThemeProps = {
           bg: 'primary',
           color: 'white',
           _hover: {
-            bg: '#0077c2'
+            bg: 'blue.hover'
           }
         },
         text: {
           bg: 'transparent',
           color: 'primary',
           _hover: {
-            color: '#0077c2'
+            color: 'blue.hover'
           }
         }
       },
