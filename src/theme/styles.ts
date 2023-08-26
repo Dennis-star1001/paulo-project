@@ -15,6 +15,11 @@ export const globalStyles = {
       900: '#003b51',
       hover: '#0077c2'
     },
+    neutral: {
+      100: '#F1F5F9',
+      900: '#0F172A',
+      300: '#D2D8E2'
+    },
     gray: { 100: '#ADA8AB', 400: '#4D4D4D' }
   },
   styles: {

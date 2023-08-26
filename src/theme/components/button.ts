@@ -27,6 +27,13 @@ export const button: ThemeProps = {
             bg: 'blue.hover'
           }
         },
+        neutral: {
+          bg: 'neutral.100',
+          color: 'neutral.900',
+          _hover: {
+            bg: 'neutral.300'
+          }
+        },
         text: {
           bg: 'transparent',
           color: 'primary',
