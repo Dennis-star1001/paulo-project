@@ -18,12 +18,27 @@ export const globalStyles = {
   },
   styles: {
     global: () => ({
-      heading: {
+      h1: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h2: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h3: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h4: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h5: {
+        fontFamily: 'Lato, sans-serif'
+      },
+      h6: {
         fontFamily: '"Lato", sans-serif'
       },
       body: {
         background: { base: '#fff' },
-        fontFamily: '"Open Sans", sans-serif',
+        fontFamily: 'Open Sans, sans-serif',
         color: '#000'
       },
       '*::placeholder': {
