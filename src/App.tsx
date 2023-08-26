@@ -1,4 +1,5 @@
-import { EmailVerificationModal } from './features/auth';
+// import { EmailVerificationModal } from './features/auth';
+import { NewPasswordModal } from './features/auth';
 
 const App = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
@@ -7,7 +8,8 @@ const App = () => {
     <>
       {/* <SignupModal /> */}
       {/* <ForgotPasswordModal /> */}
-      <EmailVerificationModal />
+      {/* <EmailVerificationModal /> */}
+      <NewPasswordModal />
     </>
   );
 };
