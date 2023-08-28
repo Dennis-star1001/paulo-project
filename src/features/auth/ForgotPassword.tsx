@@ -5,7 +5,7 @@ import { Button, Link, Stack, Text, UseDisclosureProps } from '@chakra-ui/react'
 export const ForgotPasswordModal = ({
   isOpen = true,
   onClose = () => null
-}: UseDisclosureProps) => {
+}: UseDisclosureProps) => {``
   return (
     <Modal
       isOpen={isOpen}
