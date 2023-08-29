@@ -9,6 +9,7 @@ import {
   Button
 } from '@chakra-ui/react';
 import { FormInput, PasswordInput } from '@/components';
+
 export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
   return (
     <>
@@ -33,18 +34,20 @@ export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosur
             <PasswordInput placeholder='Password' />
             <Stack spacing={2}>
               <Checkbox>
-                <ChakraLink href='#' fontSize='12px'>Forget Password? </ChakraLink>
+                <ChakraLink href='#' fontSize='12px'>
+                  Forget Password?
+                </ChakraLink>
               </Checkbox>
             </Stack>
           </Stack>
 
           <Stack mt='77px'>
-          <Button>Login</Button>
-          <Stack mx='auto' mt="8px" mb="201px">
-           <Text fontSize='14px'>
-                Don't have an account? <ChakraLink href='#' >Create account </ChakraLink>
-            </Text> 
-          </Stack>
+            <Button>Login</Button>
+            <Stack mx='auto' mt='8px' mb='201px'>
+              <Text fontSize='14px'>
+                Don&apos;t have an account? <ChakraLink href='#'>Create account </ChakraLink>
+              </Text>
+            </Stack>
           </Stack>
         </Stack>
       </Modal>
