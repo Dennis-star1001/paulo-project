@@ -21,7 +21,7 @@ export const AuthButton = () => {
       </Button>
       <Button variant='neutral'>
         <Facebook />
-        Sign up with Google
+        Sign up with Facebook
       </Button>
     </Stack>
   );
