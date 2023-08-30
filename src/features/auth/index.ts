@@ -3,4 +3,4 @@ export { ForgotPasswordModal } from './ForgotPassword';
 export { InterestSelectionModal } from './InterestSelection';
 export { SignupModal } from './Signup';
 export { NewPasswordModal } from './NewPassword';
-export {LoginModal} from './login'
+export { LoginModal } from './Login';

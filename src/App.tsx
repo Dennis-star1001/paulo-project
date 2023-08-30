@@ -1,13 +1,11 @@
-// import { EmailVerificationModal } from './features/auth';
-// import { NewPasswordModal } from './features/auth';
-import { LoginModal } from './features/auth';
+import { ProductPage } from './pages';
 
 const App = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <LoginModal />
+      <ProductPage />
     </>
   );
 };
