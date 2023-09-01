@@ -3,6 +3,7 @@ export const globalStyles = {
     white: '#FFF',
     black: '#201E1F',
     primary: '#00b0f3',
+    red: { 500: '#E9634B' },
     blue: {
       100: '#cceffd',
       200: '#aae5fb',
