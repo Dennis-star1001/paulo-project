@@ -1,17 +1,54 @@
 import { IconButton } from '@/components';
 import {
   Box,
+  BoxProps,
+  Text as ChakraText,
   Divider,
   Flex,
   Grid,
   GridItem,
+  Image,
+  Link,
   ListItem,
   Stack,
-  Text as ChakraText,
+  TextProps,
   UnorderedList
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { RiHeart2Line, RiShoppingCartLine } from 'react-icons/ri';
+
+interface ProductItem {
+  src?: string;
+  title?: string;
+  stockNumber?: number;
+  amount: string;
+}
+const similarProducts: ProductItem[] = [
+  {
+    amount: '120',
+    src: 'https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    stockNumber: 4,
+    title: "Classic men's watch extravert"
+  },
+  {
+    amount: '12.43',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe64aH9_J7iEo8tqio1UZ0FE6nWPUT1MIWQp1xENkowQ&s',
+    stockNumber: 24,
+    title: 'Plain Black T-shirt'
+  },
+  {
+    amount: '120',
+    src: 'https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    stockNumber: 4,
+    title: "Classic men's watch extravert"
+  },
+  {
+    amount: '12.43',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe64aH9_J7iEo8tqio1UZ0FE6nWPUT1MIWQp1xENkowQ&s',
+    stockNumber: 24,
+    title: 'Plain Black T-shirt'
+  }
+];
 
 const productDetails = [
   { label: 'Product Type', value: 'Others' },
@@ -106,13 +143,35 @@ const ProductPage = () => {
           <Container header='Delivery Information'>info</Container>
         </GridItem>
       </Grid>
+      <Box mt='78px'>
+        <Flex alignItems='center' bgColor='red.500' p={3} justifyContent='space-between'>
+          <ChakraText color='#fff' textStyle='h1'>
+            Similar Products
+          </ChakraText>
+          <Link color='#fff' href='#'>
+            See all
+          </Link>
+        </Flex>
+        <Grid templateColumns='repeat(4, 1fr)' mt='38px' columnGap={6}>
+          {similarProducts.map((product, i) => (
+            <GridItem key={i}>
+              <ProductItem
+                amount={product.amount}
+                src={product.src}
+                title={product.title}
+                stockNumber={product.stockNumber}
+              />
+            </GridItem>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 };
 
 export default ProductPage;
 
-interface ContainerProps {
+interface ContainerProps extends BoxProps {
   children: ReactNode;
   header?: ReactNode;
 }
@@ -142,10 +201,37 @@ const Container = ({ children, header = 'Heading', ...rest }: ContainerProps) =>
   );
 };
 
-const Text = ({ children, ...rest }: { children: ReactNode }) => {
+const Text = ({ children, ...rest }: TextProps) => {
   return (
     <ChakraText as='span' color='gray.400' textStyle='body-regular' fontWeight={400} {...rest}>
       {children}
     </ChakraText>
+  );
+};
+
+const ProductItem = ({ amount = '0', title = '', stockNumber = 0, src = '' }: ProductItem) => {
+  return (
+    <Flex flexDir='column' p={4} bgColor='#fff' h='340px'>
+      <Image alt={title} src={src} objectFit='cover' h='206px' w='307px' />
+      <Flex alignItems='center' mt='auto' gap={2}>
+        <Stack spacing={0}>
+          <ChakraText
+            color='black'
+            overflow='hidden'
+            textOverflow='ellipsis'
+            whiteSpace='nowrap'
+            maxW='217px'
+            textStyle='h1-subtext'
+            fontWeight={400}
+          >
+            {title}
+          </ChakraText>
+          <ChakraText textStyle='subtext'>
+            {`${stockNumber} piece${stockNumber > 0 ? 's' : ''}`} remaining{' '}
+          </ChakraText>
+        </Stack>
+        <ChakraText textStyle='h1'>${amount}</ChakraText>
+      </Flex>
+    </Flex>
   );
 };
