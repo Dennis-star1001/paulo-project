@@ -10,12 +10,14 @@ import {
   Image,
   Link,
   ListItem,
+  Radio,
+  RadioGroup,
   Stack,
   TextProps,
   UnorderedList
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { RiHeart2Line, RiShoppingCartLine } from 'react-icons/ri';
+import { RiHeart2Line, RiHistoryFill, RiShoppingCartLine } from 'react-icons/ri';
 
 interface ProductItem {
   src?: string;
@@ -55,11 +57,23 @@ const productDetails = [
   { label: 'Vendors', value: 'Adam' },
   { label: 'Tags', value: 'Fashion, Men' }
 ];
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  accessibility: true
+};
+
 const ProductPage = () => {
   return (
     <Box bgColor='#F1F5F9' p={8}>
       <Grid templateColumns='repeat(12, 1fr)' gap='34px'>
-        <GridItem colSpan={8}>
+        <GridItem colSpan={7}>
           <Flex justifyContent='space-between'>
             <Stack spacing={3}>
               <ChakraText color='primary' textStyle='h1'>
@@ -71,9 +85,16 @@ const ProductPage = () => {
             </Stack>
             <ChakraText textStyle='h1'>$12.43</ChakraText>
           </Flex>
-          <Flex minH='400px'>
-            <Box></Box>
-            <Box></Box>
+          <Flex minH='400px' gap='120px'>
+            <Box w='90px'></Box>
+            <Box>
+              <Image
+                h='458px'
+                w='359px'
+                objectFit='cover'
+                src='https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+              />
+            </Box>
           </Flex>
           <Divider my={2} />
           <Stack spacing={3}>
@@ -97,9 +118,22 @@ const ProductPage = () => {
               </UnorderedList>
             </Box>
           </Stack>
-          <Container header='Reviews (60)'>reviews</Container>
+          <Container
+            header={
+              <Flex alignItems='center' justifyContent='space-between'>
+                <ChakraText as='h3' textStyle='h1'>
+                  Reviews (60)
+                </ChakraText>
+                <Link color='black' href='#'>
+                  See all
+                </Link>
+              </Flex>
+            }
+          >
+            reviews
+          </Container>
         </GridItem>
-        <GridItem colSpan={4}>
+        <GridItem colSpan={5}>
           <Stack direction='row' spacing={3}>
             <IconButton icon={<RiHeart2Line />}>Save for later</IconButton>
             <IconButton icon={<RiShoppingCartLine />}>Add to cart</IconButton>
@@ -139,8 +173,67 @@ const ProductPage = () => {
               </ChakraText>
             </Flex>
           </Container>
-          <Container header='Seller Details'>details</Container>
-          <Container header='Delivery Information'>info</Container>
+          <Container header='Seller Details'>
+            <Flex justifyContent='space-between'>
+              <Flex gap='10px' alignItems='center'>
+                <Image
+                  objectFit='cover'
+                  rounded='full'
+                  src='https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d3Jpc3R3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                  h='48px'
+                  w='48px'
+                />
+                <Stack spacing={0}>
+                  <Text color='primary' textStyle='h1-subtext'>
+                    IluzBrandNigeriaLimited God Grace
+                  </Text>
+                  <Text>Ajipowo Road, Akure, ondo, NG , 234034</Text>
+                </Stack>
+              </Flex>
+              <Stack spacing={0}>
+                <Text>Seller Score</Text>
+                <Text textAlign='center'>4.5</Text>
+              </Stack>
+            </Flex>
+          </Container>
+          <Container header='Delivery Information'>
+            <RadioGroup>
+              <Stack>
+                <Radio value='local-delivery'>Local Delivery</Radio>
+                <Radio value='local-pickup'>Local Pickup</Radio>
+                <Radio value='international-delivery'>International Delivery</Radio>
+              </Stack>
+            </RadioGroup>
+            <Stack ml={4} spacing={0}>
+              <Text>4517 Washington Ave. Manchester, Kentucky 39495</Text>
+              <Link color='primary' href='#' textStyle='subtext-bold'>
+                Change location
+              </Link>
+            </Stack>
+            <Divider my='14px' />
+            <Flex>
+              <Flex gap='10px'>
+                <Box
+                  sx={{
+                    svg: {
+                      w: '30px',
+                      h: '30px'
+                    }
+                  }}
+                >
+                  <RiHistoryFill />
+                </Box>
+                <Stack>
+                  <Text textStyle='h1'>Return Policy</Text>
+                  <Text textStyle='body-regular'>
+                    Lorem ipsum dolor sit amet consectetur. Egestas massa lobortis justo in quam et.
+                    Blandit risus iaculis nisi ridiculus in. Sagittis tellus eget sed pellentesque
+                    lectus diam eu viverra risus. Leo.
+                  </Text>
+                </Stack>
+              </Flex>
+            </Flex>
+          </Container>
         </GridItem>
       </Grid>
       <Box mt='78px'>
