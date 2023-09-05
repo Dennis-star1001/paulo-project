@@ -31,7 +31,13 @@ const router = createBrowserRouter([
 const App = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <header>Navbar goes here</header>
+      <RouterProvider router={router} />
+      <footer>footer goes here</footer>
+    </>
+  );
 };
 
 export default App;
