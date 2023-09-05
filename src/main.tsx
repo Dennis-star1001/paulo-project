@@ -14,11 +14,14 @@ import '@fontsource/open-sans';
 import '@fontsource/open-sans/300.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/700.css';
+import { ErrorBoundary } from './components';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ChakraProvider>
   </React.StrictMode>
 );
