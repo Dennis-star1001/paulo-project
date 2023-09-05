@@ -58,16 +58,16 @@ const productDetails = [
   { label: 'Tags', value: 'Fashion, Men' }
 ];
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 600,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 4000,
-  accessibility: true
-};
+// const settings = {
+//   dots: true,
+//   infinite: true,
+//   speed: 600,
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   autoplay: true,
+//   autoplaySpeed: 4000,
+//   accessibility: true
+// };
 
 const ProductPage = () => {
   return (
