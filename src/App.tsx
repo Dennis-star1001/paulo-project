@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ProductPage } from './pages';
+import { ProductPage, ServicePage } from './pages';
 import { path } from './routes/path';
+import { Box } from '@chakra-ui/react';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: path.PRODUCT,
     element: <ProductPage />
+  },
+  {
+    path: path.SERVICE,
+    element: <ServicePage />
   }
 ]);
 const App = () => {
@@ -35,7 +40,7 @@ const App = () => {
     <>
       <header>Navbar goes here</header>
       <RouterProvider router={router} />
-      <footer>footer goes here</footer>
+      <Box as='footer'>footer goes here</Box>
     </>
   );
 };
