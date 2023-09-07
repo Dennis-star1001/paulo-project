@@ -21,7 +21,10 @@ export const globalStyles = {
       900: '#0F172A',
       300: '#D2D8E2'
     },
-    gray: { 100: '#ADA8AB', 400: '#4D4D4D' }
+    gray: { 100: '#ADA8AB', 400: '#4D4D4D' },
+    gradient: {
+      100: 'radial-gradient(358.78% 133.76% at 2.69% 5.45%, #00B0F3 0%, #248DC8 50%, rgba(0, 176, 243, 0.68) 100%)'
+    }
   },
   styles: {
     global: () => ({
