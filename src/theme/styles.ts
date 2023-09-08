@@ -1,8 +1,9 @@
 export const globalStyles = {
   colors: {
     white: '#FFF',
-    black: '#000',
+    black: '#201E1F',
     primary: '#00b0f3',
+    red: { 500: '#E9634B' },
     blue: {
       100: '#cceffd',
       200: '#aae5fb',
@@ -45,7 +46,7 @@ export const globalStyles = {
       body: {
         background: { base: '#fff' },
         fontFamily: 'Open Sans, sans-serif',
-        color: '#000'
+        color: '#201E1F'
       },
       '*::placeholder': {
         color: '#4D4D4D'
