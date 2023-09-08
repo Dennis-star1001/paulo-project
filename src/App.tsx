@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductPage } from './pages';
 import { path } from './routes/path';
+import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const App = () => {
 
   return (
     <>
-      <header>Navbar goes here</header>
+      <BeforeLoginHeader />
       <RouterProvider router={router} />
       <footer>footer goes here</footer>
     </>

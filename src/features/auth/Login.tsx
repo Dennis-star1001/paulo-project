@@ -9,8 +9,18 @@ import {
   Button
 } from '@chakra-ui/react';
 import { FormInput, PasswordInput } from '@/components';
+import { useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
+  const ref = useRef(null);
+  const handleClickOutside = () => {
+    // Your custom logic here
+    console.log('clicked inside');
+  };
+
+  useOnClickOutside(ref, handleClickOutside);
+
   return (
     <>
       <Modal
@@ -25,7 +35,7 @@ export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosur
           </Stack>
         }
       >
-        <Stack>
+        <Stack onClick={handleClickOutside}>
           <AuthButton />
           <Divider my={8} />
 

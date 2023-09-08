@@ -20,6 +20,7 @@ import {
   useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react';
+import { LoginModal, SignupModal } from '@/features/auth';
 
 interface NavLink {
   link: string;
@@ -46,103 +47,113 @@ const navLinks: NavLink[] = [
 ];
 
 const DesktopView = () => {
+  const { isOpen: isLoginModalOpen, onOpen: openLoginModal } = useDisclosure();
+  const { isOpen: isSignupModalOpen, onOpen: onOpenSignupModal } = useDisclosure();
+
   return (
-    <Flex alignItems='center' justify='space-around' maxW='1920px' h='124px' bg='#212529' p='6'>
-      <Box display='flex' alignItems='center'>
-        <Link href='/home' display='flex' alignItems='center' textDecoration='none'>
-          <Image
-            src='https://generation-sessions.s3.amazonaws.com/748f748c525335ed31db362685342e09/img/image-32@2x.png'
-            alt='logo'
-            bg='#212529'
-            w='290px'
-            h='44.86px'
-          />
-        </Link>
-      </Box>
+    <>
+      <LoginModal isOpen={isLoginModalOpen} />
+      <SignupModal isOpen={isSignupModalOpen} />
 
-      <Spacer />
-
-      <Box display='flex' alignItems='center' color='white' maxW='875px' h='48px' ml='6'>
-        {navLinks.map((navLink, i) => (
-          <Link
-            href={navLink.link}
-            key={`navlink_${i}`}
-            display='flex'
-            alignItems='center'
-            color='white'
-            _hover={{ color: '#00B0F3' }}
-            mr='55'
-            fontFamily='Lato'
-            fontWeight='400'
-            fontSize='24px'
-            h='36.13px'
-          >
-            {navLink.icon} <Text ml='1'>{navLink.name}</Text>
+      <Flex alignItems='center' justify='space-around' maxW='1920px' h='124px' bg='#212529' p='6'>
+        <Box display='flex' alignItems='center'>
+          <Link href='/home' display='flex' alignItems='center' textDecoration='none'>
+            <Image
+              src='https://generation-sessions.s3.amazonaws.com/748f748c525335ed31db362685342e09/img/image-32@2x.png'
+              alt='logo'
+              bg='#212529'
+              w='290px'
+              h='44.86px'
+            />
           </Link>
-        ))}
-        <Box display='flex' alignContent='center' color='#E6E7E8' borderRadius='50px'>
-          <Box w='48px' h='33px' fontSize='24px'>
-            <span className='fi fi-ng fis'></span>
-          </Box>
-          <Box fontFamily='Lato' fontWeight='600' fontSize='24px' lineHeight='34.5px'>
-            NGN
+        </Box>
+
+        <Spacer />
+
+        <Box display='flex' alignItems='center' color='white' maxW='875px' h='48px' ml='6'>
+          {navLinks.map((navLink, i) => (
+            <Link
+              href={navLink.link}
+              key={`navlink_${i}`}
+              display='flex'
+              alignItems='center'
+              color='white'
+              _hover={{ color: '#00B0F3' }}
+              mr='55'
+              fontFamily='Lato'
+              fontWeight='400'
+              fontSize='24px'
+              h='36.13px'
+            >
+              {navLink.icon} <Text ml='1'>{navLink.name}</Text>
+            </Link>
+          ))}
+          <Box display='flex' alignContent='center' color='#E6E7E8' borderRadius='50px'>
+            <Box w='48px' h='33px' fontSize='24px'>
+              <span className='fi fi-ng fis'></span>
+            </Box>
+            <Box fontFamily='Lato' fontWeight='600' fontSize='24px' lineHeight='34.5px'>
+              NGN
+            </Box>
           </Box>
         </Box>
-      </Box>
 
-      <Spacer />
+        <Spacer />
 
-      <Box display='flex' alignItems='center'>
-        <IconButton
-          aria-label='Search database'
-          bg='balck'
-          mr='4'
-          icon={<BsBell fontSize='25' w='24px' h='24px' color='#00B0F3' />}
-        />
-        <Button
-          variant='outline'
-          borderRadius='5px'
-          border='2px solid #00B0F3'
-          color='#00B0F3'
-          p='12px, 18px, 12px, 18px'
-          w='74px'
-          h='41px'
-          mr='4'
-        >
-          <Text
-            w='105px'
-            h='17px'
-            fontFamily='Inter'
-            fontWeight='600'
-            fontSize='14px'
-            textAlign='center'
+        <Box display='flex' alignItems='center'>
+          <IconButton
+            aria-label='Search database'
+            bg='balck'
+            mr='4'
+            icon={<BsBell fontSize='25' w='24px' h='24px' color='#00B0F3' />}
+          />
+          <Button
+            variant='outline'
+            borderRadius='5px'
+            border='2px solid #00B0F3'
+            color='#00B0F3'
+            p='12px, 18px, 12px, 18px'
+            w='74px'
+            h='41px'
+            mr='4'
+            onClick={openLoginModal}
           >
-            Login
-          </Text>
-        </Button>
-        <Button
-          variant='solid'
-          bg='#00B0F3'
-          borderRadius='5px'
-          p='12px, 18px, 12px, 18px'
-          color='#F8FAFC'
-          w='141px'
-          h='41px'
-          mr='4'
-        >
-          <Text
-            w='105px'
-            h='17px'
-            fontFamily='Inter'
-            fontWeight='600'
-            fontSize='14px'
-            textAlign='center'
+            <Text
+              w='105px'
+              h='17px'
+              fontFamily='Inter'
+              fontWeight='600'
+              fontSize='14px'
+              textAlign='center'
+            >
+              Login
+            </Text>
+          </Button>
+          <Button
+            variant='solid'
+            bg='#00B0F3'
+            borderRadius='5px'
+            p='12px, 18px, 12px, 18px'
+            color='#F8FAFC'
+            w='141px'
+            h='41px'
+            mr='4'
+            onClick={onOpenSignupModal}
           >
-            Create account
-          </Text>
-        </Button>
-      </Box>
-    </Flex>
+            <Text
+              w='105px'
+              h='17px'
+              fontFamily='Inter'
+              fontWeight='600'
+              fontSize='14px'
+              textAlign='center'
+            >
+              Create account
+            </Text>
+          </Button>
+        </Box>
+      </Flex>
+    </>
   );
 };
 
