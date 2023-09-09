@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 interface IconButtonProps extends ButtonProps {
   icon?: ReactNode;
 }
-export const IconButton = ({ icon, children = 'Button', ...rest }: IconButtonProps) => {
+export const IconButton = ({ icon, children, ...rest }: IconButtonProps) => {
   return (
     <Button {...rest}>
       <Stack alignItems='center' direction='row' spacing='6px'>

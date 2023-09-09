@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <>
-      <header>Navbar goes here</header>
+      <BeforeLoginHeader />
       <RouterProvider router={router} />
       <Box as='footer'>footer goes here</Box>
     </>

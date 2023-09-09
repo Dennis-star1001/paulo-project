@@ -1,14 +1,14 @@
-import { Modal, AuthButton } from '@/components/auth';
+import { FormInput, PasswordInput } from '@/components';
+import { AuthButton, Modal } from '@/components/auth';
 import {
-  UseDisclosureProps,
+  Button,
+  Link as ChakraLink,
+  Checkbox,
+  Divider,
   Stack,
   Text,
-  Divider,
-  Checkbox,
-  Link as ChakraLink,
-  Button
+  UseDisclosureProps
 } from '@chakra-ui/react';
-import { FormInput, PasswordInput } from '@/components';
 
 export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
   return (
