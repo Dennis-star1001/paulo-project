@@ -1,5 +1,6 @@
 // import Carousel from 'react-bootstrap/Carousel';
 // import { mockApi } from './mockApi';
+import Banner from '@/assets/dummy-banner.png';
 import { FormInput, IconButton, Rating } from '@/components';
 import { PanelHeader } from '@/components/panel';
 import { path } from '@/routes/path';
@@ -14,7 +15,6 @@ import {
   HStack,
   Image,
   Link,
-  Spacer,
   Stack,
   Tab,
   TabList,
@@ -23,10 +23,9 @@ import {
   Tabs,
   Text
 } from '@chakra-ui/react';
-import { RiFilter3Line, RiSearch2Line, RiStarFill } from 'react-icons/ri';
+import { RiFilter3Line, RiSearch2Line } from 'react-icons/ri';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Banner from '@/assets/dummy-banner.png';
 
 const spacing = [4, 5];
 const avatar = 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg';
