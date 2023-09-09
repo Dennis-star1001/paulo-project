@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductPage, ServicePage } from './pages';
 import { path } from './routes/path';
-import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
+import { Box } from '@chakra-ui/react';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <ProductPage />
   },
   {
-    path: path.SERVICES,
+    path: path.SERVICE,
     element: <ServicePage />
   }
 ]);
@@ -40,7 +40,7 @@ const App = () => {
     <>
       <BeforeLoginHeader />
       <RouterProvider router={router} />
-      <footer>footer goes here</footer>
+      <Box as='footer'>footer goes here</Box>
     </>
   );
 };

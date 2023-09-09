@@ -1,4 +1,4 @@
-import { IconButton } from '@/components';
+import { IconButton, PanelHeader } from '@/components';
 import {
   Box,
   BoxProps,
@@ -237,14 +237,14 @@ const ProductPage = () => {
         </GridItem>
       </Grid>
       <Box mt='78px'>
-        <Flex alignItems='center' bgColor='red.500' p={3} justifyContent='space-between'>
-          <ChakraText color='#fff' textStyle='h1'>
-            Similar Products
-          </ChakraText>
-          <Link color='#fff' href='#'>
-            See all
-          </Link>
-        </Flex>
+        <PanelHeader
+          header='Similar Products'
+          rightAction={
+            <Link color='#fff' href='#'>
+              See all
+            </Link>
+          }
+        />
         <Grid templateColumns='repeat(4, 1fr)' mt='38px' columnGap={6}>
           {similarProducts.map((product, i) => (
             <GridItem key={i}>
