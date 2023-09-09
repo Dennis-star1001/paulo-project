@@ -22,7 +22,7 @@ export const Modal = ({ children, modalHeader, ...rest }: ModalProps) => {
     <ChakraModal size={['sm', 'lg']} {...rest}>
       <ModalOverlay />
       <ModalContent>
-      <ModalCloseButton />
+        <ModalCloseButton />
 
         <ModalHeader textAlign='center'>
           <Flex justifyContent='center' mb={3}>
