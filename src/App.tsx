@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ProductPage } from './pages';
+import { ProductPage, ServicePage } from './pages';
 import { path } from './routes/path';
 import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
 
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: path.PRODUCT,
     element: <ProductPage />
+  },
+  {
+    path: path.SERVICES,
+    element: <ServicePage />
   }
 ]);
 const App = () => {
