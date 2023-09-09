@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductPage, ServicePage } from './pages';
 import { path } from './routes/path';
 import { Box } from '@chakra-ui/react';
+import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
 
 const router = createBrowserRouter([
   {
