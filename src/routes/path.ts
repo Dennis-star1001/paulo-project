@@ -7,5 +7,6 @@ export const path = {
   EVENTS_DETAILS: '/event_details',
   SOCIAL: '/social',
   PRODUCT: '/product',
-  SERVICE: '/service'
+  SERVICES: '/services',
+  SERVICES_DETAIL: '/services/:id'
 };

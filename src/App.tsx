@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Event_details, ProductPage, ServicePage } from './pages';
 import EventPage from './pages/event/Event';
@@ -40,9 +41,14 @@ const router = createBrowserRouter([
     element: <ServicePage />
   }
 ]);
-const App = () => {
-  // const { isOpen, onOpen, onClose } = useDisclosure();
+=======
+import { RouterProvider } from 'react-router-dom';
+import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
+import { router } from './routes';
+import { Box } from '@chakra-ui/react';
 
+>>>>>>> 67b990445184d0224cdf35d666061d75ca97fe33
+const App = () => {
   return (
     <>
       <BeforeLoginHeader />

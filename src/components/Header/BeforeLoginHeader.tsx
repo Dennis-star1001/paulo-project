@@ -49,13 +49,21 @@ const navLinks: NavLink[] = [
 ];
 
 const DesktopView = () => {
-  const { isOpen: isLoginModalOpen, onOpen: openLoginModal } = useDisclosure();
-  const { isOpen: isSignupModalOpen, onOpen: onOpenSignupModal } = useDisclosure();
+  const {
+    isOpen: isLoginModalOpen,
+    onOpen: openLoginModal,
+    onClose: closeLoginModal
+  } = useDisclosure();
+  const {
+    isOpen: isSignupModalOpen,
+    onOpen: onOpenSignupModal,
+    onClose: closeSignupModal
+  } = useDisclosure();
 
   return (
     <>
-      <LoginModal isOpen={isLoginModalOpen} />
-      <SignupModal isOpen={isSignupModalOpen} />
+      <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
+      <SignupModal isOpen={isSignupModalOpen} onClose={closeSignupModal} />
 
       <Flex alignItems='center' justify='space-around' maxW='1920px' h='124px' bg='#212529' p='6'>
         <Box display='flex' alignItems='center'>
