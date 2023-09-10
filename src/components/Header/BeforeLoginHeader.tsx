@@ -1,11 +1,13 @@
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineShop } from 'react-icons/ai';
+import { BsShop } from 'react-icons/bs';
+import { SlPeople } from 'react-icons/sl';
+import { BsChevronDown } from 'react-icons/bs';
 import { BiChat } from 'react-icons/bi';
 import { BsBell } from 'react-icons/bs';
 import { LuLogIn } from 'react-icons/lu';
 import { GrClose } from 'react-icons/gr';
-import { TbShoppingCart } from 'react-icons/tb';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 import {
   Box,
@@ -40,10 +42,10 @@ const BeforeLoginHeader: React.FC = () => {
 };
 
 const navLinks: NavLink[] = [
-  { name: 'Shop', link: '/shop', icon: <AiOutlineShop /> },
-  { name: 'Social', link: '/social', icon: <AiOutlineShop /> },
+  { name: 'Shop', link: '/shop', icon: <BsShop /> },
+  { name: 'Social', link: '/social', icon: <SlPeople /> },
   { name: 'Chat', link: '/chat', icon: <BiChat /> },
-  { name: 'Cart', link: '/cart', icon: <TbShoppingCart /> }
+  { name: 'Cart', link: '/cart', icon: <AiOutlineShoppingCart /> }
 ];
 
 const DesktopView = () => {
@@ -101,7 +103,10 @@ const DesktopView = () => {
               <span className='fi fi-ng fis'></span>
             </Box>
             <Box fontFamily='Lato' fontWeight='600' fontSize='24px' lineHeight='34.5px'>
-              NGN
+              <Flex>
+                NGN
+                <BsChevronDown />
+              </Flex>
             </Box>
           </Box>
         </Box>
