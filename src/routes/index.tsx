@@ -1,6 +1,7 @@
-import { ProductPage, ServiceDetailPage, ServicePage } from '@/pages';
+import { Event_details, ProductPage, ServiceDetailPage, ServicePage } from '@/pages';
 import { path } from './path';
 import { createBrowserRouter } from 'react-router-dom';
+import EventPage from '@/pages/event/Event';
 
 export const router = createBrowserRouter([
   {
@@ -20,10 +21,6 @@ export const router = createBrowserRouter([
     element: <div>Shop page goes here</div>
   },
   {
-    path: path.EVENTS,
-    element: <div>Events page goes here</div>
-  },
-  {
     path: path.PRODUCT,
     element: <ProductPage />
   },
@@ -34,5 +31,13 @@ export const router = createBrowserRouter([
   {
     path: path.SERVICES_DETAIL,
     element: <ServiceDetailPage />
+  },
+  {
+    path: path.EVENTS,
+    element: <EventPage />
+  },
+  {
+    path: path.EVENTS_DETAILS,
+    element: <Event_details />
   }
 ]);
