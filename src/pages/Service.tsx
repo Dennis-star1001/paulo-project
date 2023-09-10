@@ -27,7 +27,7 @@ import { RiFilter3Line, RiSearch2Line } from 'react-icons/ri';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const spacing = [4, 5];
+const spacing = [4, '150px'];
 const avatar = 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg';
 
 export const ServicePage = () => {
@@ -37,7 +37,7 @@ export const ServicePage = () => {
 
   return (
     <Box bg='neutral.100' pb={4} pt='100px'>
-      <Flex px={spacing} sx={{ svg: { fontSize: '20px' } }}>
+      <Flex px={[spacing[0], '300px']} sx={{ svg: { fontSize: '20px' } }}>
         <IconButton display={['none', 'block']} icon={<RiFilter3Line />} />
         <FormInput bgColor='#fff' />
         <IconButton icon={<RiSearch2Line />}>Search</IconButton>
