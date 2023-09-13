@@ -1,13 +1,13 @@
-import { FC } from "react";
 import {
+  Box,
+  Text,
+  Link,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
 } from "@chakra-ui/react";
 
 interface EventModalProps {
@@ -16,25 +16,46 @@ interface EventModalProps {
   eventTitle: string;
 }
 
-const EventModal: FC<EventModalProps> = ({ isOpen, onClose, eventTitle }) => {
+
+type Category = {
+  name: string;
+  link: string;
+};
+
+const eventCategories: Category[] = [
+  { name: "Online Events", link: "/online-events" },
+  { name: "Free Events", link: "/free-events" },
+  { name: "Paid Events", link: "/paid-events" },
+  { name: "Upcoming Events", link: "/upcoming-events" },
+  { name: "Events near you", link: "/events-near-you" },
+  { name: "Training", link: "/training" },
+  { name: "Seminars", link: "/seminars" },
+  { name: "Vlogs", link: "/vlogs" },
+  { name: "Festivals", link: "/festivals" },
+  { name: "Owanbe", link: "/owanbe" },
+  { name: "Music and Comedy", link: "/music-and-comedy" },
+  { name: "Arts & Crafts", link: "/arts-and-crafts" },
+];
+
+
+const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, eventTitle }) => {
+
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="md">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{eventTitle}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          {/* Add content related to the event here */}
-          {/* For example, you can display event details or a form */}
-          <p>Event details go here.</p>
+          {eventCategories.map((category, index) => (
+            <Box>
+              <Link key={index} href={category.link}>
+                <Text>{category.name}</Text>
+              </Link>
+            </Box>
+          ))}
         </ModalBody>
-
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-          {/* You can add additional buttons or actions here */}
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
