@@ -86,11 +86,11 @@ const EventDetails = () => {
                 <HiOutlineLocationMarker color='#00B0F3' fontSize='25px' />
               </Box>
               <Text fontSize='14px' fontWeight='400'>
-                2972 Westheimer Rd. Santa Ana, Illinois 85486
+                Online
               </Text>
             </Box>
             <Box display='flex' alignItems='center' mt={2}>
-              <Button
+              <Text
                 mr={2}
                 lineHeight='17px'
                 fontFamily='Inter'
@@ -100,9 +100,9 @@ const EventDetails = () => {
                 p={3}
                 display={['none', 'none', 'flex']}
               >
-                Regular- $15
+                Event is Live
                 <RiArrowDropDownLine fontSize='20px' />
-              </Button>
+              </Text>
               <Button
                 bg='#00B0F3'
                 color='#FFFFFF'
@@ -111,7 +111,7 @@ const EventDetails = () => {
                 fontSize='14px'
                 p={3}
               >
-                Buy
+                Watch
               </Button>
             </Box>
           </Box>
