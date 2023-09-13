@@ -124,7 +124,7 @@ const EventPage = () => {
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
         >
-          {Array.from({ length: 8 }, (_, i) => (
+          {Array.from({ length: 4 }, (_, i) => (
             <GridItem key={i}>
               <Image
                 w='344px'
@@ -180,7 +180,7 @@ const EventPage = () => {
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
         >
-          {Array.from({ length: 8 }, (_, i) => (
+          {Array.from({ length: 4 }, (_, i) => (
             <GridItem key={i}>
               <Image
                 w='344px'
@@ -219,7 +219,7 @@ const EventPage = () => {
           ))}
         </Grid>
       </Box>
-      <Box>
+      <Box m='4'>
         <PanelHeader
           mx={[0, spacing[1]]}
           header='TRENDING'
