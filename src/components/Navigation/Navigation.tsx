@@ -1,4 +1,15 @@
-import { Box, Text, InputLeftElement, InputRightElement, Flex, Input, InputGroup, Button, Link } from '@chakra-ui/react'
+import {
+    Box,
+    Text,
+    InputLeftElement,
+    InputRightElement,
+    Flex,
+    Input,
+    InputGroup,
+    Button,
+    Link
+}
+    from '@chakra-ui/react'
 import { CgSortAz } from 'react-icons/cg'
 import { AiOutlineSearch } from 'react-icons/ai'
 
