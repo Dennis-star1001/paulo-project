@@ -57,7 +57,7 @@ const Navigation = () => {
                     </InputGroup>
                 </Box>
             </Flex>
-            <Box w='901px' h='35px' display="flex" justifyContent="center" my='6' mx='450'>
+            <Box w='901px' h='35px' display="flex" justifyContent="center" my='6' mx='480'>
                 {NavigationLinks.map((NavigationLink, i) => (
                     <Link href={NavigationLink.link} key={`NavigationLink_${i}`} justifyContent='space-around'>
                         <Box

@@ -2,7 +2,6 @@ import { Event_details, ProductPage, ServiceDetailPage, ServicePage } from '@/pa
 import { path } from './path';
 import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
-
 export const router = createBrowserRouter([
   {
     path: path.HOME,
