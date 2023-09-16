@@ -1,9 +1,5 @@
-
-
 const AfterLoginFooter = () => {
-    return (
-        <div>AfterLoginFooter</div>
-    )
-}
+  return <div>AfterLoginFooter</div>;
+};
 
-export default AfterLoginFooter
+export default AfterLoginFooter;
