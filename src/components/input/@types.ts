@@ -1,4 +1,4 @@
-import { InputProps } from '@chakra-ui/react';
+import { InputGroupProps, InputProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 export interface FormInputProps extends InputProps {
@@ -9,4 +9,5 @@ export interface FormInputProps extends InputProps {
   errorMessage?: string;
   readonly?: boolean;
   disabled?: boolean;
+  inputGroup?: InputGroupProps;
 }
