@@ -7,8 +7,8 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
+  ModalCloseButton
+} from '@chakra-ui/react';
 
 interface EventModalProps {
   isOpen: boolean;
@@ -16,33 +16,29 @@ interface EventModalProps {
   eventTitle: string;
 }
 
-
 type Category = {
   name: string;
   link: string;
 };
 
 const eventCategories: Category[] = [
-  { name: "Online Events", link: "/online-events" },
-  { name: "Free Events", link: "/free-events" },
-  { name: "Paid Events", link: "/paid-events" },
-  { name: "Upcoming Events", link: "/upcoming-events" },
-  { name: "Events near you", link: "/events-near-you" },
-  { name: "Training", link: "/training" },
-  { name: "Seminars", link: "/seminars" },
-  { name: "Vlogs", link: "/vlogs" },
-  { name: "Festivals", link: "/festivals" },
-  { name: "Owanbe", link: "/owanbe" },
-  { name: "Music and Comedy", link: "/music-and-comedy" },
-  { name: "Arts & Crafts", link: "/arts-and-crafts" },
+  { name: 'Online Events', link: '/online-events' },
+  { name: 'Free Events', link: '/free-events' },
+  { name: 'Paid Events', link: '/paid-events' },
+  { name: 'Upcoming Events', link: '/upcoming-events' },
+  { name: 'Events near you', link: '/events-near-you' },
+  { name: 'Training', link: '/training' },
+  { name: 'Seminars', link: '/seminars' },
+  { name: 'Vlogs', link: '/vlogs' },
+  { name: 'Festivals', link: '/festivals' },
+  { name: 'Owanbe', link: '/owanbe' },
+  { name: 'Music and Comedy', link: '/music-and-comedy' },
+  { name: 'Arts & Crafts', link: '/arts-and-crafts' }
 ];
 
-
 const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, eventTitle }) => {
-
-
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="md">
+    <Modal isOpen={isOpen} onClose={onClose} size='md'>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{eventTitle}</ModalHeader>

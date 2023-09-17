@@ -14,14 +14,21 @@ import '@fontsource/open-sans';
 import '@fontsource/open-sans/300.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/700.css';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './app/store';
 import { ErrorBoundary } from './components';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </ChakraProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ChakraProvider theme={theme}>
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
+        </ChakraProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
