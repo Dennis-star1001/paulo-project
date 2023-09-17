@@ -1,16 +1,58 @@
 import { IconButton } from '@/components';
-import { Box, Button, Flex, Grid, GridItem, HStack, Image, Stack, Text } from '@chakra-ui/react';
-import { BiComment } from 'react-icons/bi';
-import { BsBookmarkPlus } from 'react-icons/bs';
-import { PiShareFatThin, PiThumbsUpThin } from 'react-icons/pi';
+import { Box, Flex, Grid, GridItem, HStack, Image, Link, Stack, Text } from '@chakra-ui/react';
 import { RiAddCircleFill, RiSearchLine } from 'react-icons/ri';
+import { SocialCard } from './components';
+
+const socials = [
+  {
+    img: 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg',
+    name: 'Mike John',
+    time: '2hrs',
+    taggedName: 'Orioferoliwa Peters',
+    comment: `Sed elementum turpis netus maecenas et quis neque feugiat. Dolor purus egestas hac
+    adipiscing mauris convallis sed. Mattis a rhoncus vulputate elit blandit egestas feugiat sed
+    augue. Tempor commodo risus lacus nec purus dictum dolor.`,
+    likes: 16,
+    comments: 9,
+    hasImg: true,
+    numberOfComments: 10
+  },
+  {
+    img: 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg',
+    name: 'Mike John',
+    time: '2hrs',
+    taggedName: 'Orioferoliwa Peters',
+    comment: `Sed elementum turpis netus maecenas et quis neque feugiat. Dolor purus egestas hac
+    adipiscing mauris convallis sed. Mattis a rhoncus vulputate elit blandit egestas feugiat sed
+    augue. Tempor commodo risus lacus nec purus dictum dolor.`,
+    likes: 16,
+    comments: 9,
+    hasImg: false,
+    numberOfComments: 10
+  },
+  {
+    img: 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg',
+    name: 'Mike John',
+    time: '2hrs',
+    taggedName: 'Orioferoliwa Peters',
+    comment: `Sed elementum turpis netus maecenas et quis neque feugiat. Dolor purus egestas hac
+    adipiscing mauris convallis sed. Mattis a rhoncus vulputate elit blandit egestas feugiat sed
+    augue. Tempor commodo risus lacus nec purus dictum dolor.`,
+    likes: 16,
+    comments: 9,
+    hasImg: true,
+    numberOfComments: 10
+  }
+];
 
 export const SocialPage = () => {
   return (
     <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap='36px'>
-      <GridItem colSpan={[12, 8]}>
-        <Flex justifyContent='space-between'>
-          <Text>Social</Text>
+      <GridItem colSpan={[12, 7]}>
+        <Flex justifyContent='space-between' mb={6}>
+          <Text as='h1' fontSize='40px' fontWeight={600}>
+            Social
+          </Text>
           <HStack>
             <RiSearchLine />
             <IconButton display={['none', 'block']} icon={<RiAddCircleFill />}>
@@ -18,75 +60,52 @@ export const SocialPage = () => {
             </IconButton>
           </HStack>
         </Flex>
-        <Box bg='#fff'>
-          <Flex alignItems='center'>
-            <Image
-              h='42px'
-              w='42px'
-              src='https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg'
-            />
-            <Stack spacing={0}>
-              <Text>Mike John</Text>
-              <Text>2hrs</Text>
-            </Stack>
+        <Stack spacing={2}>
+          {socials.map(
+            ({ comment, img, likes, name, numberOfComments, taggedName, time, hasImg }, i) => (
+              <SocialCard
+                comment={comment}
+                img={img}
+                likes={likes}
+                name={name}
+                numberOfComments={numberOfComments}
+                taggedName={taggedName}
+                time={time}
+                hasImg={hasImg}
+                key={i}
+              />
+            )
+          )}
+        </Stack>
+      </GridItem>
+      <GridItem colSpan={[12, 5]}>
+        <Box bg='#fff' borderRadius={2} p={6}>
+          <Flex justifyContent='space-between'>
+            <Text>Suggested People</Text>
+            <Link href='#'>See All</Link>
           </Flex>
-          <Text>Tagged: Orioferoliwa Peters</Text>
-          <Text>
-            Sed elementum turpis netus maecenas et quis neque feugiat. Dolor purus egestas hac
-            adipiscing mauris convallis sed. Mattis a rhoncus vulputate elit blandit egestas feugiat
-            sed augue. Tempor commodo risus lacus nec purus dictum dolor.
-          </Text>
-          <Flex mt={8} justifyContent='space-around'>
-            <SocialButton type='like' count={16} />
-            <SocialButton type='comment' count={9} />
-            <SocialButton type='share' />
-            <SocialButton type='bookmark' />
-          </Flex>
+          <Stack as='section' mt={8} spacing={8}>
+            {Array.from({ length: 5 }, (_, i) => (
+              <Flex key={i} alignItems='start' justifyContent='space-between'>
+                <Flex alignItems='center' gap='18px'>
+                  <Image
+                    h='50px'
+                    w='50px'
+                    src='https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg'
+                  />
+                  <Stack spacing={0}>
+                    <Text textStyle='body-regular'>Orioferoluwa Peters</Text>
+                    <Text textStyle='subtext'>Vendor~Akure, Ondo State</Text>
+                  </Stack>
+                </Flex>
+                <Link href='#' textStyle='body-regular'>
+                  View Profile
+                </Link>
+              </Flex>
+            ))}
+          </Stack>
         </Box>
       </GridItem>
-      <GridItem>fds</GridItem>
     </Grid>
   );
-};
-
-type SocialButtonProps =
-  | {
-      type: 'bookmark' | 'share';
-      count?: never;
-    }
-  | {
-      type: 'like' | 'comment';
-      count: number;
-    };
-const SocialButton = ({ count, type }: SocialButtonProps) => {
-  if (type === 'like' && count === undefined) {
-    throw new Error('Count prop is required when type is "like"');
-  }
-
-  const IconComponent = getSocialIcon(type);
-
-  return (
-    <Button variant='unstyled'>
-      <HStack spacing='2px' alignItems='center'>
-        <Box fontSize='24px' as={IconComponent} />
-        <Text>{count}</Text>
-      </HStack>
-    </Button>
-  );
-};
-
-type SocialType = 'bookmark' | 'share' | 'like' | 'comment';
-const getSocialIcon = (type: SocialType) => {
-  switch (type) {
-    case 'bookmark':
-      return BsBookmarkPlus;
-    case 'comment':
-      return BiComment;
-    case 'like':
-      return PiThumbsUpThin;
-    case 'share':
-      return PiShareFatThin;
-    default:
-      return null;
-  }
 };
