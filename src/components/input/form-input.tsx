@@ -31,7 +31,7 @@ export const FormInput = ({
           {label}
         </Text>
       )}
-      <InputGroup>
+      <InputGroup {...props.inputGroup}>
         {leftAddon && <>{leftAddon}</>}
         <Input
           {...props}
