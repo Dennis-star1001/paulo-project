@@ -66,7 +66,7 @@ type SocialButtonProps =
       type: 'like' | 'comment';
       count: number;
     };
-const SocialButton = ({ count, type }: SocialButtonProps) => {
+export const SocialButton = ({ count, type }: SocialButtonProps) => {
   if (type === 'like' && count === undefined) {
     throw new Error('Count prop is required when type is "like"');
   }

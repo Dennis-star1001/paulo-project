@@ -1,4 +1,12 @@
-import { Event_details, ProductPage, ServiceDetailPage, ServicePage, SocialPage } from '@/pages';
+// TODO: lazy load pages components
+import {
+  Event_details,
+  ProductPage,
+  ServiceDetailPage,
+  ServicePage,
+  SocialDetailPage,
+  SocialPage
+} from '@/pages';
 import { path } from './path';
 import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
@@ -47,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: path.SOCIAL,
         element: <SocialPage />
+      },
+      {
+        path: path.SOCIAL_DETAIL,
+        element: <SocialDetailPage />
       }
     ]
   }
