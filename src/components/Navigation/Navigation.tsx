@@ -1,16 +1,19 @@
 import {
   Box,
-  Text,
-  InputLeftElement,
-  InputRightElement,
+  Button,
+  Center,
   Flex,
+  Grid,
+  GridItem,
   Input,
   InputGroup,
-  Button,
-  Link
+  InputLeftElement,
+  InputRightElement,
+  Link,
+  Text
 } from '@chakra-ui/react';
-import { CgSortAz } from 'react-icons/cg';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { CgSortAz } from 'react-icons/cg';
 
 interface NavLinks {
   link: string;
@@ -32,7 +35,13 @@ const Navigation = () => {
         <Box w='48px' h='48px' mt='-1'>
           <CgSortAz fontSize='40' />
         </Box>
-        <Text fontSize='24px' fontWeight='600' textTransform='uppercase' lineHeight='34.5px'>
+        <Text
+          display={['none', 'block']}
+          fontSize='24px'
+          fontWeight='600'
+          textTransform='uppercase'
+          lineHeight='34.5px'
+        >
           Browse category
         </Text>
         <Box w='100%' maxW='864px' h='55px' borderRadius='4px'>
@@ -70,29 +79,37 @@ const Navigation = () => {
           </InputGroup>
         </Box>
       </Flex>
-      <Box w='901px' h='35px' display='flex' justifyContent='center' my='6' mx='480'>
-        {NavigationLinks.map((NavigationLink, i) => (
-          <Link
-            href={NavigationLink.link}
-            key={`NavigationLink_${i}`}
-            justifyContent='space-around'
-          >
-            <Box
-              m='4'
-              display='inline-flex'
-              alignItems='center'
-              color='#FFFFFF'
-              fontFamily='Lato'
-              fontWeight='600'
-              fontSize='24px'
-              lineHeight='34.5px'
-              textTransform='uppercase'
+      <Center h='35px' justifyContent='center' my='6'>
+        <Grid ml={[0, 20]} templateColumns='repeat(6, 1fr)' rowGap={2} columnGap={[6, '60px']}>
+          {NavigationLinks.map((link, i) => (
+            <GridItem key={i} colSpan={[2, 1]}>
+              <Link href={link.link} key={`link_${i}`}>
+                <Text
+                  textAlign='center'
+                  color='#fff'
+                  textStyle={['body', 'h1']}
+                  textTransform={['capitalize', 'uppercase']}
+                >
+                  {link.name}
+                </Text>
+              </Link>
+            </GridItem>
+          ))}
+        </Grid>
+        {/* <Stack direction='row' flexWrap='wrap' spacing={[6, '60px']}>
+          {NavigationLinks.map((NavigationLink, i) => (
+            <Link
+              href={NavigationLink.link}
+              key={`NavigationLink_${i}`}
+              justifyContent='space-around'
             >
-              {NavigationLink.name}
-            </Box>
-          </Link>
-        ))}
-      </Box>
+              <Text color='#fff' textStyle='h1' textTransform={['capitalize', 'uppercase']}>
+                {NavigationLink.name}
+              </Text>
+            </Link>
+          ))}
+        </Stack> */}
+      </Center>
     </Box>
   );
 };
