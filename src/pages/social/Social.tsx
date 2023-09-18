@@ -47,17 +47,15 @@ const socials = [
 
 export const SocialPage = () => {
   return (
-    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap='36px'>
+    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap={[0, '36px']}>
       <GridItem colSpan={[12, 7]}>
         <Flex justifyContent='space-between' mb={6}>
-          <Text as='h1' fontSize='40px' fontWeight={600}>
+          <Text as='h1' fontWeight={600} textStyle={['h1-subtext', 'h1']}>
             Social
           </Text>
           <HStack>
             <RiSearchLine />
-            <IconButton display={['none', 'block']} icon={<RiAddCircleFill />}>
-              Create Post
-            </IconButton>
+            <IconButton icon={<RiAddCircleFill />}>Create Post</IconButton>
           </HStack>
         </Flex>
         <Stack spacing={2}>
