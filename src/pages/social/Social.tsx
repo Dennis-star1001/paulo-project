@@ -2,6 +2,7 @@ import { IconButton } from '@/components';
 import { Box, Flex, Grid, GridItem, HStack, Image, Link, Stack, Text } from '@chakra-ui/react';
 import { RiAddCircleFill, RiSearchLine } from 'react-icons/ri';
 import { SocialCard } from './components';
+import { path } from '@/routes/path';
 
 const socials = [
   {
@@ -96,7 +97,7 @@ export const SocialPage = () => {
                     <Text textStyle='subtext'>Vendor~Akure, Ondo State</Text>
                   </Stack>
                 </Flex>
-                <Link href='#' textStyle='body-regular'>
+                <Link href={path.SOCIAL_DETAIL.replace(':id', '3')} textStyle='body-regular'>
                   View Profile
                 </Link>
               </Flex>

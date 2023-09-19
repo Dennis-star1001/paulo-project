@@ -11,6 +11,7 @@ import { path } from './path';
 import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
 import { DashboardLayout } from '@/components';
+import { GossipPage } from '@/pages/gossip';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
@@ -59,6 +60,16 @@ export const router = createBrowserRouter([
       {
         path: path.SOCIAL_DETAIL,
         element: <SocialDetailPage />
+      }
+    ]
+  },
+  {
+    path: path.GOSSIP,
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: path.GOSSIP,
+        element: <GossipPage />
       }
     ]
   }
