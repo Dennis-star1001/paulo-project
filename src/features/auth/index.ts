@@ -4,3 +4,4 @@ export { InterestSelectionModal } from './InterestSelection';
 export { SignupModal } from './Signup';
 export { NewPasswordModal } from './NewPassword';
 export { LoginModal } from './Login';
+export { GossipPage } from './Gossip';
