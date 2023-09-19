@@ -2,6 +2,7 @@ import { IconButton } from '@/components';
 import { Box, Flex, Grid, GridItem, HStack, Image, Link, Stack, Text } from '@chakra-ui/react';
 import { RiAddCircleFill, RiSearchLine } from 'react-icons/ri';
 import { SocialCard } from './components';
+import { path } from '@/routes/path';
 
 const socials = [
   {
@@ -47,7 +48,7 @@ const socials = [
 
 export const SocialPage = () => {
   return (
-    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap='36px'>
+    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap={[0, '36px']}>
       <GridItem colSpan={[12, 7]}>
         <Flex justifyContent='space-between' mb={6}>
           <Text as='h1' fontSize='40px' fontWeight={600}>
@@ -98,7 +99,7 @@ export const SocialPage = () => {
                     <Text textStyle='subtext'>Vendor~Akure, Ondo State</Text>
                   </Stack>
                 </Flex>
-                <Link href='#' textStyle='body-regular'>
+                <Link href={path.SOCIAL_DETAIL.replace(':id', '3')} textStyle='body-regular'>
                   View Profile
                 </Link>
               </Flex>
