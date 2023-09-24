@@ -15,7 +15,8 @@ import {
   Image,
   GridItem,
   InputGroup,
-  InputLeftElement
+  InputLeftElement,
+  SimpleGrid
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 
@@ -84,7 +85,9 @@ const Donations = () => {
         </Text>
       </Box>
       <Box m='4'>
+        <SimpleGrid columns={[2,4,7]}>
         {eventLinks.map((eventLink, i) => (
+
           <Link href={eventLink.link} key={`eventlink_${i}`} justifyContent='space-around'>
             <Box
               m='4'
@@ -97,17 +100,20 @@ const Donations = () => {
               fontWeight='600'
               fontSize='15px'
               lineHeight='34.5px'
-            >
+              >
               {eventLink.name}
             </Box>
           </Link>
         ))}
+        </SimpleGrid>
       </Box>
       <Box m='4'>
         <PanelHeader
+        fontSize={{base:'sm',md:'auto'}}
           mx={[0, spacing[1]]}
           header='MY DONATIONS'
           mb={8}
+
           rightAction={
             <Link href='#' color='#00B0F3'>
               <Text color='white'>See all</Text>
@@ -115,7 +121,7 @@ const Donations = () => {
           }
         />
         <Grid
-          templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
+          templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
@@ -171,7 +177,7 @@ const Donations = () => {
           }
         />
         <Grid
-          templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
+          templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
@@ -225,7 +231,7 @@ const Donations = () => {
           }
         />
         <Grid
-          templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
+         templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}

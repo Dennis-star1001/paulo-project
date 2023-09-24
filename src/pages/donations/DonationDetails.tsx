@@ -38,46 +38,48 @@ const eventLinks: EventLink[] = [
 
 ];
 
-const padding = [4, '50px'];
+const padding = [2, '50px'];
 const spacing = [4, 5];
 
 const DonationDetails = () => {
     return (
         <Box py='10' bg='#0D0D0D1A' px={padding}>
-            <Center mb='20' position={'relative'} display='flex' p='10' px={spacing} sx={{ svg: { fontSize: '20px' } }}>
+            <Center mb={['0','20']} position={'relative'} display='flex' p='10' px={spacing} sx={{ svg: { fontSize: '20px' } }}>
                 <Box  >
-                    <Image w='6xl' h='80' objectFit={'cover'} src={Bannar} />
-                    <Box border='5px solid white' borderRadius={'full'} p='3' bg='rgba(241, 245, 249, 1)' position={'absolute'} right='20' bottom='0'>
-                        <AiOutlineHeart color='rgba(0, 176, 243, 1)' size='44' />
+                    <Box >
+                        <Image w={'6xl'} h={'80'} objectFit={'cover'} src={Bannar} />
+                        <Box border={['none','5px solid white']} borderRadius={'full'} p='3' bg='rgba(241, 245, 249, 1)' position={'absolute'} right={['10', '28']} bottom={['24', '0']}>
+                            <AiOutlineHeart color='rgba(0, 176, 243, 1)' size={'40'} />
+                        </Box>
                     </Box>
-                    <Flex alignItems={'end'} position={'absolute'} left='20' bottom='-7'>
-                        <Image w='40' objectFit={'cover'} border='5px solid white' bg='red' h='40' borderRadius={'full'} src={Bannar} />
+                    <Flex  gap='3' mt='5' alignItems={'end'} position={['unset', 'absolute']} left={['5', '28']} bottom='-7'>
+                        <Image w={['16', '40']} objectFit={'cover'}  border={['none','5px solid white']} bg='red' h={['16', '40']} borderRadius={'full'} src={Bannar} />
                         <Box >
-                            <Text fontWeight={'medium'} fontSize={'20'}>Nicholas Adams</Text>
-                            <Text w='fit-content' px='3' py='1' textAlign={'center'} color={'rgba(0, 176, 243, 1)'} bg='rgba(225, 238, 243, 1)'>Charity</Text>
+                            <Text fontWeight={'600'} fontSize={['14','20']}>Nicholas Adams</Text>
+                            <Text fontSize={'sm'} w='fit-content' px='3' py='1' textAlign={'center'} color={'rgba(0, 176, 243, 1)'} bg='rgba(225, 238, 243, 1)'>Charity</Text>
                         </Box>
                     </Flex>
                 </Box>
 
 
             </Center>
-            <Flex flexDirection={'column'} justifyContent={'center'} position={'relative'} display='flex' p='10' px={spacing} sx={{ svg: { fontSize: '20px' } }}>
+            <Flex flexDirection={'column'} justifyContent={'center'} position={'relative'} display='flex'  px={spacing} sx={{ svg: { fontSize: '20px' } }}>
 
                 <Box bg='white' boxShadow={'0px 2px 12px 0px rgba(0, 0, 0, 0.15)'} borderRadius={'8px'}>
-                    <Flex gap='16' alignItems={'center'} p='5' fontSize={'16'}>
+                    <SimpleGrid columns={[2, 6]} gap={['5','16']} alignItems={'center'} p='5' fontSize={['sm','16']}>
                         <Text w='fit-content'> Donation Started:  16th August, 2023</Text>
                         <Text w='fit-content'>Donations: $4,500/ 5,000</Text>
                         <Text w='fit-content'>Donors: 5 People</Text>
-                        <ViewDonors/>
-                       
-                        <MakeDonation/>
+                        <ViewDonors />
+
+                        <MakeDonation />
                         <Button w='fit-content'><BsShareFill /></Button>
 
-                    </Flex>
+                    </SimpleGrid>
                 </Box>
-                <Box px='10' pt='10'>
+                <Box px={['1','10']} pt='10'>
                     <Text fontSize={'24'}>Help my life, landlord wan beat me</Text>
-                    <Divider my='3' color='gray'/>
+                    <Divider my='3' color='gray' />
                     <Text fontSize={'sm'} color='rgba(77, 77, 77, 1)'>Lorem ipsum dolor sit amet consectetur. Tempus dui in nibh eu quam tortor. Dolor hendrerit est morbi sem nisl morbi tempus. Quis amet phasellus vel commodo nunc habitant. Elementum viverra sed in suspendisse id.
                         Ut risus suscipit praesent varius. Ornare pharetra magna pellentesque lacus.
                         Sit lectus eget congue ut ipsum a. Interdum enim quam morbi orci quam.
@@ -98,7 +100,7 @@ const DonationDetails = () => {
                     }
                 />
                 <Grid
-                    templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
+                    templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
                     columnGap={[4, 7]}
                     rowGap={[3, '30px']}
                     mx={[0, spacing[1]]}
@@ -140,7 +142,7 @@ const DonationDetails = () => {
                     ))}
                 </Grid>
             </Box>
-            
+
         </Box>
     );
 };
