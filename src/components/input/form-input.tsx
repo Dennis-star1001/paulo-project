@@ -50,7 +50,7 @@ export const FormInput = ({
       </InputGroup>
 
       {touchedField && errorMessage ? (
-        <Text as='small' className='error' color='error' textStyle='xs' mt={0}>
+        <Text as='small' className='error' color='red.500' textStyle='xs' mt={0}>
           {errorMessage}
         </Text>
       ) : null}

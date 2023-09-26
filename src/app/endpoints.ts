@@ -4,4 +4,9 @@ export const ENDPOINTS = {
    *
    * e.g login:'auth/login'
    */
+
+  signup: '/user/registration',
+
+  /** vendors */
+  vendorSignup: '/vendor/registration'
 };

@@ -21,7 +21,9 @@ yarn install
 ```
 
 ### Development
+Clone `.env.example` to `.env` and add the variable
 
+#### Run the dev server
 ```sh
 npm run dev
 # or
