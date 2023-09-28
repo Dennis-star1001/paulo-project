@@ -50,7 +50,7 @@ export const useHandleError = () => {
 
   const handleErrors = (
     error?: any,
-    defaultErrorMessage?: string,
+    defaultErrorMessage?: ReactNode,
     title = 'An error occurred'
   ): void => {
     let errorMessage: ReactNode;

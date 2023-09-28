@@ -12,5 +12,6 @@ export const ENDPOINTS = {
   login: '/auth/login',
 
   /** vendors */
-  vendorSignup: '/vendor/registration'
+  vendorSignup: '/vendor/registration',
+  vendorService: '/vendor/service'
 };

@@ -27,7 +27,7 @@ import { RiFilter3Line, RiSearch2Line } from 'react-icons/ri';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const spacing = [4, '150px'];
+const spacing = [4, 6];
 const avatar = 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg';
 
 export const ServicePage = () => {

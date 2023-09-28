@@ -2,7 +2,7 @@ import { ReactComponent as UserCartBlack } from '@/assets/user-cart-black.svg';
 import { ReactComponent as UserCartWhite } from '@/assets/user-cart-white.svg';
 import { ReactComponent as UserOctagonBlack } from '@/assets/user-octagon-black.svg';
 import { ReactComponent as UserOctagonWhite } from '@/assets/user-octagon-white.svg';
-import { DropzoneFileUpload, FormInput, FormLeftAddonInput, PasswordInput } from '@/components';
+import { FormInput, FormLeftAddonInput, PasswordInput } from '@/components';
 import { AuthButton, Modal } from '@/components/auth';
 import {
   Button,
@@ -31,6 +31,7 @@ import {
 } from './schema/auth.schema';
 import { usePersonalSignupMutation, useVendorSignupMutation } from '@/app/services/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
+import { DropzoneFileUpload } from '@/components/upload';
 
 type SignupModalProps = UseDisclosureProps & {
   onLogin?: () => void;

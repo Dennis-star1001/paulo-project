@@ -1,7 +1,7 @@
 import { api } from '../api';
 import { ENDPOINTS as e } from '../endpoints';
+import { DefaultResponse } from './@types';
 
-type DefaultResponse = { status: boolean; message: string };
 type SignupResponse = DefaultResponse & {
   data: SignupData;
 };

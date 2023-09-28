@@ -10,5 +10,8 @@ export const path = {
   GOSSIP: '/gossips',
   PRODUCT: '/product',
   SERVICES: '/services',
-  SERVICES_DETAIL: '/services/:id'
+  SERVICES_DETAIL: '/services/:id',
+
+  // ADMIN
+  ADMIN_SERVICE_CREATE: '/admin/services/create'
 };
