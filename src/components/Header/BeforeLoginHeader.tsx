@@ -62,8 +62,22 @@ const DesktopView = () => {
 
   return (
     <>
-      <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
-      <SignupModal isOpen={isSignupModalOpen} onClose={closeSignupModal} />
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={closeLoginModal}
+        onRegister={() => {
+          closeLoginModal();
+          onOpenSignupModal();
+        }}
+      />
+      <SignupModal
+        isOpen={isSignupModalOpen}
+        onClose={closeSignupModal}
+        onLogin={() => {
+          closeSignupModal();
+          openLoginModal();
+        }}
+      />
 
       <Flex alignItems='center' justify='space-around' maxW='1920px' h='124px' bg='#212529' p='6'>
         <Box display='flex' alignItems='center'>
