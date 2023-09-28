@@ -28,7 +28,7 @@ import {
   SignupSchema,
   VendorSignupFormValues,
   VendorSignupSchema
-} from '../schema/auth.schema';
+} from './schema/auth.schema';
 import { usePersonalSignupMutation, useVendorSignupMutation } from '@/app/services/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
 

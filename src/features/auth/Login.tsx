@@ -10,7 +10,7 @@ import {
   UseDisclosureProps
 } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { LoginFormValues, LoginSchema } from '../schema/auth.schema';
+import { LoginFormValues, LoginSchema } from './schema/auth.schema';
 import { useLoginMutation } from '@/app/services/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
 
