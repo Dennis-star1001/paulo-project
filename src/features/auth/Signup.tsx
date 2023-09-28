@@ -32,7 +32,10 @@ import {
 import { usePersonalSignupMutation, useVendorSignupMutation } from '@/app/services/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
 
-export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
+type SignupModalProps = UseDisclosureProps & {
+  onLogin?: () => void;
+};
+export const SignupModal = ({ isOpen = true, onClose = () => null, onLogin }: SignupModalProps) => {
   const [hasCheckedTerms, setCheckedTerms] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
   const personalTabSelected = tabIndex === 0;
@@ -193,6 +196,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
                   <Stack spacing={4}>
                     <FormInput
                       label='Firstname'
+                      id='firstname'
                       name='firstname'
                       value={values.firstname}
                       errorMessage={errors.firstname}
@@ -201,6 +205,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
                     />
                     <FormInput
                       label='Lastname'
+                      id='lastname'
                       name='lastname'
                       value={values.lastname}
                       errorMessage={errors.lastname}
@@ -209,6 +214,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
                     />
                     <FormInput
                       label='Email Address'
+                      id='email'
                       name='email'
                       value={values.email}
                       errorMessage={errors.email}
@@ -283,9 +289,15 @@ export const SignupModal = ({ isOpen = true, onClose = () => null }: UseDisclosu
                       </Button>
                       <Text textAlign='center' textStyle='body-regular' fontWeight={400}>
                         Already have an account?{' '}
-                        <ChakraLink href='/login' textStyle='body'>
+                        <Text
+                          color='primary'
+                          as='span'
+                          cursor='pointer'
+                          textStyle='body'
+                          onClick={onLogin}
+                        >
                           Login
-                        </ChakraLink>
+                        </Text>
                       </Text>
                     </Stack>
                   </Flex>
