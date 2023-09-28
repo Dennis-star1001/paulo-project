@@ -34,8 +34,23 @@ type SignupRequest = {
 
 type VendorSignupResponse = DefaultResponse & { data: [] };
 
+type LoginRequest = {
+  email: string;
+  password: string;
+};
+type LoginResponse = DefaultResponse & {
+  data: [];
+};
+
 export const authApi = api.injectEndpoints({
   endpoints: (build) => ({
+    login: build.mutation<LoginResponse, LoginRequest>({
+      query: (credentials) => ({
+        url: e.login,
+        method: 'POST',
+        body: credentials
+      })
+    }),
     personalSignup: build.mutation<SignupResponse, SignupRequest>({
       query: (credentials) => ({
         url: e.signup,
@@ -53,4 +68,4 @@ export const authApi = api.injectEndpoints({
   })
 });
 
-export const { usePersonalSignupMutation, useVendorSignupMutation } = authApi;
+export const { usePersonalSignupMutation, useVendorSignupMutation, useLoginMutation } = authApi;

@@ -9,8 +9,43 @@ import {
   Text,
   UseDisclosureProps
 } from '@chakra-ui/react';
+import { Form, FormikProvider, useFormik } from 'formik';
+import { LoginFormValues, LoginSchema } from '../schema/auth.schema';
+import { useLoginMutation } from '@/app/services/auth';
+import { useHandleError, useHandleSuccess } from '@/hooks';
 
-export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosureProps) => {
+type LoginModalProps = UseDisclosureProps & {
+  onRegister?: () => void;
+};
+
+export const LoginModal = ({
+  isOpen = true,
+  onClose = () => null,
+  onRegister
+}: LoginModalProps) => {
+  const [login] = useLoginMutation();
+
+  const handleError = useHandleError();
+  const handleSuccess = useHandleSuccess();
+
+  const formik = useFormik<LoginFormValues>({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    onSubmit: async (values) => {
+      try {
+        const response = await login(values).unwrap();
+        onClose();
+        handleSuccess('Success', response.message || 'Logged in successfully');
+      } catch (err) {
+        handleError(err);
+      }
+    },
+    validationSchema: LoginSchema
+  });
+  const { values, errors, touched, handleChange, isSubmitting } = formik;
+
   return (
     <>
       <Modal
@@ -25,31 +60,56 @@ export const LoginModal = ({ isOpen = true, onClose = () => null }: UseDisclosur
           </Stack>
         }
       >
-        <Stack>
-          <AuthButton />
-          <Divider my={8} />
+        <FormikProvider value={formik}>
+          <Form>
+            <Stack>
+              <AuthButton />
+              <Divider my={8} />
 
-          <Stack spacing={4}>
-            <FormInput placeholder='Email Address' />
-            <PasswordInput placeholder='Password' />
-            <Stack spacing={2}>
-              <Checkbox>
-                <ChakraLink href='#' fontSize='12px'>
-                  Forget Password?
-                </ChakraLink>
-              </Checkbox>
-            </Stack>
-          </Stack>
+              <Stack spacing={4}>
+                <FormInput
+                  label='Email Address'
+                  id='email'
+                  name='email'
+                  value={values.email}
+                  errorMessage={errors.email}
+                  onChange={handleChange}
+                  touchedField={touched.email}
+                />
+                <PasswordInput
+                  label='Password'
+                  id='password'
+                  name='password'
+                  value={values.password}
+                  errorMessage={errors.password}
+                  onChange={handleChange}
+                  touchedField={touched.password}
+                />
+                <Stack spacing={2}>
+                  <Checkbox>
+                    <ChakraLink href='#' fontSize='12px'>
+                      Forget Password?
+                    </ChakraLink>
+                  </Checkbox>
+                </Stack>
+              </Stack>
 
-          <Stack mt='77px'>
-            <Button>Login</Button>
-            <Stack mx='auto' mt='8px' mb='201px'>
-              <Text fontSize='14px'>
-                Don&apos;t have an account? <ChakraLink href='#'>Create account </ChakraLink>
-              </Text>
+              <Stack mt='77px'>
+                <Button isDisabled={isSubmitting} type='submit'>
+                  Login
+                </Button>
+                <Stack mx='auto' my={2}>
+                  <Text fontSize='14px'>
+                    Don&apos;t have an account?{' '}
+                    <Text as='span' color='primary' cursor='pointer' onClick={onRegister}>
+                      Create account
+                    </Text>
+                  </Text>
+                </Stack>
+              </Stack>
             </Stack>
-          </Stack>
-        </Stack>
+          </Form>
+        </FormikProvider>
       </Modal>
     </>
   );

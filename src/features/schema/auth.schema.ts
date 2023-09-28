@@ -97,3 +97,13 @@ export const VendorSignupSchema = Yup.object<Record<keyof VendorSignupFormValues
   registrationNumber: Yup.string().required('Registration number is required'),
   business_referral_code: Yup.string().required('Please select a referral channel')
 });
+
+export type LoginFormValues = {
+  email: string;
+  password: string;
+};
+
+export const LoginSchema = Yup.object<Record<keyof LoginFormValues, Yup.AnySchema>>({
+  email: Yup.string().email('Enter a valid email').required('Email is required'),
+  password: Yup.string().required('Password is required')
+});
