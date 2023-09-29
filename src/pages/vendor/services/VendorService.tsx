@@ -1,4 +1,5 @@
 import { IconButton, PanelHeader } from '@/components';
+import { path } from '@/routes/path';
 import {
   Box,
   Button,
@@ -40,7 +41,9 @@ export const VendorServicePage = () => {
           </Flex>
         </Stack>
         <HStack>
-          <Button>Create Service</Button>
+          <Link href={path.VENDOR_SERVICE_CREATE}>
+            <Button>Create Service</Button>
+          </Link>
           <Button variant='outline'>Export to PDF</Button>
         </HStack>
       </Flex>
