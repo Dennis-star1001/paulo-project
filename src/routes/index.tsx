@@ -12,7 +12,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
 import { DashboardLayout } from '@/components';
 import { GossipPage } from '@/pages/gossip';
-import { ServiceForm } from '@/pages/admin/services';
+import { ServiceForm } from '@/pages/vendor/services';
 import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
 export const router = createBrowserRouter([
