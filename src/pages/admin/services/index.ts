@@ -1,2 +1,2 @@
-export * from './ServiceForm';
-export * from './Service';
+export * from './AdminServiceForm';
+export * from './AdminService';
