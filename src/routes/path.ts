@@ -3,7 +3,7 @@ export const path = {
   CHAT: '/chat',
   SHOP: '/shop',
   DONATIONS: '/donations',
-  DONATION_DETAILS:'/donation-details',
+  DONATION_DETAILS: '/donation-details',
   EVENTS: '/events',
   EVENTS_DETAILS: '/event_details',
   SOCIAL: '/social',
@@ -13,6 +13,7 @@ export const path = {
   SERVICES: '/services',
   SERVICES_DETAIL: '/services/:id',
 
-  // ADMIN
-  ADMIN_SERVICE_CREATE: '/admin/services/create'
+  // VENDOR
+  VENDOR_SERVICE_CREATE: '/vendor/services/create',
+  VENDOR_EVENTS: '/vendor/events'
 };

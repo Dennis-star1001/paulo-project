@@ -19,7 +19,7 @@ import DashboardHeader from '../dashboard/Header/DashboardHeader';
 const padding = [4, '200px'];
 const spacing = [4, 5];
 
-const Events = () => {
+const VendorEvents = () => {
   return (
     <>
       <DashboardHeader />
@@ -179,4 +179,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default VendorEvents;
