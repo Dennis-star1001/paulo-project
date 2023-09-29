@@ -9,7 +9,7 @@ import status from '../../../assets/status-up.svg';
 import megaphone from '../../../assets/meagphone.svg';
 import Features from './features';
 
-function Dashboard() {
+const Dashboard = () => {
   const bgImageStyle = {
     backgroundImage: `url(${walletBg})`,
     backgroundSize: 'cover',
