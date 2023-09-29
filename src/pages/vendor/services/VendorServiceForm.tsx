@@ -46,8 +46,8 @@ export const VendorServiceForm = () => {
   const { values, errors, touched, handleChange, isSubmitting } = formik;
 
   return (
-    <Box bg='neutral.100' p='100px'>
-      <Grid templateColumns='repeat(2, 1fr)' columnGap={6}>
+    <Box bg='neutral.100' p={[4, '100px']}>
+      <Grid templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']} columnGap={6}>
         <GridItem>
           <Text color='black' textTransform='uppercase' textStyle='h1' mb='30px'>
             create service

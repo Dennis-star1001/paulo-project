@@ -15,10 +15,13 @@ import { GossipPage } from '@/pages/gossip';
 import { VendorServicePage, VendorServiceForm } from '@/pages/vendor/services';
 import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
+import VendorEvents from '@/pages/vendor/event/Events';
+import Dashboard from '@/pages/vendor/dashboard/Dashboard';
+import VendorDonationPage from '@/pages/vendor/dashboard/donation/Donation';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
-    element: <div>Home page goes here</div>
+    element: <Dashboard />
   },
   {
     path: path.CHAT,
@@ -81,11 +84,19 @@ export const router = createBrowserRouter([
     ]
   },
   {
-    path: path.ADMIN_SERVICES,
+    path: path.VENDOR_SERVICES,
     element: <VendorServicePage />
   },
   {
-    path: path.ADMIN_SERVICE_CREATE,
+    path: path.VENDOR_SERVICE_CREATE,
     element: <VendorServiceForm />
+  },
+  {
+    path: path.VENDOR_EVENTS,
+    element: <VendorEvents />
+  },
+  {
+    path: path.VENDOR_DONATION,
+    element: <VendorDonationPage />
   }
 ]);
