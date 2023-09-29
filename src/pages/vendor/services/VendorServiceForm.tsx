@@ -7,7 +7,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { RiImage2Fill } from 'react-icons/ri';
 import { ServiceFormValues, ServiceSchema } from './schema';
 
-export const ServiceForm = () => {
+export const VendorServiceForm = () => {
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
 

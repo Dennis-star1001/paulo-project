@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { RiSearch2Line } from 'react-icons/ri';
 
-export const AdminServicePage = () => {
+export const VendorServicePage = () => {
   return (
     <Box bg='neutral.100' p={[4, '100px']}>
       <Flex

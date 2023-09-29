@@ -12,7 +12,9 @@ import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
 import { DashboardLayout } from '@/components';
 import { GossipPage } from '@/pages/gossip';
-import { AdminServicePage, ServiceForm } from '@/pages/admin/services';
+import { VendorServicePage, VendorServiceForm } from '@/pages/vendor/services';
+import Donations from '@/pages/donations/Donations';
+import DonationDetails from '@/pages/donations/DonationDetails';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
@@ -24,7 +26,11 @@ export const router = createBrowserRouter([
   },
   {
     path: path.DONATIONS,
-    element: <div>Donation page goes here</div>
+    element: <Donations />
+  },
+  {
+    path: path.DONATION_DETAILS,
+    element: <DonationDetails />
   },
   {
     path: path.SHOP,
@@ -76,10 +82,10 @@ export const router = createBrowserRouter([
   },
   {
     path: path.ADMIN_SERVICES,
-    element: <AdminServicePage />
+    element: <VendorServicePage />
   },
   {
     path: path.ADMIN_SERVICE_CREATE,
-    element: <ServiceForm />
+    element: <VendorServiceForm />
   }
 ]);
