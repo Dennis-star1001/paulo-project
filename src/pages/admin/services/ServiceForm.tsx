@@ -1,12 +1,11 @@
 import { useAddServiceMutation } from '@/app/services/admin_service';
+import Placeholder from '@/assets/placeholder.png';
 import { FormInput, FormLeftAddonInput, FormSelect, FormTextArea, IconButton } from '@/components';
 import { useHandleError, useHandleSuccess } from '@/hooks';
 import { Box, Button, Grid, GridItem, Image, Stack, Text } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { RiImage2Fill } from 'react-icons/ri';
 import { ServiceFormValues, ServiceSchema } from './schema';
-import { AvatarUploader } from '@/components/upload';
-import Placeholder from '@/assets/placeholder.png';
 
 export const ServiceForm = () => {
   const handleError = useHandleError();
@@ -44,7 +43,7 @@ export const ServiceForm = () => {
     },
     validationSchema: ServiceSchema
   });
-  const { values, errors, touched, handleChange, isSubmitting, setFieldValue } = formik;
+  const { values, errors, touched, handleChange, isSubmitting } = formik;
 
   return (
     <Box bg='neutral.100' p='100px'>

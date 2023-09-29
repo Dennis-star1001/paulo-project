@@ -13,5 +13,6 @@ export const path = {
   SERVICES_DETAIL: '/services/:id',
 
   // ADMIN
+  ADMIN_SERVICES: '/admin/services',
   ADMIN_SERVICE_CREATE: '/admin/services/create'
 };
