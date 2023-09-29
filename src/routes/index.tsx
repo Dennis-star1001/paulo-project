@@ -12,6 +12,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
 import { DashboardLayout } from '@/components';
 import { GossipPage } from '@/pages/gossip';
+import { ServiceForm } from '@/pages/admin/services';
 import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
 export const router = createBrowserRouter([
@@ -78,5 +79,9 @@ export const router = createBrowserRouter([
         element: <GossipPage />
       }
     ]
+  },
+  {
+    path: path.ADMIN_SERVICE_CREATE,
+    element: <ServiceForm />
   }
 ]);

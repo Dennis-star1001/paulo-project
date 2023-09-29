@@ -40,6 +40,16 @@ export const button: ThemeProps = {
           _hover: {
             color: 'blue.hover'
           }
+        },
+        outline: {
+          bg: 'transparent',
+          border: '1px solid',
+          borderColor: 'primary',
+          color: 'primary',
+          _hover: {
+            bg: 'primary',
+            color: 'white'
+          }
         }
       },
 

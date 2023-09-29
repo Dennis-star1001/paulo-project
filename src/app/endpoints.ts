@@ -4,4 +4,14 @@ export const ENDPOINTS = {
    *
    * e.g login:'auth/login'
    */
+
+  /** customers */
+  signup: '/user/registration',
+
+  /** general */
+  login: '/auth/login',
+
+  /** vendors */
+  vendorSignup: '/vendor/registration',
+  vendorService: '/vendor/service'
 };
