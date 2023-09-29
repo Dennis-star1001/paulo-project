@@ -12,7 +12,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import EventPage from '@/pages/event/Event';
 import { DashboardLayout } from '@/components';
 import { GossipPage } from '@/pages/gossip';
-import { ServiceForm } from '@/pages/vendor/services';
+import { VendorServicePage, VendorServiceForm } from '@/pages/vendor/services';
 import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
 import VendorEvents from '@/pages/vendor/event/Events';
@@ -84,8 +84,12 @@ export const router = createBrowserRouter([
     ]
   },
   {
+    path: path.VENDOR_SERVICES,
+    element: <VendorServicePage />
+  },
+  {
     path: path.VENDOR_SERVICE_CREATE,
-    element: <ServiceForm />
+    element: <VendorServiceForm />
   },
   {
     path: path.VENDOR_EVENTS,

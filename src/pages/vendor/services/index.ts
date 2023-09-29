@@ -1,1 +1,2 @@
-export * from './ServiceForm';
+export * from './VendorServiceForm';
+export * from './VendorService';

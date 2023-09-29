@@ -92,7 +92,7 @@ const Features = () => {
     {
       type: 'SERVICES',
       title: 'SERVICES',
-      viewAllLink: path.VENDOR_SERVICE_CREATE,
+      viewAllLink: path.VENDOR_SERVICES,
       stats: [
         { label: 'Event', value: '15' },
         { label: 'Active', value: '7' },
