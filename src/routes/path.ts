@@ -3,6 +3,7 @@ export const path = {
   CHAT: '/chat',
   SHOP: '/shop',
   DONATIONS: '/donations',
+  DONATION_DETAILS:'/donation-details',
   EVENTS: '/events',
   EVENTS_DETAILS: '/event_details',
   SOCIAL: '/social',
