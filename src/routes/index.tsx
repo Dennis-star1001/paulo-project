@@ -17,6 +17,7 @@ import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
 import VendorEvents from '@/pages/vendor/event/Events';
 import Dashboard from '@/pages/vendor/dashboard/Dashboard';
+import VendorDonationPage from '@/pages/vendor/dashboard/donation/Donation';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
@@ -89,5 +90,9 @@ export const router = createBrowserRouter([
   {
     path: path.VENDOR_EVENTS,
     element: <VendorEvents />
+  },
+  {
+    path: path.VENDOR_DONATION,
+    element: <VendorDonationPage />
   }
 ]);

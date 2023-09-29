@@ -122,7 +122,7 @@ const Features = () => {
     {
       type: 'DONATIONS',
       title: 'DONATIONS',
-      viewAllLink: '#',
+      viewAllLink: path.VENDOR_DONATION,
       stats: [
         { label: 'Event', value: '15' },
         { label: 'Active', value: '4' },
