@@ -22,7 +22,8 @@ import {
   useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react';
-import { LoginModal, SignupModal } from '@/features/auth';
+import { ForgotPasswordModal, LoginModal, SignupModal } from '@/features/auth';
+import { Outlet } from 'react-router';
 
 interface NavLink {
   link: string;
@@ -37,6 +38,7 @@ const BeforeLoginHeader: React.FC = () => {
   return (
     <chakra.header id='header'>
       <Box>{isMobile ? <MobileView /> : isTablet ? <MobileView /> : <DesktopView />}</Box>
+      <Outlet />
     </chakra.header>
   );
 };
@@ -59,6 +61,11 @@ const DesktopView = () => {
     onOpen: onOpenSignupModal,
     onClose: closeSignupModal
   } = useDisclosure();
+  const {
+    isOpen: isForgotPasswordModalOpen,
+    onOpen: onOpenForgotPasswordModal,
+    onClose: onCloseForgotPasswordModal
+  } = useDisclosure();
 
   return (
     <>
@@ -69,12 +76,24 @@ const DesktopView = () => {
           closeLoginModal();
           onOpenSignupModal();
         }}
+        onForgotPassword={() => {
+          closeLoginModal();
+          onOpenForgotPasswordModal();
+        }}
       />
       <SignupModal
         isOpen={isSignupModalOpen}
         onClose={closeSignupModal}
         onLogin={() => {
           closeSignupModal();
+          openLoginModal();
+        }}
+      />
+      <ForgotPasswordModal
+        isOpen={isForgotPasswordModalOpen}
+        onClose={onCloseForgotPasswordModal}
+        onLogin={() => {
+          onCloseForgotPasswordModal();
           openLoginModal();
         }}
       />

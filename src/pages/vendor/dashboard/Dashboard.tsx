@@ -1,4 +1,3 @@
-
 import { Box, Text, Flex, Image, Button, Stack } from '@chakra-ui/react';
 import DashboardHeader from './Header/DashboardHeader';
 import walletBg from '../../../assets/Group.svg';
@@ -15,7 +14,7 @@ const Dashboard = () => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    zIndex: -1,
+    zIndex: -1
   };
 
   const analyticsImageStyle = {
@@ -23,7 +22,7 @@ const Dashboard = () => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    zIndex: -1,
+    zIndex: -1
   };
 
   const promotionImageStyle = {
@@ -31,14 +30,14 @@ const Dashboard = () => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    zIndex: -1,
+    zIndex: -1
   };
 
   return (
     <>
-      <DashboardHeader />
-      <Box mx="auto" maxW="960px" p="10px">
-        <Flex alignItems="center" justifyContent="space-between" mb="5">
+      {/* <DashboardHeader /> */}
+      <Box mx='auto' maxW='960px' p='10px'>
+        <Flex alignItems='center' justifyContent='space-between' mb='5'>
           <Text fontSize={{ base: '16px', md: 'inherit' }}>Wallet Balance: $256.50</Text>
           <Button>Create New</Button>
         </Flex>
@@ -52,69 +51,57 @@ const Dashboard = () => {
             style={bgImageStyle}
             w={{ base: '100%', md: '300px' }}
             h={{ base: '100px', md: '150px' }}
-            borderRadius="10"
+            borderRadius='10'
           >
             <Flex
-              alignItems="center"
-              justifyContent="space-between"
-              marginX="5"
-              flexDirection="row"
-              h="100%"
+              alignItems='center'
+              justifyContent='space-between'
+              marginX='5'
+              flexDirection='row'
+              h='100%'
             >
-              <Text
-                fontFamily="Lato"
-                fontWeight="600"
-                fontSize={{ base: '20px', md: '24px' }}
-              >
+              <Text fontFamily='Lato' fontWeight='600' fontSize={{ base: '20px', md: '24px' }}>
                 Wallet
               </Text>
-              <Image src={wallet} alt="wallet" w={{ base: '8', md: '12' }} />
+              <Image src={wallet} alt='wallet' w={{ base: '8', md: '12' }} />
             </Flex>
           </Box>
           <Box
             style={analyticsImageStyle}
             w={{ base: '100%', md: '300px' }}
             h={{ base: '100px', md: '150px' }}
-            borderRadius="10"
+            borderRadius='10'
           >
             <Flex
-              alignItems="center"
-              justifyContent="space-between"
-              marginX="5"
-              flexDirection="row"
-              h="100%"
+              alignItems='center'
+              justifyContent='space-between'
+              marginX='5'
+              flexDirection='row'
+              h='100%'
             >
-              <Text
-                fontFamily="Lato"
-                fontWeight="600"
-                fontSize={{ base: '20px', md: '24px' }}
-              >
+              <Text fontFamily='Lato' fontWeight='600' fontSize={{ base: '20px', md: '24px' }}>
                 Analytics
               </Text>
-              <Image src={status} alt="status" w={{ base: '8', md: '12' }} />
+              <Image src={status} alt='status' w={{ base: '8', md: '12' }} />
             </Flex>
           </Box>
           <Box
             style={promotionImageStyle}
             w={{ base: '100%', md: '300px' }}
             h={{ base: '100px', md: '150px' }}
-            borderRadius="10"
+            borderRadius='10'
           >
             <Flex
-              alignItems="center"
-              justifyContent="space-between"
-              flexDirection="row"
-              marginX="5"
-              h="100%"
+              alignItems='center'
+              justifyContent='space-between'
+              flexDirection='row'
+              marginX='5'
+              h='100%'
             >
-              <Text
-                fontFamily="Lato"
-                fontWeight="600"
-                fontSize={{ base: '20px', md: '24px' }}
-              >
+              <Text fontFamily='Lato' fontWeight='600' fontSize={{ base: '20px', md: '24px' }}>
                 Promotion
               </Text>
-              <Image src={megaphone} alt="megaphone" w={{ base: '8', md: '12' }} />
+              <Image src={megaphone} alt='megaphone' w={{ base: '8', md: '12' }} />
             </Flex>
           </Box>
         </Stack>
@@ -123,7 +110,6 @@ const Dashboard = () => {
       </Box>
     </>
   );
-}
+};
 
 export default Dashboard;
-

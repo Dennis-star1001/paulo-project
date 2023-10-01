@@ -22,6 +22,17 @@ type Role = {
   created_at: string;
   updated_at: string;
 };
+export type User = {
+  id: number | null;
+  email: string;
+  email_verified_at: string;
+  role_id: string;
+  status: string;
+  referral_code: string;
+  created_at: string;
+  updated_at: string;
+  roles: Role[];
+};
 
 type SignupRequest = {
   email: string;
@@ -39,7 +50,12 @@ type LoginRequest = {
   password: string;
 };
 type LoginResponse = DefaultResponse & {
-  data: [];
+  data: {
+    token: string;
+    token_type: string;
+    role: string[];
+    user: User;
+  };
 };
 
 export const authApi = api.injectEndpoints({
@@ -69,3 +85,7 @@ export const authApi = api.injectEndpoints({
 });
 
 export const { usePersonalSignupMutation, useVendorSignupMutation, useLoginMutation } = authApi;
+
+export const {
+  endpoints: { login }
+} = authApi;

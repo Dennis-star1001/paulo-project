@@ -13,20 +13,29 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { LoginFormValues, LoginSchema } from './schema/auth.schema';
 import { useLoginMutation } from '@/app/services/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
+import { useNavigate } from 'react-router';
+import { path } from '@/routes/path';
+import { useAppSelector } from '@/app/hooks';
+import { isCustomer, isVendor } from '@/app/slice/authSlice';
 
 type LoginModalProps = UseDisclosureProps & {
   onRegister?: () => void;
+  onForgotPassword?: () => void;
 };
 
 export const LoginModal = ({
   isOpen = true,
   onClose = () => null,
-  onRegister
+  onRegister,
+  onForgotPassword
 }: LoginModalProps) => {
   const [login] = useLoginMutation();
 
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
+
+  const router = useNavigate();
+  const userIsVendor = useAppSelector(isVendor);
 
   const formik = useFormik<LoginFormValues>({
     initialValues: {
@@ -38,6 +47,7 @@ export const LoginModal = ({
         const response = await login(values).unwrap();
         onClose();
         handleSuccess('Success', response.message || 'Logged in successfully');
+        userIsVendor ? router(path.VENDOR_DASHBOARD) : path.HOME;
       } catch (err) {
         handleError(err);
       }
@@ -87,9 +97,15 @@ export const LoginModal = ({
                 />
                 <Stack spacing={2}>
                   <Checkbox>
-                    <ChakraLink href='#' fontSize='12px'>
+                    <Text
+                      color='primary'
+                      as='span'
+                      cursor='pointer'
+                      textStyle='body'
+                      onClick={onForgotPassword}
+                    >
                       Forget Password?
-                    </ChakraLink>
+                    </Text>
                   </Checkbox>
                 </Stack>
               </Stack>
