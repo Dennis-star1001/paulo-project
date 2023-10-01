@@ -20,6 +20,7 @@ import {
   useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react';
+import { Outlet } from 'react-router';
 
 interface NavLink {
   link: string;
@@ -34,6 +35,7 @@ const AfterLoginHeader: React.FC = () => {
   return (
     <chakra.header id='header'>
       <Box>{isMobile ? <MobileView /> : isTablet ? <MobileView /> : <DesktopView />}</Box>
+      <Outlet />
     </chakra.header>
   );
 };

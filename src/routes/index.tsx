@@ -1,4 +1,7 @@
 // TODO: lazy load pages components
+import { DashboardLayout } from '@/components';
+import AfterLoginHeader from '@/components/Header/AfterLoginHeader';
+import AuthGuard from '@/guards/AuthGuard';
 import {
   Event_details,
   ProductPage,
@@ -7,21 +10,27 @@ import {
   SocialDetailPage,
   SocialPage
 } from '@/pages';
-import { path } from './path';
-import { createBrowserRouter } from 'react-router-dom';
-import EventPage from '@/pages/event/Event';
-import { DashboardLayout } from '@/components';
-import { GossipPage } from '@/pages/gossip';
-import { VendorServicePage, VendorServiceForm } from '@/pages/vendor/services';
-import Donations from '@/pages/donations/Donations';
 import DonationDetails from '@/pages/donations/DonationDetails';
-import VendorEvents from '@/pages/vendor/event/Events';
+import Donations from '@/pages/donations/Donations';
+import EventPage from '@/pages/event/Event';
+import { GossipPage } from '@/pages/gossip';
 import Dashboard from '@/pages/vendor/dashboard/Dashboard';
 import VendorDonationPage from '@/pages/vendor/dashboard/donation/Donation';
+import VendorEvents from '@/pages/vendor/event/Events';
+import { VendorServiceForm, VendorServicePage } from '@/pages/vendor/services';
+import { createBrowserRouter } from 'react-router-dom';
+import { path } from './path';
+
 export const router = createBrowserRouter([
   {
     path: path.HOME,
-    element: <Dashboard />
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.HOME,
+        element: <Dashboard />
+      }
+    ]
   },
   {
     path: path.CHAT,
@@ -98,5 +107,16 @@ export const router = createBrowserRouter([
   {
     path: path.VENDOR_DONATION,
     element: <VendorDonationPage />
+  },
+  {
+    path: '/dashboard',
+    element: <AfterLoginHeader />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Dashboard />
+      }
+    ]
   }
+  // ...vendorRouter
 ]);

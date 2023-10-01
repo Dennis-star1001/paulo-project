@@ -1,8 +1,9 @@
+import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
-import BeforeLoginHeader from './components/Header/BeforeLoginHeader';
+import { useAppSelector } from './app/hooks';
+import { isCustomer, isSignedIn, selectUser } from './app/slice/authSlice';
 import Navigation from './components/Navigation/Navigation';
 import { router } from './routes';
-import BeforeLoginFooter from './components/Footer/BeforeLoginFooter';
 // import Dashboard from './pages/vendor/dashboard/Dashboard';
 // import Services from './pages/vendor/dashboard/services/Services';
 // import Donation from './pages/vendor/dashboard/donation/Donation';
@@ -13,12 +14,21 @@ import BeforeLoginFooter from './components/Footer/BeforeLoginFooter';
 // import CreateEvent from './pages/vendor/event/createEvent';
 
 const App = () => {
+  const user = useAppSelector(selectUser);
+  const userIsCustomer = useAppSelector(isCustomer);
+  const userIsVendor = useAppSelector(isCustomer);
+  const isUserSignedIn = useAppSelector(isSignedIn);
+  const isCustomerSignedIn = isUserSignedIn && userIsCustomer;
+  // const pathname = useLocation().pathname;
+  // const isDashboard = pathname.includes('dashboard');
+
   return (
     <>
       {/* <BeforeLoginHeader /> */}
-      <Navigation />
-      <RouterProvider router={router} />
-      <BeforeLoginFooter />
+      {!isUserSignedIn && <Navigation />}
+      <Suspense fallback={<>loading...</>}>
+        <RouterProvider router={router} />
+      </Suspense>
       <>
         {/* <Dashboard /> */}
         {/* <Services/> */}
