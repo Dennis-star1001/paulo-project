@@ -20,12 +20,14 @@ import { isCustomer, isVendor } from '@/app/slice/authSlice';
 
 type LoginModalProps = UseDisclosureProps & {
   onRegister?: () => void;
+  onForgotPassword?: () => void;
 };
 
 export const LoginModal = ({
   isOpen = true,
   onClose = () => null,
-  onRegister
+  onRegister,
+  onForgotPassword
 }: LoginModalProps) => {
   const [login] = useLoginMutation();
 
@@ -95,9 +97,15 @@ export const LoginModal = ({
                 />
                 <Stack spacing={2}>
                   <Checkbox>
-                    <ChakraLink href='#' fontSize='12px'>
+                    <Text
+                      color='primary'
+                      as='span'
+                      cursor='pointer'
+                      textStyle='body'
+                      onClick={onForgotPassword}
+                    >
                       Forget Password?
-                    </ChakraLink>
+                    </Text>
                   </Checkbox>
                 </Stack>
               </Stack>

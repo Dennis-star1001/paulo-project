@@ -4,7 +4,7 @@ import { useAppSelector } from './app/hooks';
 import { isCustomer, isSignedIn, selectUser } from './app/slice/authSlice';
 import Navigation from './components/Navigation/Navigation';
 import { router } from './routes';
-// import Dashboard from './pages/vendor/dashboard/Dashboard';
+import Dashboard from './pages/vendor/dashboard/Dashboard';
 // import Services from './pages/vendor/dashboard/services/Services';
 // import Donation from './pages/vendor/dashboard/donation/Donation';
 // import Analytics from './pages/vendor/dashboard/analysis/Analytics';
@@ -30,7 +30,7 @@ const App = () => {
         <RouterProvider router={router} />
       </Suspense>
       <>
-        {/* <Dashboard /> */}
+        <Dashboard />
         {/* <Services/> */}
         {/* <Donation/> */}
         {/* <Analytics/> */}

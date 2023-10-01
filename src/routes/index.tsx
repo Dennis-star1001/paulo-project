@@ -24,13 +24,7 @@ import { path } from './path';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
-    element: <AuthGuard />,
-    children: [
-      {
-        path: path.HOME,
-        element: <Dashboard />
-      }
-    ]
+    element: <AuthGuard />
   },
   {
     path: path.CHAT,

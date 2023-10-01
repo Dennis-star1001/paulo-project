@@ -5,6 +5,7 @@ import { User, login } from '../services/auth';
 
 export const removeUserInfo = () => {
   Cookies.remove('token');
+  localStorage.removeItem('user');
 };
 
 const initialState = {
@@ -27,6 +28,7 @@ const slice = createSlice({
   initialState,
   reducers: {
     logout: () => {
+      removeUserInfo();
       return initialState;
     }
   },
@@ -64,6 +66,7 @@ export const { logout: logoutAction } = slice.actions;
 export default slice.reducer;
 
 export const selectUser = (state: RootState) => state.auth.user;
+export const userRole = (state: RootState) => state.auth.user.roles[0].name;
 
 export const isVendor = (state: RootState) =>
   state.auth.user.roles.some((role) => role.name === 'Vendor');

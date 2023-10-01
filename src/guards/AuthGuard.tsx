@@ -1,4 +1,5 @@
 import AfterLoginHeader from '@/components/Header/AfterLoginHeader';
+import DashboardHeader from '@/pages/vendor/dashboard/Header/DashboardHeader';
 import { path } from '@/routes/path';
 import Cookies from 'js-cookie';
 import { lazy, useEffect } from 'react';
@@ -16,7 +17,7 @@ const AuthGuard = () => {
     }
   }, [navigate, token]);
 
-  return token ? <AfterLoginHeader /> : <BeforeLoginHeader />;
+  return token ? <DashboardHeader /> : <BeforeLoginHeader />;
 };
 
 export default AuthGuard;

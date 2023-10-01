@@ -107,7 +107,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null, onLogin }: Si
         }
         formData.append('email', values.businessEmail);
         formData.append('password', values.businessPassword);
-        formData.append('businessName', values.businessName);
+        formData.append('businessname', values.businessName);
         formData.append('address', values.address);
         formData.append('phone', values.businessPhone);
         formData.append('country', values.country);
@@ -115,7 +115,7 @@ export const SignupModal = ({ isOpen = true, onClose = () => null, onLogin }: Si
         formData.append('city', values.city);
         formData.append('zipCode', values.zipCode);
         formData.append('dob', values.dob);
-        formData.append('gneder', values.gender);
+        formData.append('gender', values.gender);
         formData.append('registrationNumber', values.registrationNumber);
         formData.append('referral_code', values.business_referral_code);
 
@@ -491,9 +491,15 @@ export const SignupModal = ({ isOpen = true, onClose = () => null, onLogin }: Si
                       </Button>
                       <Text textAlign='center' textStyle='body-regular' fontWeight={400}>
                         Already have an account?{' '}
-                        <ChakraLink href='/login' textStyle='body'>
+                        <Text
+                          color='primary'
+                          as='span'
+                          cursor='pointer'
+                          textStyle='body'
+                          onClick={onLogin}
+                        >
                           Login
-                        </ChakraLink>
+                        </Text>
                       </Text>
                     </Stack>
                   </Flex>
