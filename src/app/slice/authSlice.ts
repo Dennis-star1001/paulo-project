@@ -65,12 +65,12 @@ const slice = createSlice({
 export const { logout: logoutAction } = slice.actions;
 export default slice.reducer;
 
-export const selectUser = (state: RootState) => state.auth.user;
+export const selectUser = (state: RootState) => state.auth?.user;
 export const userRole = (state: RootState) => state.auth?.user?.roles[0]?.name;
 
 export const isVendor = (state: RootState) =>
-  state.auth.user.roles.some((role) => role.name === 'Vendor');
+  state.auth.user.roles.some((role) => role?.name === 'Vendor');
 export const isCustomer = (state: RootState) =>
-  state.auth.user.roles.some((role) => role.name === 'Customer');
+  state.auth.user.roles.some((role) => role?.name === 'Customer');
 
-export const isSignedIn = (state: RootState) => !!state.auth.token;
+export const isSignedIn = (state: RootState) => !!state.auth?.token;
