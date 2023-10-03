@@ -29,9 +29,9 @@ deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   environment: development
   before_script:
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/gitlab_rsa  
-    - chmod 600 ~/.ssh/gitlab_rsa   
-    - ssh-keyscan -H $SSH_HOST > ~/.ssh/known_hosts
+    #- mkdir -p ~/.ssh
+    #- echo "$SSH_PRIVATE_KEY" > ~/.ssh/gitlab_rsa  
+    #- chmod 600 ~/.ssh/gitlab_rsa   
+    #- ssh-keyscan -H $SSH_HOST > ~/.ssh/known_hosts
   script:
     - ssh $SSH_USER@$SSH_HOST "cd $TARGET_DIRECTORY && git checkout main && git pull && exit"                                                #scp -i ~/.ssh/gitlab_rsa -r * $SSH_USER@$SSH_HOST:$TARGET_DIRECTORY
