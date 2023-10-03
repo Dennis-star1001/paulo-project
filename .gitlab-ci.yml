@@ -30,6 +30,6 @@ deploy-job:      # This job runs in the deploy stage.
   environment: development
   script:
     - mkdir -p ~/.ssh
-    - echo "$ncleaques" > ~/.ssh/gitlab_rsa  
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/gitlab_rsa  
     - chmod 600 ~/.ssh/gitlab_rsa   
     - scp -i ~/.ssh/gitlab_rsa -r * $SSH_USER@$SSH_HOST:$TARGET_DIRECTORY
