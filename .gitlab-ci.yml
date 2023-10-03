@@ -33,5 +33,3 @@ deploy-job:      # This job runs in the deploy stage.
     - echo "$ncleaques" > ~/.ssh/gitlab_rsa  
     - chmod 600 ~/.ssh/gitlab_rsa   
     - scp -i * $SSH_USER@$SSH_HOST:$TARGET_DIRECTORY
-  only:
-    - master
