@@ -19,17 +19,14 @@
 variables:
   
   SSH_PRIVATE_KEY: "$ncleaques"
-  SSH_HOST: "$HOST"          # Replace with your VPC server's IP address or hostname
-  SSH_PORT: "22"                      # SSH port (default is 22)
+  SSH_HOST: "$HOST"          # Replace with your VPC server's IP address or hostname       # SSH port (default is 22)
   SSH_USER: "ubuntu"       # SSH username on the VPC server
   TARGET_DIRECTORY: "$main_dir"  # The directory where you want to transfer files
 
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  environment: development
   before_script:
-    - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/gitlab_rsa  
     - chmod 600 ~/.ssh/gitlab_rsa   
     - ssh-keyscan -H $SSH_HOST > ~/.ssh/known_hosts
