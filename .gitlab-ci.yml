@@ -22,7 +22,7 @@ variables:
   SSH_HOST: "54.167.254.250"          # Replace with your VPC server's IP address or hostname
   SSH_PORT: "22"                      # SSH port (default is 22)
   SSH_USER: "ubuntu"       # SSH username on the VPC server
-  TARGET_DIRECTORY: "/home/webuser/website/cleaques/development/public_html/public"  # The directory where you want to transfer files
+  TARGET_DIRECTORY: "/home/webuser/website/cleaques/development/public_html/"  # The directory where you want to transfer files
 
 
 deploy-job:      # This job runs in the deploy stage.
