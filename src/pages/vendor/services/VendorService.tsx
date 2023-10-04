@@ -1,3 +1,4 @@
+import { useGetVendorServicesQuery } from '@/app/services/service';
 import { IconButton, PanelHeader } from '@/components';
 import { path } from '@/routes/path';
 import {
@@ -16,6 +17,9 @@ import {
 import { RiSearch2Line } from 'react-icons/ri';
 
 export const VendorServicePage = () => {
+  const { data: response } = useGetVendorServicesQuery();
+  const services = response?.data || [];
+
   return (
     <Box bg='neutral.100' p={[4, '100px']}>
       <Flex
@@ -62,30 +66,35 @@ export const VendorServicePage = () => {
         rowGap={[3, '30px']}
         mt={4}
       >
-        {Array.from({ length: 4 }, (_, i) => (
-          <GridItem key={i}>
-            <Link color='#000' textStyle='subtext' href='#' mt={3}>
+        {services.map((service) => (
+          <GridItem key={service.id}>
+            <Link
+              color='#000'
+              textStyle='subtext'
+              href={`${path.VENDOR_SERVICES}/${service.id.toString()}`}
+              mt={3}
+            >
               <Box bgColor='#fff' borderRadius='8px'>
                 <Box borderRadius='8px 8px 0px 0px'>
                   <Image
                     objectFit='cover'
-                    src='https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg'
+                    src={service?.image}
                     h='197px'
                     w='344px'
-                    alt='John Doe'
+                    alt={service?.title}
                   />
                 </Box>
                 <Stack p={2}>
                   <Flex justifyContent='space-between'>
                     <Stack spacing={0}>
                       <Text color='black' textDecor='none !important' textStyle='h1-subtext'>
-                        Front End Developer
+                        {service?.title || 'N/A'}
                       </Text>
                       <Text color='primary' textStyle='subtext'>
-                        Available Slots: 7slots
+                        Available Slots: {service?.slot} slot{Number(service?.slot) > 1 && 's'}
                       </Text>
                     </Stack>
-                    <Text textStyle='subtext-bold'>$1,000</Text>
+                    <Text textStyle='subtext-bold'>{`₦${service?.amount}` || 'N/A'}</Text>
                   </Flex>
                   <Flex justifyContent='space-between'>
                     <Text color='#000' textStyle='subtext' textDecor='none' mt={3}>
@@ -107,65 +116,6 @@ export const VendorServicePage = () => {
         ))}
       </Grid>
 
-      <PanelHeader
-        mt='47px'
-        header='Recent Orders'
-        rightAction={
-          <Link color='white' href='#'>
-            See all
-          </Link>
-        }
-      />
-      <Grid
-        templateColumns={['repeat(1, 1fr)', 'repeat(4, 1fr)']}
-        columnGap={[4, 7]}
-        rowGap={[3, '30px']}
-        mt={4}
-      >
-        {Array.from({ length: 4 }, (_, i) => (
-          <GridItem key={i}>
-            <Link color='#000' textStyle='subtext' href='#' mt={3}>
-              <Box bgColor='#fff' borderRadius='8px'>
-                <Box borderRadius='8px 8px 0px 0px'>
-                  <Image
-                    objectFit='cover'
-                    src='https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg'
-                    h='197px'
-                    w='344px'
-                    alt='John Doe'
-                  />
-                </Box>
-                <Stack p={2}>
-                  <Flex justifyContent='space-between'>
-                    <Stack spacing={0}>
-                      <Text color='black' textDecor='none !important' textStyle='h1-subtext'>
-                        Front End Developer
-                      </Text>
-                      <Text color='primary' textStyle='subtext'>
-                        Available Slots: 7slots
-                      </Text>
-                    </Stack>
-                    <Text textStyle='subtext-bold'>$1,000</Text>
-                  </Flex>
-                  <Flex justifyContent='space-between'>
-                    <Text color='#000' textStyle='subtext' textDecor='none' mt={3}>
-                      Oludare Abimbola Daniels
-                    </Text>
-                    <Stack spacing={0}>
-                      <Text textAlign='center' textStyle='subtext-bold'>
-                        Due date
-                      </Text>
-                      <Text textAlign='center' lineHeight='normal' textStyle='bold'>
-                        16 Mar, 2023
-                      </Text>
-                    </Stack>
-                  </Flex>
-                </Stack>
-              </Box>
-            </Link>
-          </GridItem>
-        ))}
-      </Grid>
       <Flex justifyContent='center' mt={['45px', '200px']}>
         <Button mx='auto' w={['full', '550px']}>
           Load more

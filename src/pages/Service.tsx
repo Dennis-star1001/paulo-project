@@ -1,5 +1,6 @@
 // import Carousel from 'react-bootstrap/Carousel';
 // import { mockApi } from './mockApi';
+import { useGetServicesQuery } from '@/app/services/service';
 import Banner from '@/assets/dummy-banner.png';
 import { FormInput, IconButton, Rating } from '@/components';
 import { PanelHeader } from '@/components/panel';
@@ -31,9 +32,8 @@ const spacing = [4, 6];
 const avatar = 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg';
 
 export const ServicePage = () => {
-  const scrollToTop = () => {
-    document.documentElement.scrollTop = 0;
-  };
+  const { data: response } = useGetServicesQuery();
+  const services = response?.data || [];
 
   return (
     <Box bg='neutral.100' pb={4} pt='100px'>
@@ -104,93 +104,51 @@ export const ServicePage = () => {
         rowGap={[3, '30px']}
         mx={spacing}
       >
-        {Array.from({ length: 12 }, (_, i) => (
-          <GridItem key={i}>
-            <Box bgColor='#fff' borderRadius='8px'>
-              <Box borderRadius='8px 8px 0px 0px'>
-                <Image objectFit='cover' src={avatar} h='197px' w='344px' alt='John Doe' />
+        {services?.length > 0 ? (
+          services.map((service) => (
+            <GridItem key={service.id}>
+              <Box bgColor='#fff' borderRadius='8px'>
+                <Box borderRadius='8px 8px 0px 0px'>
+                  <Image
+                    objectFit='cover'
+                    src={service?.image || avatar}
+                    h='197px'
+                    w='344px'
+                    alt={service?.title}
+                  />
+                </Box>
+                <Stack p={4}>
+                  <Flex justifyContent='space-between'>
+                    <Stack spacing={0}>
+                      <Link
+                        color='black'
+                        href={path.SERVICES_DETAIL.replace(':id', '1')}
+                        textStyle='h1-subtext'
+                      >
+                        {service?.title}
+                      </Link>
+                      <Text color='primary' textStyle='subtext'>
+                        Available Slots: {service?.slot} slot{Number(service?.slot) > 1 && 's'}
+                      </Text>
+                    </Stack>
+                    <Text textStyle='subtext-bold'>{`₦${service?.amount}` || 'N/A'}</Text>
+                  </Flex>
+                  <Link
+                    color='#000'
+                    textStyle='subtext'
+                    href={path.SERVICES_DETAIL.replace(':id', service.id.toString())}
+                    textDecor='underline'
+                    mt={3}
+                  >
+                    Oludare Abimbola Daniels
+                  </Link>
+                </Stack>
               </Box>
-              <Stack p={4}>
-                <Flex justifyContent='space-between'>
-                  <Stack spacing={0}>
-                    <Link
-                      color='black'
-                      href={path.SERVICES_DETAIL.replace(':id', '1')}
-                      textStyle='h1-subtext'
-                    >
-                      Front End Developer
-                    </Link>
-                    <Text color='primary' textStyle='subtext'>
-                      Available Slots: 7slots
-                    </Text>
-                  </Stack>
-                  <Text textStyle='subtext-bold'>$1,000</Text>
-                </Flex>
-                <Link
-                  color='#000'
-                  textStyle='subtext'
-                  href={`/TabbedService/${i}`}
-                  textDecor='underline'
-                  mt={3}
-                >
-                  Oludare Abimbola Daniels
-                </Link>
-              </Stack>
-            </Box>
-          </GridItem>
-        ))}
-      </Grid>
-      <Flex justifyContent='center' mx={['44px', 0]} my={[10, '66px']}>
-        <Button w='600px'>Load More</Button>
-      </Flex>
-
-      {/* my services */}
-      <PanelHeader
-        mx={spacing}
-        header='My Services'
-        mb={8}
-        mt='90px'
-        rightAction={
-          <Link as='h1' color='#fff' href='#'>
-            See all
-          </Link>
-        }
-      />
-      <Grid
-        templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
-        columnGap={[4, 7]}
-        rowGap={[3, '30px']}
-        mx={spacing}
-      >
-        {Array.from({ length: 12 }, (_, i) => (
-          <GridItem key={i}>
-            <Box bgColor='#fff' borderRadius='8px' onClick={scrollToTop}>
-              <Box borderRadius='8px 8px 0px 0px'>
-                <Image objectFit='cover' src={avatar} h='197px' w='344px' alt='John Doe' />
-              </Box>
-              <Stack p={4}>
-                <Flex justifyContent='space-between'>
-                  <Stack spacing={0}>
-                    <Text textStyle='h1-subtext'>Front End Developer</Text>
-                    <Text color='primary' textStyle='subtext'>
-                      Available Slots: 7slots
-                    </Text>
-                  </Stack>
-                  <Text textStyle='subtext-bold'>$1,000</Text>
-                </Flex>
-                <Link
-                  color='#000'
-                  textStyle='subtext'
-                  href={`/TabbedService/${i}`}
-                  textDecor='underline'
-                  mt={3}
-                >
-                  Oludare Abimbola Daniels
-                </Link>
-              </Stack>
-            </Box>
-          </GridItem>
-        ))}
+            </GridItem>
+          ))
+        ) : (
+          <Text>No record found</Text>
+        )}
       </Grid>
       <Flex justifyContent='center' mx={['44px', 0]} my={[10, '66px']}>
         <Button w='600px'>Load More</Button>

@@ -1,23 +1,34 @@
-import AfterLoginHeader from '@/components/Header/AfterLoginHeader';
+import { useAppSelector } from '@/app/hooks';
+import { isVendor } from '@/app/slice/authSlice';
 import DashboardHeader from '@/pages/vendor/dashboard/Header/DashboardHeader';
-import { path } from '@/routes/path';
 import Cookies from 'js-cookie';
-import { lazy, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { lazy } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const BeforeLoginHeader = lazy(() => import('@/components/Header/BeforeLoginHeader'));
 
 const AuthGuard = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const token = Cookies.get('token');
+  const userIsVendor = useAppSelector(isVendor);
 
-  useEffect(() => {
-    if (!token) {
-      navigate(path.HOME);
-    }
-  }, [navigate, token]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     navigate(path.HOME);
+  //   }
+  // }, [navigate, token]);
 
-  return token ? <DashboardHeader /> : <BeforeLoginHeader />;
+  return token ? (
+    <>
+      <DashboardHeader />
+      <Outlet />
+    </>
+  ) : (
+    <>
+      <BeforeLoginHeader />
+      <Outlet />
+    </>
+  );
 };
 
 export default AuthGuard;

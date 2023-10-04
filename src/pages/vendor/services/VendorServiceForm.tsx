@@ -1,7 +1,7 @@
 import {
   useAddVendorServiceMutation,
   useGetVendorServiceCategoriesQuery
-} from '@/app/services/admin_service';
+} from '@/app/services/service';
 import { FormInput, FormLeftAddonInput, FormSelect, FormTextArea } from '@/components';
 import { AvatarUploader } from '@/components/upload';
 import { useHandleError, useHandleSuccess } from '@/hooks';

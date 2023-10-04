@@ -9,7 +9,7 @@ import {
   Tabs,
   Text,
   Image,
-  Select, 
+  Select,
   useMediaQuery
 } from '@chakra-ui/react';
 import arrow from '../../../../assets/arrowUp.svg';
@@ -37,9 +37,9 @@ const tabsData: TabData[] = [
         description: 'Full stack web development',
         time: '2:00pm',
         amount: '$1,362',
-        isToday: true,
-      },
-    ],
+        isToday: true
+      }
+    ]
   },
   {
     label: 'Service Wallet Transfer',
@@ -49,15 +49,15 @@ const tabsData: TabData[] = [
         description: '',
         time: '2:00pm',
         amount: '-$2,000',
-        isToday: false,
-      },
-    ],
-  },
+        isToday: false
+      }
+    ]
+  }
 ];
 
-function ServiceWallet() {
+const ServiceWallet = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
-  const [selectedCategory, setSelectedCategory] = useState<string>('Service'); 
+  const [selectedCategory, setSelectedCategory] = useState<string>('Service');
 
   const handleTabChange = (index: number) => {
     setSelectedTab(index);
@@ -69,31 +69,27 @@ function ServiceWallet() {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
 
   return (
-    <Box mt="30px">
+    <Box mt='30px'>
       {isMobile && (
-        <Select
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-          mb="2" 
-        >
-          <option value="Service">Service</option>
-          <option value="Donation">Donation</option>
-          <option value="Event">Event</option>
+        <Select value={selectedCategory} onChange={handleCategoryChange} mb='2'>
+          <option value='Service'>Service</option>
+          <option value='Donation'>Donation</option>
+          <option value='Event'>Event</option>
         </Select>
       )}
       <Tabs
-        variant="enclosed"
-        colorScheme="#201E1F"
-        size="lg"
+        variant='enclosed'
+        colorScheme='#201E1F'
+        size='lg'
         index={selectedTab}
         onChange={handleTabChange}
       >
-        <TabList bg="#EBE9E9">
+        <TabList bg='#EBE9E9'>
           {tabsData.map((tab, index) => (
             <Tab
               key={index}
-              fontFamily="Lato"
-              fontWeight="600"
+              fontFamily='Lato'
+              fontWeight='600'
               fontSize={{ base: '12px', md: '14px' }}
             >
               {tab.label}
@@ -107,48 +103,48 @@ function ServiceWallet() {
                 {tab.transactions.map((transaction, transactionIndex) => (
                   <Flex
                     key={transactionIndex}
-                    bg="#FFFF"
-                    mt="2"
-                    p="4"
+                    bg='#FFFF'
+                    mt='2'
+                    p='4'
                     flexDirection={{ base: 'column', md: 'row' }}
-                    justifyContent="space-between"
-                    alignItems="center"
+                    justifyContent='space-between'
+                    alignItems='center'
                   >
-                    <Flex alignItems="center" gap="2">
+                    <Flex alignItems='center' gap='2'>
                       <Box>
-                        <Image src={selectedTab === 0 ? arrow : arrowDown} w="50px" h="60px" />
+                        <Image src={selectedTab === 0 ? arrow : arrowDown} w='50px' h='60px' />
                       </Box>
                       <Box>
                         <Text
-                          fontFamily="Lato"
-                          fontWeight="600"
+                          fontFamily='Lato'
+                          fontWeight='600'
                           fontSize={{ base: '12px', md: '14px' }}
                         >
                           {transaction.title}
                         </Text>
                         {transaction.description && (
                           <Text
-                            fontFamily="Lato"
-                            fontWeight="600"
+                            fontFamily='Lato'
+                            fontWeight='600'
                             fontSize={{ base: '12px', md: '14px' }}
-                            color="#00B0F3"
+                            color='#00B0F3'
                           >
                             {transaction.description}
                           </Text>
                         )}
                       </Box>
                     </Flex>
-                    <Flex flexDirection={{ base: 'row', md: 'column' }} alignItems="center" gap="5">
+                    <Flex flexDirection={{ base: 'row', md: 'column' }} alignItems='center' gap='5'>
                       <Text
-                        fontFamily="Lato"
-                        fontWeight="500"
+                        fontFamily='Lato'
+                        fontWeight='500'
                         fontSize={{ base: '10px', md: '12px' }}
                       >
                         {transaction.isToday ? 'Today' : '2 weeks ago'} at {transaction.time}
                       </Text>
                       <Text
-                        fontFamily="Lato"
-                        fontWeight="600"
+                        fontFamily='Lato'
+                        fontWeight='600'
                         fontSize={{ base: '12px', md: '14px' }}
                       >
                         {transaction.amount}
@@ -163,6 +159,6 @@ function ServiceWallet() {
       </Tabs>
     </Box>
   );
-}
+};
 
 export default ServiceWallet;
