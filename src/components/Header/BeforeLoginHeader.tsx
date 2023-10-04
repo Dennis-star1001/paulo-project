@@ -23,7 +23,6 @@ import {
   useMediaQuery
 } from '@chakra-ui/react';
 import { ForgotPasswordModal, LoginModal, SignupModal } from '@/features/auth';
-import { Outlet } from 'react-router';
 
 interface NavLink {
   link: string;
@@ -38,7 +37,6 @@ const BeforeLoginHeader: React.FC = () => {
   return (
     <chakra.header id='header'>
       <Box>{isMobile ? <MobileView /> : isTablet ? <MobileView /> : <DesktopView />}</Box>
-      <Outlet />
     </chakra.header>
   );
 };
