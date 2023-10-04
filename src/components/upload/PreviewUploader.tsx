@@ -1,10 +1,11 @@
 import { useHandleError } from '@/hooks';
-import { Avatar, Box, Button, Flex, Icon, Stack } from '@chakra-ui/react';
+import { Avatar, Box, Button, Flex, Icon, Image, Stack } from '@chakra-ui/react';
 import { useField } from 'formik';
 import { memo, useCallback, useEffect } from 'react';
 import { FileRejection, useDropzone } from 'react-dropzone';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { v4 as key } from 'uuid';
+import Placeholder from '@/assets/placeholder.png';
 
 const MAX_UPLOADABLE_IMAGES = 1;
 
@@ -99,7 +100,7 @@ export const AvatarUploader = ({
             />
           ))
         ) : (
-          <Avatar size='2xl' objectFit='cover' />
+          <Image src={Placeholder} alt='service' w='592px' h='394px' />
         )}
 
         {uploadedImages.length < 1 ? (
@@ -111,13 +112,11 @@ export const AvatarUploader = ({
             </Button>
           </Flex>
         ) : (
-          <Button type='submit' w='auto' size='sm'>
-            Save Image
-          </Button>
+          <></>
         )}
 
         {errorMessage && touchedField && (
-          <Box as='small' color='error'>
+          <Box as='small' color='red.500' textStyle='xs'>
             {errorMessage}
           </Box>
         )}
@@ -131,14 +130,7 @@ export default AvatarUploader;
 const Previewer = memo(({ img = '', onDelete }: { img?: string; onDelete: () => void }) => {
   return (
     <Flex>
-      <Avatar
-        src={img}
-        // onLoad={() => {
-        //   URL.revokeObjectURL(img);
-        // }}
-        size='2xl'
-        objectFit='cover'
-      />
+      <Image objectFit='cover' src={img} alt='service' w='592px' h='394px' />
       <Icon
         cursor='pointer'
         as={RiDeleteBin6Fill}
