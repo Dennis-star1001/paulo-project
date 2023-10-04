@@ -45,6 +45,7 @@ export const LoginModal = ({
     onSubmit: async (values) => {
       try {
         const response = await login(values).unwrap();
+
         onClose();
         handleSuccess('Success', response.message || 'Logged in successfully');
         userIsVendor ? router(path.VENDOR_DASHBOARD) : path.HOME;
