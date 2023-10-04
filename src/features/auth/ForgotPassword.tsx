@@ -2,10 +2,14 @@ import { FormInput } from '@/components';
 import { Modal } from '@/components/auth';
 import { Button, Link, Stack, Text, UseDisclosureProps } from '@chakra-ui/react';
 
+type ForgotModalProps = UseDisclosureProps & {
+  onLogin?: () => void;
+};
 export const ForgotPasswordModal = ({
   isOpen = true,
-  onClose = () => null
-}: UseDisclosureProps) => {
+  onClose = () => null,
+  onLogin
+}: ForgotModalProps) => {
   ``;
   return (
     <Modal
@@ -19,7 +23,9 @@ export const ForgotPasswordModal = ({
       </Link>
       <Stack spacing={3} my={3}>
         <Button>Reset Password</Button>
-        <Button variant='text'>Login to your account</Button>
+        <Button variant='text' onClick={onLogin}>
+          Login to your account
+        </Button>
       </Stack>
     </Modal>
   );
