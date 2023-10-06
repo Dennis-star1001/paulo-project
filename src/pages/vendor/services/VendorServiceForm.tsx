@@ -8,10 +8,14 @@ import { useHandleError, useHandleSuccess } from '@/hooks';
 import { Box, Button, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { ServiceFormValues, ServiceSchema } from './schema';
+import { useNavigate } from 'react-router';
+import { path } from '@/routes/path';
 
 export const VendorServiceForm = () => {
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
+
+  const router=useNavigate()
 
   const [vendorService] = useAddVendorServiceMutation();
   const { data: response } = useGetVendorServiceCategoriesQuery();
@@ -42,6 +46,7 @@ export const VendorServiceForm = () => {
 
         const response = await vendorService(formData).unwrap();
         handleSuccess('Success', response.message || 'Service created');
+        router(path.VENDOR_SERVICES)
       } catch (err) {
         handleError(err);
       }
