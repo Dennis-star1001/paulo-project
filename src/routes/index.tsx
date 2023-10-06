@@ -64,7 +64,13 @@ export const router = createBrowserRouter([
   },
   {
     path: path.SERVICES_DETAIL,
-    element: <ServiceDetailPage />
+    element: <AuthGuard />,
+    children:[
+      {
+        path: path.SERVICES_DETAIL,
+        element: <ServiceDetailPage />
+      }
+    ]
   },
   {
     path: path.EVENTS,
