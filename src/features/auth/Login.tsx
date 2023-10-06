@@ -35,10 +35,14 @@ export const LoginModal = ({
     onSubmit: async (values) => {
       try {
         const response = await login(values).unwrap();
+        const status = response.status;
 
-        onClose();
-        handleSuccess('Success', response.message || 'Logged in successfully');
-        userIsVendor ? (location.href = path.HOME) : (location.href = path.SERVICES);
+        handleSuccess('', response.message, status);
+        if (status) {
+          onClose();
+
+          userIsVendor ? (location.href = path.HOME) : (location.href = path.VENDOR_SERVICES);
+        }
       } catch (err) {
         handleError(err);
       }
