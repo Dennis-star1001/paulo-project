@@ -1,4 +1,4 @@
-import { useToast } from '@chakra-ui/react';
+import { UseToastOptions, useToast } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface ErrorData {
@@ -31,15 +31,30 @@ export const getErrors = (errors: ErrorData): string[] => {
 export const useHandleSuccess = () => {
   const toast = useToast();
 
-  const handleSuccess = (title: string | null = 'Success', response: string): void => {
-    toast({
-      title,
-      description: response,
-      status: 'success',
-      duration: 4000,
-      position: 'top-right',
-      isClosable: true
-    });
+  const handleSuccess = (
+    title: string | null = 'Success',
+    response: string,
+    status: true | false = true
+  ): void => {
+    if (status) {
+      toast({
+        title,
+        description: response,
+        status: 'success',
+        duration: 4000,
+        position: 'top-right',
+        isClosable: true
+      });
+    } else {
+      toast({
+        title,
+        description: response,
+        status: 'error',
+        duration: 4000,
+        position: 'top-right',
+        isClosable: true
+      });
+    }
   };
 
   return handleSuccess;
