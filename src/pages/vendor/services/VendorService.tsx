@@ -53,7 +53,7 @@ export const VendorServicePage = () => {
       </Flex>
       <PanelHeader
         mt='88px'
-        header='Recent Orders'
+        header='Recent Services'
         rightAction={
           <Link color='white' href='#'>
             See all
