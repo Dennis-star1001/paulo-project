@@ -116,11 +116,13 @@ export const VendorServicePage = () => {
         ))}
       </Grid>
 
-      <Flex justifyContent='center' mt={['45px', '200px']}>
-        <Button mx='auto' w={['full', '550px']}>
-          Load more
-        </Button>
-      </Flex>
+      {services.length > 10 && (
+        <Flex justifyContent='center' mt={['45px', '200px']}>
+          <Button mx='auto' w={['full', '550px']}>
+            Load more
+          </Button>
+        </Flex>
+      )}
     </Box>
   );
 };

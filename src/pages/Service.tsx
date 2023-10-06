@@ -150,9 +150,11 @@ export const ServicePage = () => {
           <Text>No record found</Text>
         )}
       </Grid>
-      <Flex justifyContent='center' mx={['44px', 0]} my={[10, '66px']}>
-        <Button w='600px'>Load More</Button>
-      </Flex>
+      {services.length > 10 && (
+        <Flex justifyContent='center' mx={['44px', 0]} my={[10, '66px']}>
+          <Button w='600px'>Load More</Button>
+        </Flex>
+      )}
     </Box>
   );
 };
