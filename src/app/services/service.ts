@@ -16,6 +16,7 @@ type Service = {
 };
 type CreateVendorServiceResponse = DefaultResponse & { data: Service };
 type ServiceResponse = DefaultResponse & { data: Service[] };
+type SingleServiceResponse = DefaultResponse & { data: Service };
 type VendorServiceCategory = {
   name: string;
   slug: string;
@@ -50,7 +51,13 @@ export const serviceApi = api.injectEndpoints({
     }),
     getServices: build.query<ServiceResponse, void>({
       query: () => ({
-        url: e.service,
+        url: `${e.service}/all`,
+        method: 'GET'
+      })
+    }),
+    getServiceDetails: build.query<SingleServiceResponse, { id: string }>({
+      query: ({ id }) => ({
+        url: `${e.service}/${id}`,
         method: 'GET'
       })
     })
@@ -61,5 +68,6 @@ export const {
   useAddVendorServiceMutation,
   useGetServicesQuery,
   useGetVendorServiceCategoriesQuery,
-  useGetVendorServicesQuery
+  useGetVendorServicesQuery,
+  useGetServiceDetailsQuery
 } = serviceApi;

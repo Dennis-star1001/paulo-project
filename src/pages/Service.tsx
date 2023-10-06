@@ -1,6 +1,6 @@
 // import Carousel from 'react-bootstrap/Carousel';
 // import { mockApi } from './mockApi';
-import { useGetServicesQuery } from '@/app/services/service';
+import { useGetServiceDetailsQuery, useGetServicesQuery } from '@/app/services/service';
 import Banner from '@/assets/dummy-banner.png';
 import { FormInput, IconButton, Rating } from '@/components';
 import { PanelHeader } from '@/components/panel';
@@ -27,6 +27,7 @@ import {
 import { RiFilter3Line, RiSearch2Line } from 'react-icons/ri';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useParams } from 'react-router';
 
 const spacing = [4, 6];
 const avatar = 'https://www.johnmeyerwebdev.com/images/Me-Avatar-Maker.svg';
@@ -107,7 +108,7 @@ export const ServicePage = () => {
         {services?.length > 0 ? (
           services.map((service) => (
             <GridItem key={service.id}>
-              <Box bgColor='#fff' borderRadius='8px'>
+              <Box bgColor='#fff' borderRadius='8px' w='fit-content'>
                 <Box borderRadius='8px 8px 0px 0px'>
                   <Image
                     objectFit='cover'
@@ -160,6 +161,14 @@ export const ServicePage = () => {
 };
 
 export const ServiceDetailPage = () => {
+  const { id } = useParams() as { id: string };
+
+  const { data: response } = useGetServiceDetailsQuery({ id });
+  const serviceDetails = response?.data;
+
+  const { data: serviceResponse } = useGetServicesQuery();
+  const services = serviceResponse?.data || [];
+
   return (
     <>
       <Box mt='98px' bg='neutral.100'>
@@ -170,7 +179,7 @@ export const ServiceDetailPage = () => {
           <Flex flexDir={['column', 'row']} justifyContent='space-between'>
             <Flex gap={[2, 10]} mt={['26px', 0]}>
               <Image
-                src={avatar}
+                src={serviceDetails?.image}
                 h={['50px', '146px']}
                 w={['50px', '146px']}
                 pos={['static', 'relative']}
@@ -284,41 +293,51 @@ export const ServiceDetailPage = () => {
               rowGap={[3, '30px']}
               mx={[0, spacing[1]]}
             >
-              {Array.from({ length: 12 }, (_, i) => (
-                <GridItem key={i}>
-                  <Box bgColor='#fff' borderRadius='8px'>
-                    <Box borderRadius='8px 8px 0px 0px'>
-                      <Image objectFit='cover' src={avatar} h='197px' w='344px' alt='John Doe' />
+              {services?.length > 0 ? (
+                services.map((service) => (
+                  <GridItem key={service.id}>
+                    <Box bgColor='#fff' borderRadius='8px'>
+                      <Box borderRadius='8px 8px 0px 0px'>
+                        <Image
+                          objectFit='cover'
+                          src={service?.image}
+                          h='197px'
+                          w='344px'
+                          alt={service?.title}
+                        />
+                      </Box>
+                      <Stack p={4}>
+                        <Flex justifyContent='space-between'>
+                          <Stack spacing={0}>
+                            <Link
+                              color='black'
+                              href={path.SERVICES_DETAIL.replace(':id', '1')}
+                              textStyle='h1-subtext'
+                            >
+                              {service?.title}
+                            </Link>
+                            <Text color='primary' textStyle='subtext'>
+                              Available Slots: 7slots
+                            </Text>
+                          </Stack>
+                          <Text textStyle='subtext-bold'>$1,000</Text>
+                        </Flex>
+                        <Link
+                          color='#000'
+                          textStyle='subtext'
+                          href='#'
+                          textDecor='underline'
+                          mt={3}
+                        >
+                          Oludare Abimbola Daniels
+                        </Link>
+                      </Stack>
                     </Box>
-                    <Stack p={4}>
-                      <Flex justifyContent='space-between'>
-                        <Stack spacing={0}>
-                          <Link
-                            color='black'
-                            href={path.SERVICES_DETAIL.replace(':id', '1')}
-                            textStyle='h1-subtext'
-                          >
-                            Front End Developer
-                          </Link>
-                          <Text color='primary' textStyle='subtext'>
-                            Available Slots: 7slots
-                          </Text>
-                        </Stack>
-                        <Text textStyle='subtext-bold'>$1,000</Text>
-                      </Flex>
-                      <Link
-                        color='#000'
-                        textStyle='subtext'
-                        href={`/TabbedService/${i}`}
-                        textDecor='underline'
-                        mt={3}
-                      >
-                        Oludare Abimbola Daniels
-                      </Link>
-                    </Stack>
-                  </Box>
-                </GridItem>
-              ))}
+                  </GridItem>
+                ))
+              ) : (
+                <Text>No record found</Text>
+              )}
             </Grid>
           </Box>
         </Box>
