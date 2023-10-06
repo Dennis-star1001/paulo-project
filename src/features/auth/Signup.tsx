@@ -70,9 +70,12 @@ export const SignupModal = ({ isOpen = true, onClose = () => null, onLogin }: Si
         };
 
         const response = await signup(payload).unwrap();
+        const status = response.status;
 
-        handleSuccess('Success', response.message || 'You have successfully signed up');
-        onClose();
+        handleSuccess('', response.message, status);
+        if (status) {
+          onClose();
+        }
       } catch (err: any) {
         handleError(err);
       }
