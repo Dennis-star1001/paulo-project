@@ -34,18 +34,20 @@ const slice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addMatcher(login.matchFulfilled, (state, { payload }) => {
-      const token = payload.data.token;
-      // const user = { user: payload.data.user };
-      // merge roles into user
-      const user = { ...payload.data.user, user: payload.data.role };
+      if (payload.status) {
+        const token = payload?.data?.token;
+        // const user = { user: payload.data.user };
+        // merge roles into user
+        const user = { ...payload?.data?.user, user: payload?.data?.role };
 
-      Cookies.set('token', token, {
-        sameSite: 'strict'
-      });
-      localStorage.setItem('user', JSON.stringify(user));
+        Cookies.set('token', token, {
+          sameSite: 'strict'
+        });
+        localStorage.setItem('user', JSON.stringify(user));
 
-      state.token = token;
-      state.user = user;
+        state.token = token;
+        state.user = user;
+      }
     });
     builder.addDefaultCase((state) => {
       // read the "user" cookie and update the state accordingly
@@ -66,11 +68,12 @@ export const { logout: logoutAction } = slice.actions;
 export default slice.reducer;
 
 export const selectUser = (state: RootState) => state.auth?.user;
-export const userRole = (state: RootState) => state.auth?.user?.roles[0]?.name;
+export const userRole = (state: RootState) =>
+  state.auth.user?.roles ? state.auth?.user?.roles[0]?.name : '';
 
 export const isVendor = (state: RootState) =>
-  state.auth.user.roles.some((role) => role?.name === 'Vendor');
+  (state.auth.user?.roles || []).some((role) => role?.name === 'Vendor');
 export const isCustomer = (state: RootState) =>
-  state.auth.user.roles.some((role) => role?.name === 'Customer');
+  (state.auth.user?.roles || []).some((role) => role?.name === 'Customer');
 
 export const isSignedIn = (state: RootState) => !!state.auth?.token;
