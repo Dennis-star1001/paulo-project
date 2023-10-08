@@ -126,6 +126,16 @@ export const router = createBrowserRouter([
     ]
   },
   {
+    path: path.VENDOR_SERVICE_EDIT,
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.VENDOR_SERVICE_EDIT,
+        element: <VendorServiceForm />
+      }
+    ]
+  },
+  {
     path: path.VENDOR_SERVICE_CREATE,
     element: <AuthGuard />,
     children: [

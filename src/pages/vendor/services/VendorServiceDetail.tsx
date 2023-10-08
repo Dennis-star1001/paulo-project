@@ -13,14 +13,9 @@ import {
   Image,
   Link,
   Stack,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
   Text
 } from '@chakra-ui/react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Link as RRLink } from 'react-router-dom';
 
 const spacing = [4, 6];
@@ -33,6 +28,8 @@ export const VendorServiceDetailPage = () => {
 
   const { data: serviceResponse } = useGetVendorServicesQuery();
   const services = serviceResponse?.data || [];
+
+  const route = useNavigate();
 
   return (
     <>
@@ -70,73 +67,41 @@ export const VendorServiceDetailPage = () => {
             </Flex>
           </Flex>
           <Box>
-            <Box
-              bgColor={['transparent', '#fff']}
-              boxShadow={['none', 'px 2px 12px 0px rgba(0, 0, 0, 0.15)']}
-              borderRadius='8px'
-              pt='36px'
-              px={[0, 6]}
-            >
-              <Text as='h2' textStyle='h1'>
-                Alun Visuals Video editor
-              </Text>
-              <Divider my='10px' />
-              <Tabs>
-                <TabList
-                  sx={{
-                    '.chakra-tabs__tab': {
-                      color: 'black',
-                      textStyle: 'h1-subtext',
-                      fontWeight: 400,
-                      _selected: {
-                        color: 'primary'
-                      }
-                    }
-                  }}
-                >
-                  <Tab>Services Description</Tab>
-                  <Tab>Available Services</Tab>
-                </TabList>
-
-                <TabPanels>
-                  <TabPanel>
-                    <Text>{serviceDetails?.description || ''}</Text>
-                  </TabPanel>
-                  <TabPanel>
-                    <Flex flexDir='column'>
-                      {Array.from({ length: 5 }, (_, i) => (
-                        <Box key={i}>
-                          <Flex mb={4} justifyContent='space-between'>
-                            <Stack>
-                              <Text textStyle='h1-subtext' fontWeight={400}>
-                                <Text as='span' fontWeight={600}>
-                                  Service 1:
-                                </Text>{' '}
-                                Small description
-                              </Text>
-                              <Text color='primary' fontWeight={400} textStyle='h1-subtext'>
-                                Available slots: 05
-                              </Text>
-                            </Stack>
-                            <HStack spacing={4}>
-                              <Text textStyle='h1-subtext'>$24.00</Text>
-                              <Button>Book Services</Button>
-                            </HStack>
-                          </Flex>
-                          <Text>
-                            Elementum viverra sed in suspendisse id. Ut risus suscipit praesent
-                            varius. Ornare pharetra magna pellentesque lacus. Sit lectus eget congue
-                            ut ipsum a. Interdum enim quam morbi orci quam. Cursus at et sit elit.
-                            Leo volutpat et duis pellentesque amet. Vitae viverra curabitur a nam.
-                          </Text>
-                          <Divider my={6} />
-                        </Box>
-                      ))}
-                    </Flex>
-                  </TabPanel>
-                </TabPanels>
-              </Tabs>
-            </Box>
+            <Flex flexDir='column' gap={2}>
+              {Array.from({ length: 1 }, (_, i) => (
+                <Box key={i}>
+                  <Flex mb={4} justifyContent='space-between'>
+                    <Stack>
+                      <Text textStyle='h1-subtext' fontWeight={400}>
+                        <Text as='span' fontWeight={600}>
+                          Service 1:
+                        </Text>{' '}
+                        Small description
+                      </Text>
+                      <Text color='primary' fontWeight={400} textStyle='h1-subtext'>
+                        Available slots: 05
+                      </Text>
+                    </Stack>
+                    <HStack spacing={4}>
+                      <Text textStyle='h1-subtext'>$24.00</Text>
+                      <Button
+                        onClick={() => {
+                          if (serviceDetails) {
+                            route(
+                              path.VENDOR_SERVICE_EDIT.replace(':id', serviceDetails.id.toString())
+                            );
+                          }
+                        }}
+                      >
+                        Edit Service
+                      </Button>
+                    </HStack>
+                  </Flex>
+                  <Text>{serviceDetails?.description}</Text>
+                  <Divider my={6} />
+                </Box>
+              ))}
+            </Flex>
             <PanelHeader
               mx={[0, spacing[1]]}
               header='Services'

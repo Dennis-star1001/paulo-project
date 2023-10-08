@@ -1,5 +1,6 @@
 import {
   useAddVendorServiceMutation,
+  useEditVendorServiceMutation,
   useGetVendorServiceCategoriesQuery
 } from '@/app/services/service';
 import { FormInput, FormLeftAddonInput, FormSelect, FormTextArea } from '@/components';
@@ -8,7 +9,7 @@ import { useHandleError, useHandleSuccess } from '@/hooks';
 import { Box, Button, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { ServiceFormValues, ServiceSchema } from './schema';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { path } from '@/routes/path';
 
 export const VendorServiceForm = () => {
@@ -17,7 +18,11 @@ export const VendorServiceForm = () => {
 
   const router = useNavigate();
 
+  const { id } = useParams() as { id: string };
+
   const [vendorService] = useAddVendorServiceMutation();
+  const [editVendorService] = useEditVendorServiceMutation();
+
   const { data: response } = useGetVendorServiceCategoriesQuery();
   const categories =
     response?.data?.map((category) => ({
@@ -44,8 +49,13 @@ export const VendorServiceForm = () => {
         formData.append('type_id', values.category);
         formData.append('serviceImage', values.serviceImage[0]);
 
-        const response = await vendorService(formData).unwrap();
-        handleSuccess('Success', response.message || 'Service created');
+        if (id) {
+          const response = await editVendorService({ id, data: formData }).unwrap();
+          handleSuccess('', response.message, response.status);
+        } else {
+          const response = await vendorService(formData).unwrap();
+          handleSuccess('Success', response.message || 'Service created');
+        }
         router(path.VENDOR_SERVICES);
       } catch (err) {
         handleError(err);
