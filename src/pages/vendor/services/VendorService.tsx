@@ -15,6 +15,7 @@ import {
   Text
 } from '@chakra-ui/react';
 import { RiSearch2Line } from 'react-icons/ri';
+import { Link as RRLink } from 'react-router-dom';
 
 export const VendorServicePage = () => {
   const { data: response } = useGetVendorServicesQuery();
@@ -45,7 +46,7 @@ export const VendorServicePage = () => {
           </Flex>
         </Stack>
         <HStack>
-          <Link href={path.VENDOR_SERVICE_CREATE}>
+          <Link as={RRLink} to={path.VENDOR_SERVICE_CREATE}>
             <Button>Create Service</Button>
           </Link>
           <Button variant='outline'>Export to PDF</Button>
@@ -55,7 +56,7 @@ export const VendorServicePage = () => {
         mt='88px'
         header='Recent Services'
         rightAction={
-          <Link color='white' href='#'>
+          <Link as={RRLink} color='white' to='#'>
             See all
           </Link>
         }
@@ -69,9 +70,10 @@ export const VendorServicePage = () => {
         {services.map((service) => (
           <GridItem key={service.id}>
             <Link
+              as={RRLink}
               color='#000'
               textStyle='subtext'
-              href={`${path.VENDOR_SERVICES}/${service.id.toString()}`}
+              to={`${path.VENDOR_SERVICES}/${service.id.toString()}`}
               mt={3}
             >
               <Box bgColor='#fff' borderRadius='8px'>

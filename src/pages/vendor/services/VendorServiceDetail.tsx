@@ -21,6 +21,7 @@ import {
   Text
 } from '@chakra-ui/react';
 import { useParams } from 'react-router';
+import { Link as RRLink } from 'react-router-dom';
 
 const spacing = [4, 6];
 
@@ -142,7 +143,7 @@ export const VendorServiceDetailPage = () => {
               mb={8}
               mt='56px'
               rightAction={
-                <Link as='h1' color='#fff' href='#'>
+                <Link as={RRLink} color='#fff' to='#'>
                   See all
                 </Link>
               }
@@ -170,11 +171,9 @@ export const VendorServiceDetailPage = () => {
                         <Flex justifyContent='space-between'>
                           <Stack spacing={0}>
                             <Link
+                              as={RRLink}
                               color='black'
-                              href={path.VENDOR_SERVICE_DETAIL.replace(
-                                ':id',
-                                service.id.toString()
-                              )}
+                              to={path.VENDOR_SERVICE_DETAIL.replace(':id', service.id.toString())}
                               textStyle='h1-subtext'
                             >
                               {service?.title}i
@@ -186,9 +185,10 @@ export const VendorServiceDetailPage = () => {
                           <Text textStyle='subtext-bold'>$1,000</Text>
                         </Flex>
                         <Link
+                          as={RRLink}
                           color='#000'
                           textStyle='subtext'
-                          href='#'
+                          to='#'
                           textDecor='underline'
                           mt={3}
                         >
