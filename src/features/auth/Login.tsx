@@ -1,22 +1,13 @@
+import { useAppSelector } from '@/app/hooks';
+import { useLoginMutation } from '@/app/services/auth';
+import { isVendor } from '@/app/slice/authSlice';
 import { FormInput, PasswordInput } from '@/components';
 import { AuthButton, Modal } from '@/components/auth';
-import {
-  Button,
-  Link as ChakraLink,
-  Checkbox,
-  Divider,
-  Stack,
-  Text,
-  UseDisclosureProps
-} from '@chakra-ui/react';
+import { useHandleError, useHandleSuccess } from '@/hooks';
+import { path } from '@/routes/path';
+import { Button, Checkbox, Divider, Stack, Text, UseDisclosureProps } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { LoginFormValues, LoginSchema } from './schema/auth.schema';
-import { useLoginMutation } from '@/app/services/auth';
-import { useHandleError, useHandleSuccess } from '@/hooks';
-import { useNavigate } from 'react-router';
-import { path } from '@/routes/path';
-import { useAppSelector } from '@/app/hooks';
-import { isCustomer, isVendor } from '@/app/slice/authSlice';
 
 type LoginModalProps = UseDisclosureProps & {
   onRegister?: () => void;
@@ -34,7 +25,6 @@ export const LoginModal = ({
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
 
-  const router = useNavigate();
   const userIsVendor = useAppSelector(isVendor);
 
   const formik = useFormik<LoginFormValues>({
@@ -45,9 +35,14 @@ export const LoginModal = ({
     onSubmit: async (values) => {
       try {
         const response = await login(values).unwrap();
-        onClose();
-        handleSuccess('Success', response.message || 'Logged in successfully');
-        userIsVendor ? router(path.VENDOR_DASHBOARD) : path.HOME;
+        const status = response.status;
+
+        handleSuccess('', response.message, status);
+        if (status) {
+          onClose();
+
+          userIsVendor ? (location.href = path.HOME) : (location.href = path.VENDOR_SERVICES);
+        }
       } catch (err) {
         handleError(err);
       }

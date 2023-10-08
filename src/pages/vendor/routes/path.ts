@@ -1,4 +1,3 @@
 export const path = {
-    DASHBOARD: "/dashboard",
-
+  DASHBOARD: '/dashboard'
 };

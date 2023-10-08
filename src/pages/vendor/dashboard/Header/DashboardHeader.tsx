@@ -60,7 +60,7 @@ const mobileLinks: DashboardLink[] = [
 ];
 
 const navLinks: NavLink[] = [
-  { name: ' Dashboard', link: '/shop', icon: <BsShop /> },
+  { name: ' Dashboard', link: '/', icon: <BsShop /> },
   { name: 'Social', link: '/social', icon: <SlPeople /> },
   { name: 'Chat', link: '/chat', icon: <BiChat /> }
 ];

@@ -24,7 +24,13 @@ import { path } from './path';
 export const router = createBrowserRouter([
   {
     path: path.HOME,
-    element: <AuthGuard />
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.HOME,
+        element: <Dashboard />
+      }
+    ]
   },
   {
     path: path.CHAT,
@@ -48,11 +54,23 @@ export const router = createBrowserRouter([
   },
   {
     path: path.SERVICES,
-    element: <ServicePage />
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.SERVICES,
+        element: <ServicePage />
+      }
+    ]
   },
   {
     path: path.SERVICES_DETAIL,
-    element: <ServiceDetailPage />
+    element: <AuthGuard />,
+    children:[
+      {
+        path: path.SERVICES_DETAIL,
+        element: <ServiceDetailPage />
+      }
+    ]
   },
   {
     path: path.EVENTS,
@@ -88,11 +106,23 @@ export const router = createBrowserRouter([
   },
   {
     path: path.VENDOR_SERVICES,
-    element: <VendorServicePage />
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.VENDOR_SERVICES,
+        element: <VendorServicePage />
+      }
+    ]
   },
   {
     path: path.VENDOR_SERVICE_CREATE,
-    element: <VendorServiceForm />
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.VENDOR_SERVICE_CREATE,
+        element: <VendorServiceForm />
+      }
+    ]
   },
   {
     path: path.VENDOR_EVENTS,
