@@ -1,11 +1,10 @@
-import { Box, Text, Flex, Image, Button, Stack } from '@chakra-ui/react';
-import DashboardHeader from './Header/DashboardHeader';
+import { Box, Button, Flex, Image, Stack, Text } from '@chakra-ui/react';
 import walletBg from '../../../assets/Group.svg';
-import wallet from '../../../assets/wallet.svg';
 import analyticsBg from '../../../assets/analytics.svg';
+import megaphone from '../../../assets/meagphone.svg';
 import promotionBg from '../../../assets/promotionBg.svg';
 import status from '../../../assets/status-up.svg';
-import megaphone from '../../../assets/meagphone.svg';
+import wallet from '../../../assets/wallet.svg';
 import Features from './features';
 
 const Dashboard = () => {

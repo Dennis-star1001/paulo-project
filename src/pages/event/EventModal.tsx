@@ -36,6 +36,7 @@ const eventCategories: Category[] = [
   { name: 'Arts & Crafts', link: '/arts-and-crafts' }
 ];
 
+// eslint-disable-next-line react/prop-types
 const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, eventTitle }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size='md'>
@@ -45,8 +46,8 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, eventTitle }) 
         <ModalCloseButton />
         <ModalBody>
           {eventCategories.map((category, index) => (
-            <Box>
-              <Link key={index} href={category.link}>
+            <Box key={index}>
+              <Link href={category.link}>
                 <Text>{category.name}</Text>
               </Link>
             </Box>

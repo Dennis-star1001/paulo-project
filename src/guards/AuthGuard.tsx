@@ -1,5 +1,3 @@
-import { useAppSelector } from '@/app/hooks';
-import { isVendor } from '@/app/slice/authSlice';
 import DashboardHeader from '@/pages/vendor/dashboard/Header/DashboardHeader';
 import Cookies from 'js-cookie';
 import { lazy } from 'react';
@@ -10,7 +8,6 @@ const BeforeLoginHeader = lazy(() => import('@/components/Header/BeforeLoginHead
 const AuthGuard = () => {
   // const navigate = useNavigate();
   const token = Cookies.get('token');
-  const userIsVendor = useAppSelector(isVendor);
 
   // useEffect(() => {
   //   if (!token) {

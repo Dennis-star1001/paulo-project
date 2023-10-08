@@ -55,7 +55,7 @@ const tabsData: TabData[] = [
   }
 ];
 
-function DonationWallet() {
+const DonationWallet = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('Service');
 
@@ -159,6 +159,6 @@ function DonationWallet() {
       </Tabs>
     </Box>
   );
-}
+};
 
 export default DonationWallet;
