@@ -1,12 +1,11 @@
 import { useCallback, useRef } from 'react';
 import { Accept, useDropzone } from 'react-dropzone';
 import { Box, Text, Button } from '@chakra-ui/react';
-import gallery from '../../../assets/gallery-add.svg'
+import gallery from '../../../assets/gallery-add.svg';
 
 interface FileDropzoneProps {
   onDrop: (acceptedFiles: File[]) => void;
 }
-
 
 interface FileDropzoneProps {
   onDrop: (acceptedFiles: File[]) => void;
@@ -39,8 +38,8 @@ const FileDropzone = ({ onDrop }: FileDropzoneProps & { accept: Accept }) => {
   return (
     <Box display='flex' flexDirection='column' alignItems='center'>
       <Box
-      maxW='500px'
-      height='300'
+        maxW='500px'
+        height='300'
         {...getRootProps()}
         borderWidth={2}
         borderRadius='lg'
@@ -61,7 +60,7 @@ const FileDropzone = ({ onDrop }: FileDropzoneProps & { accept: Accept }) => {
       </Box>
       <Button onClick={handleFileInputClick} mt={2} width='fit-content' colorScheme='blue'>
         <img src={gallery} alt='gallery' />
-         Add Image
+        Add Image
       </Button>
     </Box>
   );

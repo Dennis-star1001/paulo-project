@@ -31,8 +31,7 @@ const eventLinks: EventLink[] = [
   { name: 'Children', link: '/paid_events' },
   { name: 'Business ', link: '/upcoming_events' },
   { name: 'Emergency', link: '/events_near' },
-  { name: 'Others', link: '/training' },
-
+  { name: 'Others', link: '/training' }
 ];
 
 const padding = [4, '50px'];
@@ -85,35 +84,33 @@ const Donations = () => {
         </Text>
       </Box>
       <Box m='4'>
-        <SimpleGrid columns={[2,4,7]}>
-        {eventLinks.map((eventLink, i) => (
-
-          <Link href={eventLink.link} key={`eventlink_${i}`} justifyContent='space-around'>
-            <Box
-              m='4'
-              p='4'
-              bg='#E1EEF3'
-              display='inline-flex'
-              borderRadius='4px'
-              alignItems='center'
-              color='#00B0F3'
-              fontWeight='600'
-              fontSize='15px'
-              lineHeight='34.5px'
+        <SimpleGrid columns={[2, 4, 7]}>
+          {eventLinks.map((eventLink, i) => (
+            <Link href={eventLink.link} key={`eventlink_${i}`} justifyContent='space-around'>
+              <Box
+                m='4'
+                p='4'
+                bg='#E1EEF3'
+                display='inline-flex'
+                borderRadius='4px'
+                alignItems='center'
+                color='#00B0F3'
+                fontWeight='600'
+                fontSize='15px'
+                lineHeight='34.5px'
               >
-              {eventLink.name}
-            </Box>
-          </Link>
-        ))}
+                {eventLink.name}
+              </Box>
+            </Link>
+          ))}
         </SimpleGrid>
       </Box>
       <Box m='4'>
         <PanelHeader
-        fontSize={{base:'sm',md:'auto'}}
+          fontSize={{ base: 'sm', md: 'auto' }}
           mx={[0, spacing[1]]}
           header='MY DONATIONS'
           mb={8}
-
           rightAction={
             <Link href='#' color='#00B0F3'>
               <Text color='white'>See all</Text>
@@ -121,7 +118,7 @@ const Donations = () => {
           }
         />
         <Grid
-          templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
+          templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
@@ -134,14 +131,7 @@ const Donations = () => {
                 src='https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
               />
               <Box p='2' fontFamily='Open Sans' bgColor='#fff'>
-
-                <Text
-                  fontWeight='600'
-                  fontSize='16'
-                  color='#201E1F'
-                  mt='2'
-                  mb='2'
-                >
+                <Text fontWeight='600' fontSize='16' color='#201E1F' mt='2' mb='2'>
                   Help my life abeg
                 </Text>
                 <Text
@@ -152,13 +142,17 @@ const Donations = () => {
                   mt='2'
                   mb='2'
                 >
-                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim convallis dolor interdum.
+                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim
+                  convallis dolor interdum.
                 </Text>
                 <Flex alignItems={'center'} justifyContent={'space-between'}>
-                  <Text fontWeight={'bold'} fontSize={'sm'}>$14,334 Donated </Text>
-                
-                    <Button onClick={()=>navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>View Details</Button>
-                  
+                  <Text fontWeight={'bold'} fontSize={'sm'}>
+                    $14,334 Donated{' '}
+                  </Text>
+
+                  <Button onClick={() => navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>
+                    View Details
+                  </Button>
                 </Flex>
               </Box>
             </GridItem>
@@ -177,7 +171,7 @@ const Donations = () => {
           }
         />
         <Grid
-          templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
+          templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
@@ -190,14 +184,7 @@ const Donations = () => {
                 src='https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
               />
               <Box p='2' fontFamily='Open Sans' bgColor='#fff'>
-
-                <Text
-                  fontWeight='600'
-                  fontSize='16'
-                  color='#201E1F'
-                  mt='2'
-                  mb='2'
-                >
+                <Text fontWeight='600' fontSize='16' color='#201E1F' mt='2' mb='2'>
                   Help my life abeg
                 </Text>
                 <Text
@@ -208,11 +195,16 @@ const Donations = () => {
                   mt='2'
                   mb='2'
                 >
-                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim convallis dolor interdum.
+                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim
+                  convallis dolor interdum.
                 </Text>
                 <Flex alignItems={'center'} justifyContent={'space-between'}>
-                  <Text fontWeight={'bold'} fontSize={'sm'}>$14,334 Donated </Text>
-                  <Button onClick={()=>navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>View Details</Button>
+                  <Text fontWeight={'bold'} fontSize={'sm'}>
+                    $14,334 Donated{' '}
+                  </Text>
+                  <Button onClick={() => navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>
+                    View Details
+                  </Button>
                 </Flex>
               </Box>
             </GridItem>
@@ -231,7 +223,7 @@ const Donations = () => {
           }
         />
         <Grid
-         templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
+          templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
           columnGap={[4, 7]}
           rowGap={[3, '30px']}
           mx={[0, spacing[1]]}
@@ -244,14 +236,7 @@ const Donations = () => {
                 src='https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
               />
               <Box p='2' fontFamily='Open Sans' bgColor='#fff'>
-
-                <Text
-                  fontWeight='600'
-                  fontSize='16'
-                  color='#201E1F'
-                  mt='2'
-                  mb='2'
-                >
+                <Text fontWeight='600' fontSize='16' color='#201E1F' mt='2' mb='2'>
                   Help my life abeg
                 </Text>
                 <Text
@@ -262,11 +247,16 @@ const Donations = () => {
                   mt='2'
                   mb='2'
                 >
-                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim convallis dolor interdum.
+                  Lorem ipsum dolor sit amet consectetur. Elementum bibendum suspendisse enim
+                  convallis dolor interdum.
                 </Text>
                 <Flex alignItems={'center'} justifyContent={'space-between'}>
-                  <Text fontWeight={'bold'} fontSize={'sm'}>$14,334 Donated </Text>
-                  <Button onClick={()=>navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>View Details</Button>
+                  <Text fontWeight={'bold'} fontSize={'sm'}>
+                    $14,334 Donated{' '}
+                  </Text>
+                  <Button onClick={() => navigate('/donation-details')} bg='rgba(0, 176, 243, 1)'>
+                    View Details
+                  </Button>
                 </Flex>
               </Box>
             </GridItem>

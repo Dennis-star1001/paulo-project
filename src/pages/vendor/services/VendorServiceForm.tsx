@@ -15,7 +15,7 @@ export const VendorServiceForm = () => {
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
 
-  const router=useNavigate()
+  const router = useNavigate();
 
   const [vendorService] = useAddVendorServiceMutation();
   const { data: response } = useGetVendorServiceCategoriesQuery();
@@ -46,7 +46,7 @@ export const VendorServiceForm = () => {
 
         const response = await vendorService(formData).unwrap();
         handleSuccess('Success', response.message || 'Service created');
-        router(path.VENDOR_SERVICES)
+        router(path.VENDOR_SERVICES);
       } catch (err) {
         handleError(err);
       }

@@ -54,7 +54,7 @@ const EventDetails = () => {
           >
             Available Tickets: 05
           </Text>
-          <Box display='flex' borderBottom='#ADA8AB 1px solid' mt={2} alignItems='center' >
+          <Box display='flex' borderBottom='#ADA8AB 1px solid' mt={2} alignItems='center'>
             <Box display='flex' alignItems='center' py={2}>
               <Box
                 h='43px'
@@ -142,7 +142,7 @@ const EventDetails = () => {
           >
             Event Host
           </Text>
-          <Flex  display='flex' alignItems='center' gap={4}>
+          <Flex display='flex' alignItems='center' gap={4}>
             <Box>
               <CgProfile fontSize='24px' />
             </Box>

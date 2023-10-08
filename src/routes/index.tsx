@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
   {
     path: path.SERVICES_DETAIL,
     element: <AuthGuard />,
-    children:[
+    children: [
       {
         path: path.SERVICES_DETAIL,
         element: <ServiceDetailPage />
