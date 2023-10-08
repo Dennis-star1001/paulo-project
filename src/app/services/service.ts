@@ -2,7 +2,7 @@ import { api } from '../api';
 import { ENDPOINTS as e } from '../endpoints';
 import type { DefaultResponse } from './@types';
 
-type Service = {
+export type Service = {
   id: number;
   user_id: string;
   title: string;
@@ -43,6 +43,12 @@ export const serviceApi = api.injectEndpoints({
         method: 'GET'
       })
     }),
+    getVendorServiceDetails: build.query<ServiceResponse, { id: string }>({
+      query: ({ id }) => ({
+        url: `${e.vendorService}/${id}`,
+        method: 'GET'
+      })
+    }),
     getVendorServiceCategories: build.query<VendorServiceCategoryResponse, void>({
       query: () => ({
         url: e.vendorServiceCategory,
@@ -69,5 +75,6 @@ export const {
   useGetServicesQuery,
   useGetVendorServiceCategoriesQuery,
   useGetVendorServicesQuery,
-  useGetServiceDetailsQuery
+  useGetServiceDetailsQuery,
+  useGetVendorServiceDetailsQuery
 } = serviceApi;

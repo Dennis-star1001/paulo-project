@@ -20,6 +20,7 @@ import VendorEvents from '@/pages/vendor/event/Events';
 import { VendorServiceForm, VendorServicePage } from '@/pages/vendor/services';
 import { createBrowserRouter } from 'react-router-dom';
 import { path } from './path';
+import { VendorServiceDetailPage } from '@/pages/vendor/services/VendorServiceDetail';
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +112,16 @@ export const router = createBrowserRouter([
       {
         path: path.VENDOR_SERVICES,
         element: <VendorServicePage />
+      }
+    ]
+  },
+  {
+    path: path.VENDOR_SERVICE_DETAIL,
+    element: <AuthGuard />,
+    children: [
+      {
+        path: path.VENDOR_SERVICE_DETAIL,
+        element: <VendorServiceDetailPage />
       }
     ]
   },

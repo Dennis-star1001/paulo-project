@@ -18,5 +18,6 @@ export const path = {
   VENDOR_SERVICE_CREATE: '/vendor/services/create',
   VENDOR_EVENTS: '/vendor/events',
   VENDOR_DONATION: '/vendor/donations',
-  VENDOR_DASHBOARD: '/vendor/dashboard'
+  VENDOR_DASHBOARD: '/vendor/dashboard',
+  VENDOR_SERVICE_DETAIL: '/vendor/services/:id'
 };
