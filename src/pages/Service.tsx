@@ -123,7 +123,7 @@ export const ServicePage = () => {
                     <Stack spacing={0}>
                       <Link
                         color='black'
-                        href={path.SERVICES_DETAIL.replace(':id', '1')}
+                        href={path.SERVICES_DETAIL.replace(':id', service.id.toString())}
                         textStyle='h1-subtext'
                       >
                         {service?.title}
@@ -311,10 +311,10 @@ export const ServiceDetailPage = () => {
                           <Stack spacing={0}>
                             <Link
                               color='black'
-                              href={path.SERVICES_DETAIL.replace(':id', '1')}
+                              href={path.SERVICES_DETAIL.replace(':id', service.id.toString())}
                               textStyle='h1-subtext'
                             >
-                              {service?.title}
+                              {service?.title}i
                             </Link>
                             <Text color='primary' textStyle='subtext'>
                               Available Slots: 7slots

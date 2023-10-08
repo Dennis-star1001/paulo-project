@@ -2,7 +2,7 @@ import { api } from '../api';
 import { ENDPOINTS as e } from '../endpoints';
 import type { DefaultResponse } from './@types';
 
-type Service = {
+export type Service = {
   id: number;
   user_id: string;
   title: string;
@@ -27,6 +27,11 @@ type VendorServiceCategory = {
 type VendorServiceCategoryResponse = DefaultResponse & {
   data: VendorServiceCategory[];
 };
+interface EditServiceResponse {
+  status: boolean;
+  message: string;
+  data: { service: Service };
+}
 
 export const serviceApi = api.injectEndpoints({
   endpoints: (build) => ({
@@ -41,6 +46,19 @@ export const serviceApi = api.injectEndpoints({
       query: () => ({
         url: `${e.vendorService}/all`,
         method: 'GET'
+      })
+    }),
+    getVendorServiceDetails: build.query<ServiceResponse, { id: string }>({
+      query: ({ id }) => ({
+        url: `${e.vendorService}/${id}`,
+        method: 'GET'
+      })
+    }),
+    editVendorService: build.mutation<EditServiceResponse, { id: string; data: FormData }>({
+      query: ({ id, data }) => ({
+        url: `${e.vendorService}/${id}/edit`,
+        method: 'POST',
+        body: data
       })
     }),
     getVendorServiceCategories: build.query<VendorServiceCategoryResponse, void>({
@@ -69,5 +87,7 @@ export const {
   useGetServicesQuery,
   useGetVendorServiceCategoriesQuery,
   useGetVendorServicesQuery,
-  useGetServiceDetailsQuery
+  useGetServiceDetailsQuery,
+  useGetVendorServiceDetailsQuery,
+  useEditVendorServiceMutation
 } = serviceApi;
