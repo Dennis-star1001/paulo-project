@@ -182,7 +182,7 @@ const DesktopView = () => {
         <Table variant='simple' width='100%'>
           <Thead background='#4E4D4D1A' borderRadius='10px'>
             <Tr>
-              <Th>Client's Name</Th>
+              <Th>Client&apos;s Name</Th>
               <Th>Service</Th>
               <Th>Order Date</Th>
               <Th>Payment</Th>

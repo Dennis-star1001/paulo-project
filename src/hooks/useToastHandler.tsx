@@ -1,4 +1,4 @@
-import { UseToastOptions, useToast } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface ErrorData {

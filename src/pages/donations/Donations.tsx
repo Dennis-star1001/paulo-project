@@ -1,23 +1,22 @@
-import { CgSortAz } from 'react-icons/cg';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { PanelHeader } from '@/components/panel';
-import { CiLocationOn } from 'react-icons/ci';
 import {
   Box,
-  Text,
   Button,
-  IconButton,
-  Input,
   Center,
-  Link,
-  Grid,
   Flex,
-  Image,
+  Grid,
   GridItem,
+  IconButton,
+  Image,
+  Input,
   InputGroup,
   InputLeftElement,
-  SimpleGrid
+  Link,
+  SimpleGrid,
+  Text
 } from '@chakra-ui/react';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { CgSortAz } from 'react-icons/cg';
 import { useNavigate } from 'react-router';
 
 interface EventLink {

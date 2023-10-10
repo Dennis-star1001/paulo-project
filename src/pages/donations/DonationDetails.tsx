@@ -1,41 +1,35 @@
-import { CgSortAz } from 'react-icons/cg';
-import { AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
 import { PanelHeader } from '@/components/panel';
-import { CiLocationOn } from 'react-icons/ci';
 import {
   Box,
-  Text,
   Button,
-  IconButton,
-  Input,
   Center,
-  Link,
-  Grid,
+  Divider,
   Flex,
-  Image,
+  Grid,
   GridItem,
-  InputGroup,
-  InputLeftElement,
+  Image,
+  Link,
   SimpleGrid,
-  Divider
+  Text
 } from '@chakra-ui/react';
-import Bannar from '../../assets/dummy-banner.png';
+import { AiOutlineHeart } from 'react-icons/ai';
 import { BsShareFill } from 'react-icons/bs';
+import Bannar from '../../assets/dummy-banner.png';
 import MakeDonation from './MakeDonation';
 import ViewDonors from './ViewDonors';
-interface EventLink {
-  link: string;
-  name: string;
-}
+// interface EventLink {
+//   link: string;
+//   name: string;
+// }
 
-const eventLinks: EventLink[] = [
-  { name: 'Disaster ', link: '/Online_Events' },
-  { name: 'Missionary ', link: '/free_events' },
-  { name: 'Children', link: '/paid_events' },
-  { name: 'Business ', link: '/upcoming_events' },
-  { name: 'Emergency', link: '/events_near' },
-  { name: 'Others', link: '/training' }
-];
+// const eventLinks: EventLink[] = [
+//   { name: 'Disaster ', link: '/Online_Events' },
+//   { name: 'Missionary ', link: '/free_events' },
+//   { name: 'Children', link: '/paid_events' },
+//   { name: 'Business ', link: '/upcoming_events' },
+//   { name: 'Emergency', link: '/events_near' },
+//   { name: 'Others', link: '/training' }
+// ];
 
 const padding = [2, '50px'];
 const spacing = [4, 5];

@@ -3,25 +3,19 @@ import {
   AvatarGroup,
   Box,
   Button,
-  Checkbox,
   Divider,
   Flex,
-  FormControl,
-  FormLabel,
-  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Text,
   useDisclosure
 } from '@chakra-ui/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
-function ViewDonors() {
+const ViewDonors = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = React.useRef(null);
@@ -121,5 +115,5 @@ function ViewDonors() {
       </Modal>
     </>
   );
-}
+};
 export default ViewDonors;

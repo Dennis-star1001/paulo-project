@@ -126,7 +126,7 @@ import {
   Link,
   Textarea
 } from '@chakra-ui/react';
-import FileDropzone from './fileDrop';
+// import FileDropzone from './fileDrop';
 import DashboardHeader from '../dashboard/Header/DashboardHeader';
 import plus from '../../../assets/plus.svg';
 
@@ -143,12 +143,12 @@ const CreateEvent = () => {
     venue: '',
     dateTime: ''
   });
-  const [laterEventData, setLaterEventData] = React.useState({
-    eventName: '',
-    eventDescription: '',
-    venue: '',
-    dateTime: ''
-  });
+  // const [laterEventData, setLaterEventData] = React.useState({
+  //   eventName: '',
+  //   eventDescription: '',
+  //   venue: '',
+  //   dateTime: ''
+  // });
 
   const handleEventLocationChange = (value: string) => {
     setEventLocation(value);
@@ -179,9 +179,7 @@ const CreateEvent = () => {
           Create Events
         </Text>
         <Flex flexDirection={['column', 'column', 'row']} alignItems='center'>
-          <Box>
-            <FileDropzone />
-          </Box>
+          <Box>{/* <FileDropzone /> */}</Box>
           <Box ml={4} flex={1}>
             <Box ml={4}>
               <Box mt={4}>

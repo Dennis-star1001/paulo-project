@@ -6,8 +6,6 @@ import {
   Checkbox,
   Divider,
   Flex,
-  FormControl,
-  FormLabel,
   Input,
   Modal,
   ModalBody,
@@ -16,13 +14,12 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,
-  useDisclosure
+  Text
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import OTPInput from 'react-otp-input';
-function MakeDonation() {
+const MakeDonation = () => {
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const [otp, setOtp] = useState('');
@@ -193,5 +190,5 @@ function MakeDonation() {
       </Modal>
     </>
   );
-}
+};
 export default MakeDonation;

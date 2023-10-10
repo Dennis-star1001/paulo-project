@@ -1,36 +1,33 @@
-import '/node_modules/flag-icons/css/flag-icons.min.css';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { BsShop } from 'react-icons/bs';
-import { SlPeople } from 'react-icons/sl';
-import { BsChevronDown } from 'react-icons/bs';
+import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { BiChat } from 'react-icons/bi';
-import { BsBell } from 'react-icons/bs';
+import { BsBell, BsChevronDown, BsShop } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
-import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import dashboardlogo from '../../../../assets/dashboardlogo.svg';
+import { SlPeople } from 'react-icons/sl';
 import addCircle from '../../../../assets/add-circle.svg';
+import dashboardlogo from '../../../../assets/dashboardlogo.svg';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 
 import UserProfile from '../Userprofile';
 
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
+import { logoutAction, selectUser, userRole } from '@/app/slice/authSlice';
+import { path } from '@/routes/path';
 import {
-  Box,
-  Link,
-  Text,
-  Flex,
-  Image,
-  Button,
-  chakra,
-  Spacer,
-  IconButton,
-  useDisclosure,
   Avatar,
+  Box,
+  Button,
+  Flex,
+  IconButton,
+  Image,
+  Link,
+  Spacer,
+  Text,
+  chakra,
+  useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react';
-import { useNavigate } from 'react-router';
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { path } from '@/routes/path';
-import { logoutAction, selectUser, userRole } from '@/app/slice/authSlice';
 
 interface NavLink {
   link: string;
@@ -167,9 +164,6 @@ const DesktopView = () => {
 
 const MobileView = () => {
   const { isOpen, onToggle } = useDisclosure();
-  const navigate = useNavigate();
-
-  const dispatch = useAppDispatch();
 
   return (
     <>

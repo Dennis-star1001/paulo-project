@@ -62,7 +62,7 @@ const tabsData: TabData[] = [
   }
 ];
 
-function dashboardEvent() {
+const DashboardEvent = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('Service');
 
@@ -166,6 +166,6 @@ function dashboardEvent() {
       </Tabs>
     </Box>
   );
-}
+};
 
-export default dashboardEvent;
+export default DashboardEvent;

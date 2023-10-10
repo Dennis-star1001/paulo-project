@@ -7,14 +7,6 @@ interface Stat {
   value: string;
 }
 
-interface EventDetail {
-  location: string;
-  time: string;
-  price: string;
-  category: string;
-  moreLink: string;
-}
-
 interface Event {
   image: string;
   status: string;
