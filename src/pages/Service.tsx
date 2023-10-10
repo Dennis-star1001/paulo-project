@@ -2,7 +2,7 @@
 // import { mockApi } from './mockApi';
 import { useGetServiceDetailsQuery, useGetServicesQuery } from '@/app/services/service';
 import Banner from '@/assets/dummy-banner.png';
-import { FormInput, IconButton, Rating } from '@/components';
+import { FormInput, IconButton, PageLayout, Rating } from '@/components';
 import { PanelHeader } from '@/components/panel';
 import { path } from '@/routes/path';
 import {
@@ -37,28 +37,25 @@ export const ServicePage = () => {
   const services = response?.data || [];
 
   return (
-    <Box bg='neutral.100' pb={4} pt='100px'>
+    <PageLayout bg='neutral.100'>
       <Flex px={[spacing[0], '300px']} sx={{ svg: { fontSize: '20px' } }}>
         <IconButton display={['none', 'block']} icon={<RiFilter3Line />} />
         <FormInput bgColor='#fff' />
         <IconButton icon={<RiSearch2Line />}>Search</IconButton>
       </Flex>
 
-      <PanelHeader mx={spacing} header='Highlights' mt={['30px', '90px']} />
+      <PanelHeader header='Highlights' mt={['30px', '90px']} />
 
-      <Box mx={[0, spacing[1]]}>
-        <Center h='fit-content' w='full' bg='gradient.100' mt={['30px', '42px']}>
-          <Carousel>
-            <Image src={avatar} h='304px' w='full' />
+      <Center h='fit-content' w='full' bg='gradient.100' mt={['30px', '42px']}>
+        <Carousel>
+          <Image src={avatar} h='304px' w='full' />
 
-            <Image src={avatar} h='304px' w='full' />
-          </Carousel>
-        </Center>
-      </Box>
+          <Image src={avatar} h='304px' w='full' />
+        </Carousel>
+      </Center>
 
       <PanelHeader
         mt={['46px', '80px']}
-        mx={spacing}
         header={
           <Text as='h1' textTransform='uppercase' textStyle='h1'>
             Trending Services
@@ -73,7 +70,7 @@ export const ServicePage = () => {
         p={0}
       />
 
-      <Flex gap={4} mt={10} mx={spacing} overflowX='auto'>
+      <Flex gap={4} mt={10} overflowX='auto'>
         {Array.from({ length: 5 }, (_, i) => (
           <Box bgColor='#fff' p={4} w='fit-content' key={i}>
             <Image
@@ -89,7 +86,6 @@ export const ServicePage = () => {
       </Flex>
 
       <PanelHeader
-        mx={spacing}
         header='Services'
         mb={8}
         mt='90px'
@@ -103,7 +99,6 @@ export const ServicePage = () => {
         templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
         columnGap={[4, 7]}
         rowGap={[3, '30px']}
-        mx={spacing}
       >
         {services?.length > 0 ? (
           services.map((service) => (
@@ -156,7 +151,7 @@ export const ServicePage = () => {
           <Button w='600px'>Load More</Button>
         </Flex>
       )}
-    </Box>
+    </PageLayout>
   );
 };
 
@@ -171,8 +166,8 @@ export const ServiceDetailPage = () => {
 
   return (
     <>
-      <Box mt='98px' bg='neutral.100'>
-        <Box mx={[4, 20]}>
+      <PageLayout bg='neutral.100'>
+        <Box>
           <Flex justifyContent='center'>
             <Image src={Banner} />
           </Flex>
@@ -341,7 +336,7 @@ export const ServiceDetailPage = () => {
             </Grid>
           </Box>
         </Box>
-      </Box>
+      </PageLayout>
     </>
   );
 };

@@ -83,7 +83,7 @@ export const router = createBrowserRouter([
   },
   {
     path: path.SOCIAL,
-    element: <DashboardLayout />,
+    element: <AuthGuard />,
     children: [
       {
         path: path.SOCIAL,

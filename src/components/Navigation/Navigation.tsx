@@ -30,7 +30,7 @@ const NavigationLinks: NavLinks[] = [
 
 const Navigation = () => {
   return (
-    <Box bg='#E9634B' fontFamily='Lato' color='#FFFFFF' h='150px' mt='6'>
+    <Box bg='#E9634B' fontFamily='Lato' color='#FFFFFF' h='150px'>
       <Flex w='100%' h='55px' gap='18px' py='8' px='4' justifyContent='center'>
         <Box w='48px' h='48px' mt='-1'>
           <CgSortAz fontSize='40' />

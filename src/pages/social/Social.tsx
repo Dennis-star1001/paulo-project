@@ -48,7 +48,7 @@ const socials = [
 
 export const SocialPage = () => {
   return (
-    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap={[0, '36px']}>
+    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap={[0, '36px']} mt={3}>
       <GridItem colSpan={[12, 7]}>
         <Flex justifyContent='space-between' mb={6}>
           <Text as='h1' fontWeight={600} textStyle={['h1-subtext', 'h1']}>
