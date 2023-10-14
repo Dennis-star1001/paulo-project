@@ -20,5 +20,16 @@ export const path = {
   VENDOR_DONATION: '/vendor/donations',
   VENDOR_DASHBOARD: '/vendor/dashboard',
   VENDOR_SERVICE_DETAIL: '/vendor/services/:id',
-  VENDOR_SERVICE_EDIT: '/vendor/services/:id/edit'
+  VENDOR_SERVICE_EDIT: '/vendor/services/:id/edit',
+
+  ARTIST:"/vendor/artist",
+  ARTIST_ADD_SONG:"/vendor/artist-add-song",
+  ARTIST_DASHBOARD:"/vendor/artist-dashboard",
+  ARTIST_WALLET:"/vendor/artist-wallet",
+  ARTIST_SAVED:"/vendor/artist-saved",
+  ARTIST_BOOKING:"/vendor/artist-booking",
+  ARTIST_ANALYTICS:"/vendor/artist-analytics",
+  ARTIST_CREATE_ACCOUNT:"/vendor/artist-create-account",
+  ARTIST_EDIT_PROFILE:"/vendor/artist-edit-profile",
+
 };

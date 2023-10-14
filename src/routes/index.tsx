@@ -20,6 +20,20 @@ import VendorEvents from '@/pages/vendor/event/Events';
 import { VendorServiceForm, VendorServicePage } from '@/pages/vendor/services';
 import { createBrowserRouter } from 'react-router-dom';
 import { path } from './path';
+
+import Artist from "@/pages/vendor/artist/Artist"
+import ArtistAddSong from "@/pages/vendor/artist/ArtistAddSong"
+import ArtistDashboard from "@/pages/vendor/artist/ArtistDashboard"
+import ArtistWallet from "@/pages/vendor/artist/ArtistWallet"
+import ArtistSaved from "@/pages/vendor/artist/ArtistSaved"
+import ArtistBooking from "@/pages/vendor/artist/ArtistBooking"
+import ArtistAnalytics from "@/pages/vendor/artist/ArtistAnalytics"
+import ArtistCreateAccount from "@/pages/vendor/artist/ArtistCreateAccount"
+import ArtistEditProfile from "@/pages/vendor/artist/ArtistEditProfile"
+
+
+
+
 import { VendorServiceDetailPage } from '@/pages/vendor/services/VendorServiceDetail';
 
 export const router = createBrowserRouter([
@@ -40,6 +54,43 @@ export const router = createBrowserRouter([
   {
     path: path.DONATIONS,
     element: <Donations />
+  },
+  {
+    path: path.ARTIST,
+    element: <Artist/>
+  },
+  {
+    path: path.ARTIST_ADD_SONG,
+    element: <ArtistAddSong/>
+  },
+  {
+    path: path.ARTIST_DASHBOARD,
+    element: <ArtistDashboard/>
+  },
+  {
+    path: path.ARTIST_WALLET,
+    element: <ArtistWallet/>
+  },
+  {
+    path: path.ARTIST_SAVED,
+    element: <ArtistSaved/>
+  },
+  ,
+  {
+    path: path.ARTIST_BOOKING,
+    element: <ArtistBooking/>
+  },
+  {
+    path: path.ARTIST_ANALYTICS,
+    element: <ArtistAnalytics/>
+  },
+  {
+    path: path.ARTIST_CREATE_ACCOUNT,
+    element: <ArtistCreateAccount/>
+  },
+  {
+    path: path.ARTIST_EDIT_PROFILE,
+    element: <ArtistEditProfile/>
   },
   {
     path: path.DONATION_DETAILS,
@@ -83,7 +134,7 @@ export const router = createBrowserRouter([
   },
   {
     path: path.SOCIAL,
-    element: <AuthGuard />,
+    element: <DashboardLayout />,
     children: [
       {
         path: path.SOCIAL,
