@@ -9,7 +9,6 @@ import {
   Avatar,
   Heading,
   HStack,
-  VStack,
   Button,
   Badge,
   Grid,

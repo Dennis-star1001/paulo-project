@@ -1,9 +1,9 @@
 import AfterLoginHeader from '../../../components/Header/AfterLoginHeader';
-import { FormInput, FormLeftAddonInput, FormSelect, FormTextArea } from '@/components';
+import { FormInput } from '@/components';
 import { Box, Button, Grid, GridItem, Stack, Text, Container } from '@chakra-ui/react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { AvatarUploader } from '@/components/upload';
-import { ArtistAddSongFormValues, ArtistAddSongSchema } from './schema';
+import { ArtistAddSongFormValues } from './schema';
 
 const ArtistAddSong = () => {
   const formik = useFormik<ArtistAddSongFormValues>({
@@ -12,6 +12,9 @@ const ArtistAddSong = () => {
       songTitle: '',
       songFeature: '',
       songCover: []
+    },
+    onSubmit:async() => {
+
     }
   });
 

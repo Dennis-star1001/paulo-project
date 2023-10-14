@@ -72,7 +72,6 @@ export const router = createBrowserRouter([
     path: path.ARTIST_SAVED,
     element: <ArtistSaved />
   },
-  ,
   {
     path: path.ARTIST_BOOKING,
     element: <ArtistBooking />

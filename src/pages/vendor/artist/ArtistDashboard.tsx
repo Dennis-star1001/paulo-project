@@ -4,7 +4,6 @@ import {
   Text,
   Flex,
   Box,
-  Image,
   Stack,
   HStack,
   VStack,
@@ -29,7 +28,7 @@ const ArtistDashboard = () => {
 
       <Box bg='neutral.100' p={[4, '100px']}>
         <Container maxW='1000px' p='0'>
-          <Flex justifyContent='space-between' my='20px' alignItems='center' wrap='flex-wrap'>
+          <Flex justifyContent='space-between' my='20px' alignItems='center'>
             <Box>
               <Text as='h3'>
                 Wallet Balance:{' '}

@@ -9,9 +9,7 @@ import {
   Stack,
   Avatar,
   Heading,
-  Button,
-  Link,
-  Badge
+  Button
 } from '@chakra-ui/react';
 
 import { SearchIcon, CalendarIcon } from '@chakra-ui/icons';

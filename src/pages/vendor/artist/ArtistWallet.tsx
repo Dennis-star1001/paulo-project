@@ -7,15 +7,12 @@ import {
   HStack,
   VStack,
   Stack,
-  Heading,
   Button,
   Tabs,
   TabList,
   TabPanels,
   Tab,
   TabPanel,
-  Link,
-  Badge
 } from '@chakra-ui/react';
 
 import { ArrowUpIcon, ArrowDownIcon } from '@chakra-ui/icons';

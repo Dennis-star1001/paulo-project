@@ -2,32 +2,18 @@ import BeforeLoginHeader from '../../../components/Header/BeforeLoginHeader';
 import {
   Container,
   Text,
-  Flex,
   Box,
-  Image,
-  Stack,
-  Avatar,
   Heading,
   HStack,
-  VStack,
   Button,
-  Badge,
-  Grid,
-  GridItem,
-  Progress,
   Checkbox,
-  CheckboxGroup
 } from '@chakra-ui/react';
-import { AvatarUploader } from '@/components/upload';
 import {
   FormInput,
-  FormLeftAddonInput,
-  FormSelect,
-  FormTextArea,
-  FormCheckBox
+  FormSelect
 } from '@/components';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { ArtistCreateFormValues, ArtistCreateSchema } from './schema';
+import { ArtistCreateFormValues} from './schema';
 
 const ArtistCreateAccount = () => {
   const formik = useFormik<ArtistCreateFormValues>({
@@ -36,7 +22,7 @@ const ArtistCreateAccount = () => {
       stageName: '',
       emailAddress: '',
       artistGenre: '',
-      phoneNumber: '',
+      phoneNumber: 0,
       password: '',
       confirmPassword: '',
       address: '',
@@ -47,10 +33,13 @@ const ArtistCreateAccount = () => {
       dateOfBirth: '',
       gender: '',
       referralCode: ''
+    },
+    onSubmit:async() => {
+
     }
   });
 
-  const { values, errors, touched, handleChange, isSubmitting, setFieldValue } = formik;
+  const { values, errors, touched, handleChange, isSubmitting } = formik;
 
   return (
     <>
@@ -62,7 +51,7 @@ const ArtistCreateAccount = () => {
             CREATE AND ARTIST ACCOUNT
           </Heading>
           <FormikProvider value={formik}>
-            <Form spacing='20px'>
+            <Form>
               <FormInput
                 py='25px'
                 id='fullName'
@@ -164,6 +153,7 @@ const ArtistCreateAccount = () => {
               <HStack mb='25px'>
                 <FormSelect
                   id='country'
+                  label=""
                   name='country'
                   placeholder='Country'
                   options={[]}
@@ -188,6 +178,7 @@ const ArtistCreateAccount = () => {
               <HStack mb='25px'>
                 <FormSelect
                   id='city'
+                  label=""
                   name='city'
                   placeholder='City'
                   options={[]}
@@ -254,7 +245,7 @@ const ArtistCreateAccount = () => {
               </Text>
 
               <Box display='flex' justifyContent='center'>
-                <Button my='20px' width='80%' py='15px' h='auto'>
+                <Button my='20px' width='80%' py='15px' h='auto' isLoading={isSubmitting}>
                   Sign Up
                 </Button>
               </Box>

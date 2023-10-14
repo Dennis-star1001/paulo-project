@@ -10,12 +10,6 @@ import {
   Avatar,
   Heading,
   Button,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  Link,
   Badge
 } from '@chakra-ui/react';
 

@@ -5,28 +5,17 @@ import {
   Flex,
   Box,
   Image,
-  Stack,
   Avatar,
-  Heading,
   HStack,
-  VStack,
   Button,
-  Badge,
-  Grid,
-  GridItem,
-  Progress
 } from '@chakra-ui/react';
 import Breezy from '../../../assets/Breezey.png';
-import { AvatarUploader } from '@/components/upload';
 import {
   FormInput,
-  FormLeftAddonInput,
   FormSelect,
-  FormTextArea,
-  FormCheckBox
 } from '@/components';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { ArtistCreateFormValues, ArtistCreateSchema } from './schema';
+import { ArtistCreateFormValues } from './schema';
 
 const ArtistEditProfile = () => {
   const formik = useFormik<ArtistCreateFormValues>({
@@ -35,7 +24,7 @@ const ArtistEditProfile = () => {
       stageName: '',
       emailAddress: '',
       artistGenre: '',
-      phoneNumber: '',
+      phoneNumber: 0,
       password: '',
       confirmPassword: '',
       address: '',
@@ -46,10 +35,13 @@ const ArtistEditProfile = () => {
       dateOfBirth: '',
       gender: '',
       referralCode: ''
+    },
+    onSubmit:async() => {
+
     }
   });
 
-  const { values, errors, touched, handleChange, isSubmitting, setFieldValue } = formik;
+  const { values, errors, touched, handleChange, isSubmitting } = formik;
 
   return (
     <>
@@ -80,7 +72,7 @@ const ArtistEditProfile = () => {
 
               <Box p={{ base: '20px', md: '0' }}>
                 <FormikProvider value={formik}>
-                  <Form spacing='20px'>
+                  <Form>
                     <FormInput
                       py='25px'
                       id='fullName'
@@ -181,6 +173,7 @@ const ArtistEditProfile = () => {
 
                     <HStack mb='25px'>
                       <FormSelect
+                        label=""
                         id='country'
                         name='country'
                         placeholder='Country'
@@ -205,6 +198,7 @@ const ArtistEditProfile = () => {
 
                     <HStack mb='25px'>
                       <FormSelect
+                        label=''
                         id='city'
                         name='city'
                         placeholder='City'
@@ -265,7 +259,7 @@ const ArtistEditProfile = () => {
                 />
 
                 <Box display='flex' justifyContent='center'>
-                  <Button my='20px' width='50%' py='15px' h='auto'>
+                  <Button my='20px' width='50%' py='15px' h='auto' isLoading={isSubmitting}>
                     Save Changes
                   </Button>
                 </Box>
