@@ -31,7 +31,7 @@ const FileDropzone = ({ onDrop }: FileDropzoneProps & { accept: Accept }) => {
   );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: handleDrop,
+    onDrop: handleDrop
     // accept: ['image/*']
   });
 

@@ -7,13 +7,14 @@ export type ArtistAddSongFormValues = {
   songCover: File[];
 };
 
-export const ArtistAddSongSchema = Yup.object<Record<keyof ArtistAddSongFormValues, Yup.AnySchema>>({
-  songGenre: Yup.string().required('Song Genre is required'),
-  songTitle: Yup.string().required('Song Title is required'),
-  songFeature: Yup.string().required('Song Feature is required'),
-  songCover: Yup.array().of(Yup.mixed()).length(1, 'Please upload a valid image')
-});
-
+export const ArtistAddSongSchema = Yup.object<Record<keyof ArtistAddSongFormValues, Yup.AnySchema>>(
+  {
+    songGenre: Yup.string().required('Song Genre is required'),
+    songTitle: Yup.string().required('Song Title is required'),
+    songFeature: Yup.string().required('Song Feature is required'),
+    songCover: Yup.array().of(Yup.mixed()).length(1, 'Please upload a valid image')
+  }
+);
 
 export type ArtistCreateFormValues = {
   fullName: string;
@@ -33,7 +34,6 @@ export type ArtistCreateFormValues = {
   referralCode: string;
 };
 
-
 export const ArtistCreateSchema = Yup.object<Record<keyof ArtistCreateFormValues, Yup.AnySchema>>({
   fullName: Yup.string().required('Full Name is required'),
   stageName: Yup.string().required('Stage Name is required'),
@@ -50,10 +50,4 @@ export const ArtistCreateSchema = Yup.object<Record<keyof ArtistCreateFormValues
   dateOfBirth: Yup.string().required('Date of Birth is required'),
   gender: Yup.string().required('Gender is required'),
   referralCode: Yup.string().required('Referral Code is required')
-
 });
-
-
-
-
-
