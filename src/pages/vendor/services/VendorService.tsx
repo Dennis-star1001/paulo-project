@@ -1,5 +1,5 @@
 import { useGetVendorServicesQuery } from '@/app/services/service';
-import { IconButton, PanelHeader } from '@/components';
+import { IconButton, PageLayout, PanelHeader } from '@/components';
 import { path } from '@/routes/path';
 import {
   Box,
@@ -22,7 +22,7 @@ export const VendorServicePage = () => {
   const services = response?.data || [];
 
   return (
-    <Box bg='neutral.100' p={[4, '100px']}>
+    <PageLayout bg='neutral.100'>
       <Flex
         flexDir={['column', 'row']}
         justifyContent='space-between'
@@ -125,6 +125,6 @@ export const VendorServicePage = () => {
           </Button>
         </Flex>
       )}
-    </Box>
+    </PageLayout>
   );
 };

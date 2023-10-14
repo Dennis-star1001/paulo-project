@@ -1,6 +1,6 @@
 import { useGetVendorServiceDetailsQuery, useGetVendorServicesQuery } from '@/app/services/service';
 import Banner from '@/assets/dummy-banner.png';
-import { PanelHeader, Rating } from '@/components';
+import { PageLayout, PanelHeader, Rating } from '@/components';
 import { path } from '@/routes/path';
 import {
   Box,
@@ -18,8 +18,6 @@ import {
 import { useNavigate, useParams } from 'react-router';
 import { Link as RRLink } from 'react-router-dom';
 
-const spacing = [4, 6];
-
 export const VendorServiceDetailPage = () => {
   const { id } = useParams() as { id: string };
 
@@ -33,8 +31,8 @@ export const VendorServiceDetailPage = () => {
 
   return (
     <>
-      <Box mt='98px' bg='neutral.100'>
-        <Box mx={[4, 20]}>
+      <PageLayout bg='neutral.100'>
+        <Box>
           <Flex justifyContent='center'>
             <Image src={Banner} />
           </Flex>
@@ -103,7 +101,6 @@ export const VendorServiceDetailPage = () => {
               ))}
             </Flex>
             <PanelHeader
-              mx={[0, spacing[1]]}
               header='Services'
               mb={8}
               mt='56px'
@@ -117,7 +114,6 @@ export const VendorServiceDetailPage = () => {
               templateColumns={['repeat(2, 1fr)', 'repeat(4, 1fr)']}
               columnGap={[4, 7]}
               rowGap={[3, '30px']}
-              mx={[0, spacing[1]]}
             >
               {services?.length > 0 ? (
                 services.map((service) => (
@@ -169,7 +165,7 @@ export const VendorServiceDetailPage = () => {
             </Grid>
           </Box>
         </Box>
-      </Box>
+      </PageLayout>
     </>
   );
 };

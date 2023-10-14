@@ -1,6 +1,4 @@
-import { useAppSelector } from '@/app/hooks';
 import { useLoginMutation } from '@/app/services/auth';
-import { isVendor } from '@/app/slice/authSlice';
 import { FormInput, PasswordInput } from '@/components';
 import { AuthButton, Modal } from '@/components/auth';
 import { useHandleError, useHandleSuccess } from '@/hooks';
@@ -25,8 +23,6 @@ export const LoginModal = ({
   const handleError = useHandleError();
   const handleSuccess = useHandleSuccess();
 
-  const userIsVendor = useAppSelector(isVendor);
-
   const formik = useFormik<LoginFormValues>({
     initialValues: {
       email: '',
@@ -41,7 +37,7 @@ export const LoginModal = ({
         if (status) {
           onClose();
 
-          userIsVendor ? (location.href = path.HOME) : (location.href = path.VENDOR_SERVICES);
+          location.href = path.HOME;
         }
       } catch (err) {
         handleError(err);

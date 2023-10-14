@@ -23,7 +23,7 @@ export const SocialDetailPage = () => {
   const [isFollowing, toggleFollow] = useState<boolean>(false);
 
   return (
-    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap='26px'>
+    <Grid templateColumns='repeat(12, 1fr)' rowGap='22px' columnGap='26px' mt={3}>
       <GridItem colSpan={[12, 7]}>
         <Flex alignItems='center' gap='18px'>
           <Image
