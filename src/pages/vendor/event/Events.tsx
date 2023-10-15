@@ -11,7 +11,9 @@ import {
   Image,
   GridItem,
   InputGroup,
-  InputLeftElement
+  InputLeftElement,
+  HStack,
+  VStack
 } from '@chakra-ui/react';
 import Breezy from '../../../assets/Breezey.png';
 import DashboardHeader from '../dashboard/Header/DashboardHeader';
@@ -25,45 +27,53 @@ const VendorEvents = () => {
       <DashboardHeader />
 
       <Box bg='#0D0D0D1A' px={padding}>
-        <Flex alignContent='flex-end' justifyContent={{ base: 'center', md: 'flex-end' }} gap={3}>
-          <Button mt={10}>Create Event</Button>
-          <Button mt={10}>Export to PDF</Button>
-        </Flex>
+        
         <Flex
-          display='flex'
-          flexDirection='column'
+          justifyContent="space-between"
+          alignItems={{base:"center", md:"flex-start"}}
           p='10'
+          gap="15px"
+          flexDirection={{base:"column-reverse", md:"row"}}
           px={spacing}
           sx={{ svg: { fontSize: '20px' } }}
         >
-          <Box>
-            <Text fontFamily='Lato' fontWeight='400' fontSize={{ base: '0', md: '26px' }}>
-              Events
-            </Text>
-          </Box>
-          <Box h='55px' display='flex' borderRadius='4px #0D0D0D1A '>
-            <InputGroup maxW='200px'>
-              <InputLeftElement pointerEvents='none'>
-                <AiOutlineSearch fontSize='20' />
-              </InputLeftElement>
-              <Input placeholder='Search for events' bg='#FFFFFF' />
-            </InputGroup>
-            <Box w='103px' h='58px'>
-              <Button borderRadius='5px'>
-                <AiOutlineSearch fontSize='20' />
-                <Text
-                  fontFamily='Open Sans'
-                  lineHeight='33.5px'
-                  fontSize='14px'
-                  fontWeight='400'
-                  alignItems='Center'
-                  ml='2'
-                >
-                  search
-                </Text>
-              </Button>
+
+          <VStack alignItems="flex-start"> 
+            <Box>
+              <Text fontFamily='Lato' fontWeight='400' fontSize={{ base: '0', md: '26px' }}>
+                Events
+              </Text>
             </Box>
-          </Box>
+            <Box h='55px' display='flex' borderRadius='4px #0D0D0D1A '>
+              <InputGroup maxW='200px'>
+                <InputLeftElement pointerEvents='none'>
+                  <AiOutlineSearch fontSize='20' />
+                </InputLeftElement>
+                <Input placeholder='Search for events' bg='#FFFFFF' />
+              </InputGroup>
+              <Box w='103px' h='58px'>
+                <Button borderRadius='5px'>
+                  <AiOutlineSearch fontSize='20' />
+                  <Text
+                    fontFamily='Open Sans'
+                    lineHeight='33.5px'
+                    fontSize='14px'
+                    fontWeight='400'
+                    alignItems='Center'
+                    ml='2'
+                  >
+                    search
+                  </Text>
+                </Button>
+              </Box>
+            </Box>
+          </VStack>
+
+          <HStack spacing={3}>
+          <Button>Create Event</Button>
+          <Button>Export to PDF</Button>
+        </HStack>
+
         </Flex>
 
         <Box m='2'>
@@ -171,7 +181,7 @@ const VendorEvents = () => {
           </Grid>
         </Box>
 
-        <Flex justifyContent='center' mx={['44px', 0]} my={[10, '66px']}>
+        <Flex justifyContent='center' mx={['44px', 0]} py={[10, '20px']}>
           <Button w='600px'>Load More</Button>
         </Flex>
       </Box>

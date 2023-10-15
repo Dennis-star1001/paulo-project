@@ -17,6 +17,9 @@ import { GossipPage } from '@/pages/gossip';
 import Dashboard from '@/pages/vendor/dashboard/Dashboard';
 import VendorDonationPage from '@/pages/vendor/dashboard/donation/Donation';
 import VendorEvents from '@/pages/vendor/event/Events';
+import VendorEventLive from '@/pages/vendor/event/Eventlive';
+import VendorEventDetails from '@/pages/vendor/event/Eventdetails';
+import VendorCreateEvent from '@/pages/vendor/event/CreateEvent';
 import { VendorServiceForm, VendorServicePage } from '@/pages/vendor/services';
 import { createBrowserRouter } from 'react-router-dom';
 import { path } from './path';
@@ -195,6 +198,18 @@ export const router = createBrowserRouter([
   {
     path: path.VENDOR_EVENTS,
     element: <VendorEvents />
+  },
+  {
+    path: path.VENDOR_EVENT_LIVE,
+    element: <VendorEventLive />
+  },
+  {
+    path: path.VENDOR_EVENT_DETAILS,
+    element: <VendorEventDetails />
+  },
+  {
+    path: path.VENDOR_CREATE_EVENT,
+    element: <VendorCreateEvent/>
   },
   {
     path: path.VENDOR_DONATION,
