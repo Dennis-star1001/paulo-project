@@ -13,9 +13,7 @@ const ArtistAddSong = () => {
       songFeature: '',
       songCover: []
     },
-    onSubmit:async() => {
-
-    }
+    onSubmit: async () => {}
   });
 
   const { values, errors, touched, handleChange, isSubmitting, setFieldValue } = formik;

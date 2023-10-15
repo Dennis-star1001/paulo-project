@@ -1,19 +1,8 @@
 import BeforeLoginHeader from '../../../components/Header/BeforeLoginHeader';
-import {
-  Container,
-  Text,
-  Box,
-  Heading,
-  HStack,
-  Button,
-  Checkbox,
-} from '@chakra-ui/react';
-import {
-  FormInput,
-  FormSelect
-} from '@/components';
+import { Container, Text, Box, Heading, HStack, Button, Checkbox } from '@chakra-ui/react';
+import { FormInput, FormSelect } from '@/components';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { ArtistCreateFormValues} from './schema';
+import { ArtistCreateFormValues } from './schema';
 
 const ArtistCreateAccount = () => {
   const formik = useFormik<ArtistCreateFormValues>({
@@ -34,9 +23,7 @@ const ArtistCreateAccount = () => {
       gender: '',
       referralCode: ''
     },
-    onSubmit:async() => {
-
-    }
+    onSubmit: async () => {}
   });
 
   const { values, errors, touched, handleChange, isSubmitting } = formik;
@@ -153,7 +140,7 @@ const ArtistCreateAccount = () => {
               <HStack mb='25px'>
                 <FormSelect
                   id='country'
-                  label=""
+                  label=''
                   name='country'
                   placeholder='Country'
                   options={[]}
@@ -178,7 +165,7 @@ const ArtistCreateAccount = () => {
               <HStack mb='25px'>
                 <FormSelect
                   id='city'
-                  label=""
+                  label=''
                   name='city'
                   placeholder='City'
                   options={[]}

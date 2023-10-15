@@ -97,10 +97,12 @@ const Artist = () => {
                       Platinum Subscription
                     </Text>
                     <HStack mt='10px'>
-                      <Button as="a" href="artist-edit-profile" variant='outline' size='md'>
+                      <Button as='a' href='artist-edit-profile' variant='outline' size='md'>
                         Edit Profile
                       </Button>
-                      <Button as="a" href="artist-add-song" size='md'>Add Sample Song</Button>
+                      <Button as='a' href='artist-add-song' size='md'>
+                        Add Sample Song
+                      </Button>
                     </HStack>
                   </Flex>
                 </Flex>

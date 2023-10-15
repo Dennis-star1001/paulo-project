@@ -110,7 +110,7 @@ const EventLive = () => {
         alignItems='center'
         justifyContent='space-between'
         mt={10}
-        paddingX="210px"
+        paddingX='210px'
         display={['none', 'none', 'flex']}
       >
         <Text
@@ -125,7 +125,6 @@ const EventLive = () => {
         <Button>Create Event</Button>
       </Flex>
       <Box p={[2, 4, '200px']}>
-
         <Box p={[2, 4, 5]} pt={[2, 4, '10']} mt={[-4, -4, '-200']}>
           <Image w='100%' h={['auto', 'auto', '448px']} borderRadius='5px' src={Breezy} />
         </Box>

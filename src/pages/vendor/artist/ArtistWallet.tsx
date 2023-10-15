@@ -12,7 +12,7 @@ import {
   TabList,
   TabPanels,
   Tab,
-  TabPanel,
+  TabPanel
 } from '@chakra-ui/react';
 
 import { ArrowUpIcon, ArrowDownIcon } from '@chakra-ui/icons';

@@ -209,7 +209,7 @@ export const router = createBrowserRouter([
   },
   {
     path: path.VENDOR_CREATE_EVENT,
-    element: <VendorCreateEvent/>
+    element: <VendorCreateEvent />
   },
   {
     path: path.VENDOR_DONATION,

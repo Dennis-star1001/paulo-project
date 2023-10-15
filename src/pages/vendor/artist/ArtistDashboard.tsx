@@ -38,7 +38,9 @@ const ArtistDashboard = () => {
               </Text>
             </Box>
             <Box>
-              <Button as="a" href="artist-add-song">Add Sample Song</Button>
+              <Button as='a' href='artist-add-song'>
+                Add Sample Song
+              </Button>
             </Box>
           </Flex>
 

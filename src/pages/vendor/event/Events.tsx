@@ -27,18 +27,16 @@ const VendorEvents = () => {
       <DashboardHeader />
 
       <Box bg='#0D0D0D1A' px={padding}>
-        
         <Flex
-          justifyContent="space-between"
-          alignItems={{base:"center", md:"flex-start"}}
+          justifyContent='space-between'
+          alignItems={{ base: 'center', md: 'flex-start' }}
           p='10'
-          gap="15px"
-          flexDirection={{base:"column-reverse", md:"row"}}
+          gap='15px'
+          flexDirection={{ base: 'column-reverse', md: 'row' }}
           px={spacing}
           sx={{ svg: { fontSize: '20px' } }}
         >
-
-          <VStack alignItems="flex-start"> 
+          <VStack alignItems='flex-start'>
             <Box>
               <Text fontFamily='Lato' fontWeight='400' fontSize={{ base: '0', md: '26px' }}>
                 Events
@@ -70,10 +68,9 @@ const VendorEvents = () => {
           </VStack>
 
           <HStack spacing={3}>
-          <Button>Create Event</Button>
-          <Button>Export to PDF</Button>
-        </HStack>
-
+            <Button>Create Event</Button>
+            <Button>Export to PDF</Button>
+          </HStack>
         </Flex>
 
         <Box m='2'>

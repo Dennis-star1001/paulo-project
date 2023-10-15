@@ -109,7 +109,7 @@ const EventDetails = () => {
         alignItems='center'
         justifyContent='space-between'
         mt={10}
-        paddingX="210px"
+        paddingX='210px'
         display={['none', 'none', 'flex']}
       >
         <Text

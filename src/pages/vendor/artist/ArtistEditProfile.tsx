@@ -1,19 +1,7 @@
 import AfterLoginHeader from '../../../components/Header/AfterLoginHeader';
-import {
-  Container,
-  Text,
-  Flex,
-  Box,
-  Image,
-  Avatar,
-  HStack,
-  Button,
-} from '@chakra-ui/react';
+import { Container, Text, Flex, Box, Image, Avatar, HStack, Button } from '@chakra-ui/react';
 import Breezy from '../../../assets/Breezey.png';
-import {
-  FormInput,
-  FormSelect,
-} from '@/components';
+import { FormInput, FormSelect } from '@/components';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { ArtistCreateFormValues } from './schema';
 
@@ -36,9 +24,7 @@ const ArtistEditProfile = () => {
       gender: '',
       referralCode: ''
     },
-    onSubmit:async() => {
-
-    }
+    onSubmit: async () => {}
   });
 
   const { values, errors, touched, handleChange, isSubmitting } = formik;
@@ -173,7 +159,7 @@ const ArtistEditProfile = () => {
 
                     <HStack mb='25px'>
                       <FormSelect
-                        label=""
+                        label=''
                         id='country'
                         name='country'
                         placeholder='Country'
