@@ -22,7 +22,13 @@ import {
   useDisclosure,
   useMediaQuery
 } from '@chakra-ui/react';
-import { ForgotPasswordModal, LoginModal, SignupModal } from '@/features/auth';
+import {
+  EmailVerificationModal,
+  ForgotPasswordModal,
+  LoginModal,
+  NewPasswordModal,
+  SignupModal
+} from '@/features/auth';
 
 interface NavLink {
   link: string;
@@ -64,6 +70,17 @@ const DesktopView = () => {
     onOpen: onOpenForgotPasswordModal,
     onClose: onCloseForgotPasswordModal
   } = useDisclosure();
+  const {
+    isOpen: isEmailVerificationModalOpen,
+    onOpen: onOpenEmailVerificationModal,
+    onClose: onCloseEmailVerificationModal
+  } = useDisclosure();
+
+  const {
+    isOpen: isPasswordModalOpen,
+    onOpen: onOpenPasswordModal,
+    onClose: onClosePasswordModal
+  } = useDisclosure();
 
   return (
     <>
@@ -89,10 +106,30 @@ const DesktopView = () => {
       />
       <ForgotPasswordModal
         isOpen={isForgotPasswordModalOpen}
-        onClose={onCloseForgotPasswordModal}
+        onClose={() => {
+          onCloseForgotPasswordModal();
+          onOpenEmailVerificationModal();
+        }}
         onLogin={() => {
           onCloseForgotPasswordModal();
           openLoginModal();
+        }}
+      />
+      <EmailVerificationModal
+        isOpen={isEmailVerificationModalOpen}
+        onClose={() => {
+          onCloseEmailVerificationModal();
+          onOpenPasswordModal();
+        }}
+        onLogin={() => {
+          onCloseForgotPasswordModal();
+          openLoginModal();
+        }}
+      />
+      <NewPasswordModal
+        isOpen={isPasswordModalOpen}
+        onClose={() => {
+          onClosePasswordModal();
         }}
       />
 
