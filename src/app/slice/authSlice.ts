@@ -8,6 +8,13 @@ export const removeUserInfo = () => {
   localStorage.removeItem('user');
 };
 
+type InitState = {
+  token: string;
+  user: User;
+  forgotEmail: string;
+  forgotEmailToken: string;
+};
+
 const initialState = {
   token: '',
   user: {
@@ -20,8 +27,10 @@ const initialState = {
     created_at: '',
     updated_at: '',
     roles: []
-  }
-} as { token: string; user: User };
+  },
+  forgotEmail: '',
+  forgotEmailToken: ''
+} as InitState;
 
 const slice = createSlice({
   name: 'auth',
@@ -30,6 +39,12 @@ const slice = createSlice({
     logout: () => {
       removeUserInfo();
       return initialState;
+    },
+    setForgotEmail: (state, { payload }) => {
+      state.forgotEmail = payload;
+    },
+    setForgotEmailToken: (state, { payload }) => {
+      state.forgotEmailToken = payload;
     }
   },
   extraReducers: (builder) => {
@@ -64,7 +79,7 @@ const slice = createSlice({
   }
 });
 
-export const { logout: logoutAction } = slice.actions;
+export const { logout: logoutAction, setForgotEmail, setForgotEmailToken } = slice.actions;
 export default slice.reducer;
 
 export const selectUser = (state: RootState) => state.auth?.user;
