@@ -107,3 +107,41 @@ export const LoginSchema = Yup.object<Record<keyof LoginFormValues, Yup.AnySchem
   email: Yup.string().email('Enter a valid email').required('Email is required'),
   password: Yup.string().required('Password is required')
 });
+
+export type ForgotPasswordFormValues = {
+  email: string;
+};
+
+export const ForgotPasswordSchema = Yup.object<
+  Record<keyof ForgotPasswordFormValues, Yup.AnySchema>
+>({
+  email: Yup.string().email('Enter a valid email').required('Email is required')
+});
+
+export type ResetPasswordFormValues = {
+  email: string;
+  password: string;
+  password_confirmation: string;
+  token?: string;
+};
+export const ResetPasswordSchema = Yup.object<Record<keyof ResetPasswordFormValues, Yup.AnySchema>>(
+  {
+    email: Yup.string().email('Enter a valid email').required('Email is required'),
+    password: Yup.string()
+      .min(8, 'Password must be at least 8 characters')
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})/,
+        'Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special case character'
+      )
+      .required('Password is required'),
+    password_confirmation: Yup.string()
+      .oneOf([Yup.ref('password')], 'Passwords must match')
+      .required('Passwords must match')
+  }
+);
+
+export type VerifyCodeFormValues = Pick<ResetPasswordFormValues, 'email' | 'token'>;
+export const VerifyCodeSchema = Yup.object<Record<keyof VerifyCodeFormValues, Yup.AnySchema>>({
+  email: Yup.string().email('Enter a valid '),
+  token: Yup.string().required('Verification Code is required')
+});
