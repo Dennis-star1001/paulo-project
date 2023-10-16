@@ -11,6 +11,8 @@ export const ENDPOINTS = {
 
   /** general */
   login: '/auth/login',
+  forgotPassword: '/forgot-password',
+  resetPassword: '/reset-password',
 
   /** vendors */
   vendorSignup: '/vendor/registration',
