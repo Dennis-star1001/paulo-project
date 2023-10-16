@@ -1,3 +1,4 @@
+import { ResetPasswordFormValues, VerifyCodeFormValues } from '@/features/auth/schema/auth.schema';
 import { api } from '../api';
 import { ENDPOINTS as e } from '../endpoints';
 import { DefaultResponse } from './@types';
@@ -67,6 +68,27 @@ export const authApi = api.injectEndpoints({
         body: credentials
       })
     }),
+    forgotPassword: build.mutation<DefaultResponse, { email: string }>({
+      query: (credentials) => ({
+        url: e.forgotPassword,
+        method: 'POST',
+        body: credentials
+      })
+    }),
+    resetPassword: build.mutation<DefaultResponse, ResetPasswordFormValues>({
+      query: (credentials) => ({
+        url: e.resetPassword,
+        method: 'POST',
+        body: credentials
+      })
+    }),
+    verifyPasswordCode: build.mutation<DefaultResponse, VerifyCodeFormValues>({
+      query: (credentials) => ({
+        url: `${e.forgotPassword}/pin`,
+        method: 'POST',
+        body: credentials
+      })
+    }),
     personalSignup: build.mutation<SignupResponse, SignupRequest>({
       query: (credentials) => ({
         url: e.signup,
@@ -84,7 +106,14 @@ export const authApi = api.injectEndpoints({
   })
 });
 
-export const { usePersonalSignupMutation, useVendorSignupMutation, useLoginMutation } = authApi;
+export const {
+  usePersonalSignupMutation,
+  useVendorSignupMutation,
+  useLoginMutation,
+  useForgotPasswordMutation,
+  useVerifyPasswordCodeMutation,
+  useResetPasswordMutation
+} = authApi;
 
 export const {
   endpoints: { login }
