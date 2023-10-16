@@ -11,7 +11,7 @@ export const DashboardLayout = () => {
 
 export const PageLayout = ({ ...rest }: BoxProps) => {
   return (
-    <Box px={[3, '50px']} {...rest} py={10}>
+    <Box px={[3, '50px']} {...rest} py={10} mx='230px' maxW='1980px'>
       {rest.children}
     </Box>
   );
