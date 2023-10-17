@@ -33,5 +33,13 @@ export const path = {
   ARTIST_BOOKING: '/vendor/artist-booking',
   ARTIST_ANALYTICS: '/vendor/artist-analytics',
   ARTIST_CREATE_ACCOUNT: '/vendor/artist-create-account',
-  ARTIST_EDIT_PROFILE: '/vendor/artist-edit-profile'
+  ARTIST_EDIT_PROFILE: '/vendor/artist-edit-profile',
+
+  ARTIST_MAIN_SCREEN:'/artist',
+  ARTIST_PROFILE:'/artist-profile',
+  SONG_TYPE:'/create-song/song-type',
+  SONG_INFO:'/create-song/song-info',
+  CHECKOUT:'/create-song/checkout',
+  FINAL_CHECKOUT:'/create-song/final-checkout',
+  ARTIST_MAIN_BOOKING:'/artist-booking',
 };

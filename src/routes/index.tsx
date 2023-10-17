@@ -35,6 +35,13 @@ import ArtistCreateAccount from '@/pages/vendor/artist/ArtistCreateAccount';
 import ArtistEditProfile from '@/pages/vendor/artist/ArtistEditProfile';
 
 import { VendorServiceDetailPage } from '@/pages/vendor/services/VendorServiceDetail';
+import ArtistScreen from '@/pages/vendor/artist/ArtistScreen';
+import ArtistProfile from '@/pages/vendor/artist/ArtistProfile';
+import SongType from '@/pages/vendor/artist/createSong/SongType';
+import SongInfo from '@/pages/vendor/artist/createSong/SongInfo';
+import Checkout from '@/pages/vendor/artist/createSong/Checkout';
+import FinalCheckOut from '@/pages/vendor/artist/createSong/FinalCheckOut';
+import MainArtistBooking from '@/pages/vendor/artist/MainArtistBooking';
 
 export const router = createBrowserRouter([
   {
@@ -90,6 +97,35 @@ export const router = createBrowserRouter([
   {
     path: path.ARTIST_EDIT_PROFILE,
     element: <ArtistEditProfile />
+  },
+  {
+    path: path.ARTIST_MAIN_SCREEN,
+    element: <ArtistScreen />
+  },
+
+  {
+    path: path.ARTIST_PROFILE,
+    element: <ArtistProfile />
+  },
+  {
+    path:path.SONG_TYPE,
+    element:<SongType/>
+  },
+  {
+    path:path.SONG_INFO,
+    element:<SongInfo/>
+  },
+  {
+    path:path.CHECKOUT,
+    element:<Checkout/>
+  },
+  {
+    path:path.FINAL_CHECKOUT,
+    element:<FinalCheckOut/>
+  },
+  {
+    path:path.ARTIST_MAIN_BOOKING,
+    element:<MainArtistBooking/>
   },
   {
     path: path.DONATION_DETAILS,
