@@ -121,7 +121,9 @@ const EventDetails = () => {
           {' '}
           Event
         </Text>
-        <Button as="a" href="/vendor/create-event">Create Event</Button>
+        <Button as='a' href='/vendor/create-event'>
+          Create Event
+        </Button>
       </Flex>
       <Box p={[2, 4, '200px']}>
         <Box p={[2, 4, 5]} pt={[2, 4, '10']} mt={[-4, -4, '-200']}>

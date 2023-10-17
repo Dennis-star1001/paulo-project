@@ -68,7 +68,9 @@ const VendorEvents = () => {
           </VStack>
 
           <HStack spacing={3}>
-            <Button as="a" href="create-event">Create Event</Button>
+            <Button as='a' href='create-event'>
+              Create Event
+            </Button>
             <Button>Export to PDF</Button>
           </HStack>
         </Flex>
@@ -91,7 +93,7 @@ const VendorEvents = () => {
             mx={[0, spacing[1]]}
           >
             {Array.from({ length: 6 }, (_, i) => (
-              <GridItem key={i} as="a" href={`event-details/${i}`}>
+              <GridItem key={i} as='a' href={`event-details/${i}`}>
                 <Image src={Breezy} />
                 <Box p='2' fontFamily='Open Sans' bgColor='#fff'>
                   <Box display='flex' alignItems='center'>
