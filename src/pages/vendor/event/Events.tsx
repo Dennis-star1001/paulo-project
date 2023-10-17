@@ -94,7 +94,7 @@ const VendorEvents = () => {
           >
             {Array.from({ length: 6 }, (_, i) => (
               <GridItem key={i} as='a' href={`event-details/${i}`}>
-                <Image src={Breezy} />
+                <Image w='100%' src={Breezy} />
                 <Box p='2' fontFamily='Open Sans' bgColor='#fff'>
                   <Box display='flex' alignItems='center'>
                     <Box mt='2' mr='2' color='#4D4D4D' w='20px' h='20px' borderRadius='50%'>
