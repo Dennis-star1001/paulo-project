@@ -51,7 +51,7 @@ const ArtistScreen = () => {
                                 <MenuItem>Genre</MenuItem>
                                 <MenuItem>Location</MenuItem>
                                 <MenuItem>Song</MenuItem>
-                             
+
                             </MenuList>
                         </Menu>
                         <FormInput w='xl' bgColor='#fff' />
@@ -61,22 +61,23 @@ const ArtistScreen = () => {
                 </Center>
                 <Box px='10' py='10'>
                     <Text textAlign={'center'} fontWeight={'bold'} pb='5'>HOW WE WORK</Text>
-
-                    <Flex justifyContent={'space-between'}>
-                        <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
-                            <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>1</Text>
-                            <Text w='xs' fontSize={'sm'}>Customize your song
-                                Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
-                        </Flex>
-                        <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
-                            <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>2</Text>
-                            <Text w='xs' fontSize={'sm'}>Customize your song
-                                Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
-                        </Flex>
-                        <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
-                            <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>3</Text>
-                            <Text w='xs' fontSize={'sm'}>Customize your song
-                                Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
+                    <Flex justifyContent={'center'}>
+                        <Flex gap='5'>
+                            <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
+                                <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>1</Text>
+                                <Text w='xs' fontSize={'sm'}>Customize your song
+                                    Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
+                            </Flex>
+                            <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
+                                <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>2</Text>
+                                <Text w='xs' fontSize={'sm'}>Customize your song
+                                    Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
+                            </Flex>
+                            <Flex gap='5' p='5' flexDirection={'column'} bg='#E1EEF3'>
+                                <Text bg='#00B0F3' color='white' w='fit-content' py='3' px='5' borderRadius={'full'}>3</Text>
+                                <Text w='xs' fontSize={'sm'}>Customize your song
+                                    Select your favorite artist, genre, desired length, mood, and share your unique story.</Text>
+                            </Flex>
                         </Flex>
                     </Flex>
                 </Box>

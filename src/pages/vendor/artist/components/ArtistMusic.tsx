@@ -37,7 +37,7 @@ const ArtistMusic: React.FC = ({ background }: any) => {
     };
 
     return (
-        <Box textAlign="center" w={'64'} bg={background || 'white'} px='5' py='5'>
+        <Box textAlign="center" w={'64'} bg={background || 'white'} px='5' py='5' borderRadius={'8px'}>
             <Flex gap='3' alignItems={'center'}>
                 <Image
                     borderRadius={'full'}

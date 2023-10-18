@@ -13,11 +13,11 @@ const ArtistProfile = () => {
     const padding = [2, '50px'];
     const spacing = [4, 5];
     return (
-        <Box bg='#0D0D0D1A'  w='100%'>
-             <AfterLoginHeader />
-            <Flex py='10' px={padding}  gap=''>
-                <Box  w='70%' px={10}>
-                    <Center mb={['0', '20']} position={'relative'} display='flex'   sx={{ svg: { fontSize: '20px' } }}>
+        <Box bg='#0D0D0D1A' w='100%'>
+            <AfterLoginHeader />
+            <Flex py='10' px={padding} gap=''>
+                <Box w='70%' px={10}>
+                    <Center mb={['0', '20']} position={'relative'} display='flex' sx={{ svg: { fontSize: '20px' } }}>
                         <Box  >
                             <Box >
                                 <Image w={'6xl'} h={'80'} objectFit={'cover'} src={Bannar} />
@@ -47,7 +47,7 @@ const ArtistProfile = () => {
                                     <Flex gap='5'>
                                         <Button bg='none'><BiChat size='28' color='#00B0F3' /></Button>
                                         <Link to='/create-song/song-type'>
-                                        <Button>Create my song</Button>
+                                            <Button>Create my song</Button>
                                         </Link>
                                     </Flex>
                                 </Flex>
@@ -64,7 +64,7 @@ const ArtistProfile = () => {
                             <Text bg='#F1F5F9' px='3' borderRadius={'sm'} color='#00B0F3'>Afro fusion</Text>
                         </Flex>
                     </Box>
-                    <Box bg='white' p='5'>
+                    <Box bg='white' p='5' borderRadius={'8px'}>
                         <Text mb='5'>Pricing</Text>
                         <Flex justifyContent={'space-between'}>
                             <Box>
@@ -84,7 +84,7 @@ const ArtistProfile = () => {
 
                     <Box>
                         <Text py='5'>Sample Songs</Text>
-                        <SimpleGrid gap='10' columns={[1, 3]}>
+                        <SimpleGrid gap='5' columns={[1, 3]}>
                             <ArtistMusic />
                             <ArtistMusic />
                             <ArtistMusic />
@@ -96,10 +96,10 @@ const ArtistProfile = () => {
                     <Box>
                         <Text py='5'>Reviews</Text>
                         <Flex gap='5'>
-                        <Reviews/>
-                        <Reviews/>
-                        <Reviews/>
-                       
+                            <Reviews />
+                            <Reviews />
+                            <Reviews />
+
 
                         </Flex>
                     </Box>
@@ -108,13 +108,15 @@ const ArtistProfile = () => {
                 <Box>
                     <Flex flexDirection={'column'} bg='white' gap='3' p='10' px={spacing} >
                         <Text fontWeight={'bold'}>Similar Artist</Text>
-                        <MusicPlayer background='#F1F5F9' />
-                        <MusicPlayer background='#F1F5F9' />
-                        <MusicPlayer background='#F1F5F9' />
-                       
+                        <ArtistMusic background='#F1F5F9' />
+                        <ArtistMusic background='#F1F5F9' />
+                        <ArtistMusic background='#F1F5F9' />
+                        <ArtistMusic background='#F1F5F9' />
+
+
                     </Flex>
                 </Box>
-                
+
             </Flex>
         </Box>
     )

@@ -2,8 +2,15 @@ import { Box, Button, Center, Divider, Flex, FormLabel, Input, Radio, Select, Te
 import { AiFillCheckCircle } from "react-icons/ai"
 import { BsFillClipboardFill, BsMusicNoteBeamed } from "react-icons/bs"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 const Checkout = () => {
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const handleOptionChange = (event: any) => {
+        setSelectedOption(event.target.value);
+
+    };
     return (
         <Box py='10' bg='#F1F5F9'>
             <Text fontSize={'3xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
@@ -45,24 +52,27 @@ const Checkout = () => {
                         <Text my='10' fontSize={'sm'} textAlign={'center'}>Complete your song order</Text>
                         <Text py='2' fontWeight={'bold'} fontSize={'sm'}>Delivery Period</Text>
                         <Flex gap='5'>
-                            <Box bg='white' p='3' borderRadius={'lg'}>
-                                <Radio display={'flex'} alignItems={'center'} value='1'>
+                            <Box bg='white' p='3' borderRadius={'lg'} _hover={{ bg: '#00B0F3' }}
+                                onClick={() => handleOptionChange('1')}>
+                                <Radio display={'flex'} alignItems={'center'} value={selectedOption || '1'}>
                                     <Box >
 
                                         <Text fontSize={'xs'}>6-Day delivery - no extra charge</Text>
                                     </Box>
                                 </Radio>
                             </Box>
-                            <Box bg='white' p='3' borderRadius={'lg'}>
-                                <Radio display={'flex'} alignItems={'center'} value='2'>
+                            <Box bg='white' p='3' borderRadius={'lg'} _hover={{ bg: '#00B0F3' }}
+                                onClick={() => handleOptionChange('2')}>
+                                <Radio display={'flex'} alignItems={'center'} value={selectedOption || '2'}>
                                     <Box >
 
                                         <Text fontSize={'xs'}>4-Days delivery - + $30</Text>
                                     </Box>
                                 </Radio>
                             </Box>
-                            <Box bg='white' p='3' borderRadius={'lg'}>
-                                <Radio display={'flex'} alignItems={'center'} value='3'>
+                            <Box bg='white' p='3' borderRadius={'lg'} _hover={{ bg: '#00B0F3' }}
+                                onClick={() => handleOptionChange('3')}>
+                                <Radio display={'flex'} alignItems={'center'} value={selectedOption || '3'}>
                                     <Box >
 
                                         <Text fontSize={'xs'}>2-Days delivery - + $60</Text>
@@ -84,10 +94,10 @@ const Checkout = () => {
                         </Center>
                         <Center pt='10'>
                             <Flex gap='5'>
-                                <Link to='/create-song/checkout'>
+                                <Link to='/create-song/song-info'>
                                     <Button px='10'>Back</Button>
                                 </Link>
-                                <Link to='/create-song/checkout'>
+                                <Link to='/create-song/final-checkout'>
                                     <Button px='10'>Continue</Button>
                                 </Link>
                             </Flex>

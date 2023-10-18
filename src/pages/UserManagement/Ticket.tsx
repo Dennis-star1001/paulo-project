@@ -23,7 +23,7 @@ const TicketUserManagement = () => {
                     ))}
                 </Flex>
                 <Flex flexDirection={'column'} gap='5' bg='white' py='10' h='auto' w='5xl'>
-                    <Text px='10' py='5' fontWeight={'600'}>Donations</Text>
+                    <Text px='10' py='5' fontWeight={'600'}>Ticket</Text>
                     <Flex gap='2' bg='#E1EEF3' p='5' mx='10' >
                         <Image
                             w='250px'

@@ -108,7 +108,7 @@ const SongInfo = () => {
                         </Box>
                         <Center pt='10'>
                             <Flex gap='5'>
-                                <Link to='/create-song/song-info'>
+                                <Link to='/create-song/song-type'>
                                     <Button px='10'>Back</Button>
                                 </Link>
                                 <Link to='/create-song/checkout'>

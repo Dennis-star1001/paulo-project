@@ -42,6 +42,29 @@ import SongInfo from '@/pages/vendor/artist/createSong/SongInfo';
 import Checkout from '@/pages/vendor/artist/createSong/Checkout';
 import FinalCheckOut from '@/pages/vendor/artist/createSong/FinalCheckOut';
 import MainArtistBooking from '@/pages/vendor/artist/MainArtistBooking';
+import DonationUserManagement from '@/pages/UserManagement/Donation';
+import PointUserManagement from '@/pages/UserManagement/Point';
+import BookingUserManagement from '@/pages/UserManagement/Booking';
+import RewardUserManagement from '@/pages/UserManagement/Reward/Reward';
+import TicketUserManagement from '@/pages/UserManagement/Ticket';
+import NigerianDomiciallyAccount from '@/pages/UserManagement/Reward/DepositeToBank/NigerianDomiciallyAccount';
+import NigeriaLocalGov from '@/pages/UserManagement/Reward/DepositeToBank/NigeriaLocalGov';
+import USAccount from '@/pages/UserManagement/Reward/DepositeToBank/USAccount';
+import SharePoints from '@/pages/UserManagement/Reward/SharePoint/SharePoint';
+import BuyMorePoints from '@/pages/UserManagement/Reward/BuyMorePoint/BuyMorePoints';
+import VendorAccountChangePassword from '@/pages/vendor/AccountSettings/ChangePassword';
+import VendorAccountEditProfile from '@/pages/vendor/AccountSettings/EditProfile';
+import VendorAccountNotification from '@/pages/vendor/AccountSettings/Notification';
+import VendorAccountSubscription from '@/pages/vendor/AccountSettings/Subscription';
+import VendorDonationDetails from '@/pages/vendor/Donation/DonationDetails';
+import CreateVendorDonation from '@/pages/vendor/Donation/CreateDonation';
+import VendorSaveItemEvent from '@/pages/vendor/SaveItem.tsx/Event';
+import VendorSaveItemBooking from '@/pages/vendor/SaveItem.tsx/Booking';
+import VendorSaveItemDonation from '@/pages/vendor/SaveItem.tsx/Donation';
+import VendorSaveItemPost from '@/pages/vendor/SaveItem.tsx/Post';
+import WithdrawalNigeriaLocalBank from '@/pages/vendor/Withdrawal/NigerianLocalBank';
+import WithdrawalNigerianDomiciallyAccount from '@/pages/vendor/Withdrawal/NigerianDomiciallyAccount';
+import WithdrawalUSAccount from '@/pages/vendor/Withdrawal/USAccount';
 
 export const router = createBrowserRouter([
   {
@@ -260,6 +283,128 @@ export const router = createBrowserRouter([
         element: <Dashboard />
       }
     ]
+  },
+  {
+    path: path.DONATION_USER_MANAGEMENT,
+    element: <DonationUserManagement />,
+  },
+  {
+    path: path.POINT_USER_MANAGEMENT,
+    element: <PointUserManagement />,
+  },
+  {
+    path: path.BOOKINGS_USER_MANAGEMENT,
+    element: <BookingUserManagement />
+  },
+  {
+    path: path.REWARD_USER_MANAGEMENT,
+    element: <RewardUserManagement />
+  },
+  {
+    path: path.TICKET_USER_MANAGEMENT,
+    element: <TicketUserManagement />
+  },
+  {
+    path: path.NIGERIA_DOMICIALLY_ACCOUNT,
+    element: <NigerianDomiciallyAccount />
+  },
+  {
+    path: path.NIGERIA_LOCAL_GOVERNMENT,
+    element: <NigeriaLocalGov />
+  },
+  {
+    path: path.US_ACCOUNT,
+    element: <USAccount />
+  },
+  {
+    path: path.SHARE_POINTS,
+    element: <SharePoints />
+  },
+  {
+    path: path.BUY_MORE_POINTS,
+    element: <BuyMorePoints />
+  },
+  {
+    path: path.VENDOR_DONATION_DETAILS,
+    element: <VendorDonationDetails />
+  },
+  {
+    path: path.VENDOR_CREATE_DONATION,
+    element: <CreateVendorDonation />
+  },
+  {
+    path: path.VENDOR_SAVED_ITEM_EVENT,
+    element: <VendorSaveItemEvent />
+  },
+  {
+    path: path.VENDOR_SAVED_ITEM_BOOKING,
+    element: <VendorSaveItemBooking />
+  },
+  {
+    path: path.VENDOR_SAVED_ITEM_DONATION,
+    element: <VendorSaveItemDonation />
+  },
+  {
+    path: path.VENDOR_SAVED_ITEM_POST,
+    element: <VendorSaveItemPost />
+  },
+  {
+    path: path.VENDOR_WITHDRAWL_NIGERIA_LOCAL_BANK,
+    element: <WithdrawalNigeriaLocalBank />
+  },
+  {
+    path: path.VENDOR_WITHDRAWL_NIGERIA_DOMICALLY_ACCOUNT,
+    element: <WithdrawalNigerianDomiciallyAccount />
+  },
+  {
+    path: path.VENDOR_WITHDRAWL_US_ACCOUNT,
+    element: <WithdrawalUSAccount />
+  },
+  {
+    path: path.VENDOR_ACCOUNT_SETTINGS_EDIT_PROFILE,
+    element: <VendorAccountEditProfile />
+  },
+  {
+    path: path.VENDOR_ACCOUNT_SETTINGS_CHANEGE_PASSWORD,
+    element: <VendorAccountChangePassword />
+  },
+  {
+    path: path.VENDOR_ACCOUNT_SETTINGS_NOTIFICATION,
+    element: <VendorAccountNotification />
+  },
+  {
+    path: path.VENDOR_ACCOUNT_SETTINGS_SUBSCRIPTION,
+    element: <VendorAccountSubscription />
+  },
+  {
+    path: path.ARTIST_MAIN_SCREEN,
+    element: <ArtistScreen />
+  },
+
+  {
+    path: path.ARTIST_PROFILE,
+    element: <ArtistProfile />
+  },
+  {
+    path:path.SONG_TYPE,
+    element:<SongType/>
+  },
+  {
+    path:path.SONG_INFO,
+    element:<SongInfo/>
+  },
+  {
+    path:path.CHECKOUT,
+    element:<Checkout/>
+  },
+  {
+    path:path.FINAL_CHECKOUT,
+    element:<FinalCheckOut/>
+  },
+  {
+    path:path.ARTIST_BOOKING,
+    element:<ArtistBooking/>
   }
+
   // ...vendorRouter
 ]);
