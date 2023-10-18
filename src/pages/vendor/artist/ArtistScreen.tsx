@@ -3,6 +3,7 @@ import ArtistImage from "../../../assets/Artist-bg-image.png"
 import { FormInput, IconButton } from "@/components";
 import { RiFilter3Line, RiSearch2Line } from "react-icons/ri";
 import MusicPlayer from "./components/MusicPlayer";
+import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
 const ArtistScreen = () => {
     interface EventLink {
         link: string;
@@ -24,6 +25,7 @@ const ArtistScreen = () => {
 
     return (
         <Box bg='#F1F5F9' >
+             <AfterLoginHeader />
             <Box position={'relative'}>
 
                 <Image src={ArtistImage} />

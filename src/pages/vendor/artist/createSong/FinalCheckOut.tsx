@@ -1,5 +1,7 @@
+import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
 import { Box, Button, Divider, Flex, FormLabel, Radio, Text } from "@chakra-ui/react"
 import { useState } from "react"
+import { Link } from "react-router-dom";
 const FinalCheckOut = () => {
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -8,8 +10,9 @@ const FinalCheckOut = () => {
 
     };
     return (
-        <Box bg='#F1F5F9' p='10' w='100%'>
-            <Box bg='white' mx='20' py='10'>
+        <Box bg='#F1F5F9' w='100%'>
+            <AfterLoginHeader />
+            <Box bg='white' mx='20' my='10' py='10'>
                 <Text fontSize={'xl'} textAlign={'center'}>CHECK-OUT</Text>
                 <Flex py='10' px='10' justifyContent={'center'} gap='5'>
                     <Flex borderRadius={'md'} fontSize={'xs'} height={'fit-content'} gap='2' flexDirection={'column'} bg='#F1F5F9' p='5' w='60'>
@@ -100,7 +103,7 @@ const FinalCheckOut = () => {
                                         <Box >
                                             <Flex fontSize={'sm'} pb='2' justifyContent={'space-between'}>
                                                 <Text>Snippet</Text>
-                                                <Text  fontWeight={'bold'}>3 Minutes - $20</Text>
+                                                <Text fontWeight={'bold'}>3 Minutes - $20</Text>
                                             </Flex>
                                             <Text maxW={'60'} fontSize={'xs'}>Pay 30% first to hear the a 1min snippet of your song and you pay the remaining $70 when you have approve the song</Text>
                                         </Box>
@@ -110,9 +113,9 @@ const FinalCheckOut = () => {
                                     onClick={() => handleOptionChange('2')}>
                                     <Radio display={'flex'} alignItems={'flex-start'} value={selectedOption || '2'}>
                                         <Box >
-                                            <Flex  fontSize={'sm'} pb='2' justifyContent={'space-between'}>
+                                            <Flex fontSize={'sm'} pb='2' justifyContent={'space-between'}>
                                                 <Text>Full Song</Text>
-                                                <Text  fontWeight={'bold'}>3 Minutes - $20</Text>
+                                                <Text fontWeight={'bold'}>3 Minutes - $20</Text>
                                             </Flex>
                                             <Text maxW={'60'} fontSize={'xs'}>Pay 30% first to hear the a 1min snippet of your song and you pay the remaining $70 when you have approve the song</Text>
                                         </Box>
@@ -123,9 +126,14 @@ const FinalCheckOut = () => {
                     </Flex>
 
                     <Box pt='10'>
+
                         <Flex gap='5' justifyContent={'center'}>
-                            <Button px='10'>Back</Button>
-                            <Button px='5'>Proceed to Make Payment</Button>
+                            <Link to='/create-song/checkout'>
+                                <Button px='10'>Back</Button>
+                            </Link>
+
+                            <Button px='10'>Proceed to Make Payment</Button>
+
                         </Flex>
                     </Box>
                 </Box>

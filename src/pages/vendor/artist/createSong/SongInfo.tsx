@@ -4,6 +4,7 @@ import { BsFillClipboardFill, BsMusicNoteBeamed } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import React, { useRef } from 'react';
 import { MdAdd } from "react-icons/md";
+import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
 
 const SongInfo = () => {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -24,8 +25,9 @@ const SongInfo = () => {
     };
 
     return (
-        <Box py='10' bg='#F1F5F9'>
-            <Text fontSize={'3xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
+        <Box  bg='#F1F5F9'>
+            <AfterLoginHeader />
+            <Text py='10' fontSize={'3xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
 
             <Flex mt='5' justifyContent={'center'} alignItems={'center'}>
                 <Box>
