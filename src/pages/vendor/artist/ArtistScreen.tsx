@@ -80,16 +80,16 @@ const ArtistScreen = () => {
                         </Flex>
                     </Flex>
                 </Box>
-                <Flex px='10'>
+                <Flex py='10' px='10'>
                     <Box py='5'>
-                        <Text pb='2' fontWeight={'bold'} >Trending Genre</Text>
-                        <Box>
+                        <Text pb='2' textTransform={'uppercase'} fontWeight={'bold'} >Trending Genre</Text>
+                        <Flex gap='5'>
                             {eventLinks.map((eventLink, i) => (
                                 <Link href={eventLink.link} key={`eventlink_${i}`} justifyContent='space-around'>
                                     <Box
                                         mr='4'
-                                        px='3'
-                                        py='2'
+                                        px='7'
+                                        py='1'
                                         bg='#E1EEF3'
                                         display='inline-flex'
                                         borderRadius='4px'
@@ -103,7 +103,7 @@ const ArtistScreen = () => {
                                     </Box>
                                 </Link>
                             ))}
-                        </Box>
+                        </Flex>
                     </Box>
                 </Flex>
                 <Flex px='10' justifyContent={'center'}>

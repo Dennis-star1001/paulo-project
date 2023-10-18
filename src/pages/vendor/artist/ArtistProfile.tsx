@@ -7,22 +7,24 @@ import MusicPlayer from "./components/MusicPlayer";
 import ArtistMusic from "./components/ArtistMusic";
 import Reviews from "./components/Review";
 import { Link } from "react-router-dom";
+import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
 const ArtistProfile = () => {
 
     const padding = [2, '50px'];
     const spacing = [4, 5];
     return (
-        <Box py='10' bg='#0D0D0D1A' px={padding} w='100%'>
-            <Flex gap='5'>
-                <Box>
-                    <Center mb={['0', '20']} position={'relative'} display='flex' p='10' px={spacing} sx={{ svg: { fontSize: '20px' } }}>
+        <Box bg='#0D0D0D1A'  w='100%'>
+             <AfterLoginHeader />
+            <Flex py='10' px={padding}  gap=''>
+                <Box  w='70%' px={10}>
+                    <Center mb={['0', '20']} position={'relative'} display='flex'   sx={{ svg: { fontSize: '20px' } }}>
                         <Box  >
                             <Box >
                                 <Image w={'6xl'} h={'80'} objectFit={'cover'} src={Bannar} />
 
                             </Box>
-                            <Flex w={{ base: 'auto', md: '87%' }} gap='3' mt='5' alignItems={'end'} position={['unset', 'absolute']} left={['5', '20']} bottom='-16'>
-                                <Image w={['16', '40']} objectFit={'cover'} border={['none', '5px solid white']} h={['16', '40']} borderRadius={'full'} src={Bannar} />
+                            <Flex w={{ base: 'auto', md: '100%' }} gap='5' mt='5' alignItems={'end'} position={['unset', 'absolute']} bottom='-24'>
+                                <Image ml='5' w={['16', '40']} objectFit={'cover'} border={['none', '5px solid white']} h={['16', '40']} borderRadius={'full'} src={Bannar} />
                                 <Flex w='full' justifyContent={'space-between'} >
 
                                     <Box>
@@ -54,7 +56,7 @@ const ArtistProfile = () => {
 
 
                     </Center>
-                    <Box px={'20'}>
+                    <Box pt='10' px={'20'}>
                         <Text fontSize={'sm'}>Lorem ipsum dolor sit amet consectetur. In praesent sed enim lacus ultrices. Enim vulputate in eu purus in semper imperdiet sed eget. Tellus varius maecenas risus felis. Venenatis integer semper integer lorem et nullam purus id eleifend. Phasellus imperdiet varius lectus tincidunt gravida. Lorem et consequat dui quis ut.</Text>
                         <Flex gap='3' py='5'>
                             <Text bg='#F1F5F9' px='3' borderRadius={'sm'} color='#00B0F3'>RnB</Text>
@@ -104,7 +106,7 @@ const ArtistProfile = () => {
                 </Box>
 
                 <Box>
-                    <Flex mt='10' flexDirection={'column'} bg='white' gap='3' p='10' px={spacing} >
+                    <Flex flexDirection={'column'} bg='white' gap='3' p='10' px={spacing} >
                         <Text fontWeight={'bold'}>Similar Artist</Text>
                         <MusicPlayer background='#F1F5F9' />
                         <MusicPlayer background='#F1F5F9' />

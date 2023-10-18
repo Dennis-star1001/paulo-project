@@ -13,11 +13,15 @@ const Reviews = () => {
                 />
                 <Box>
                     <Text color='#00B0F3'>Olarenwaju Daniels </Text>
-                    <Flex>
-                        <AiFillStar color='#00B0F3'/>
-                        <AiFillStar color='#00B0F3'/>
-                        <AiFillStar color='#00B0F3'/>
-                        <AiFillStar color='#00B0F3'/>
+                    <Flex alignItems={'center'} gap='2'>
+
+                        <Flex>
+                            <AiFillStar color='#00B0F3' />
+                            <AiFillStar color='#00B0F3' />
+                            <AiFillStar color='#00B0F3' />
+                            <AiFillStar color='#00B0F3' />
+                        </Flex>
+                        <Text fontWeight={'bold'} fontSize={'sm'}>4.0/5</Text>
                     </Flex>
                 </Box>
             </Flex>

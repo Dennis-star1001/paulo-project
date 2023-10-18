@@ -6,82 +6,82 @@ import { Link } from "react-router-dom"
 const Checkout = () => {
     return (
         <Box py='10' bg='#F1F5F9'>
-            <Text fontSize={'2xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
-            <Flex justifyContent={'center'} alignItems={'center'}>
+            <Text fontSize={'3xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
+            <Flex mt='5' justifyContent={'center'} alignItems={'center'}>
                 <Box>
-                    <Box bg='#00B0F3' p='4' borderRadius={'full'}>
+                    <Box bg='#00B0F3' p='2' borderRadius={'full'}>
                         <Box bg='white' p='1' borderRadius={'lg'}>
 
                             <BsMusicNoteBeamed color='#00B0F3' size='24' />
                         </Box>
                     </Box>
-                    <Text fontSize={'sm'} position={'absolute'}>Song Type</Text>
+                    <Text fontSize={'sm'} fontWeight={'bold'} position={'absolute'}>Song Type</Text>
                 </Box>
-                <Divider w='52' orientation="horizontal" />
+                <Divider w='24' orientation="horizontal" />
                 <Box>
-                    <Box bg='#00B0F3' p='4' borderRadius={'full'}>
+                    <Box bg='#00B0F3' p='2' borderRadius={'full'}>
                         <Box bg='white' p='1' borderRadius={'lg'}>
 
-                        <BsFillClipboardFill color='#00B0F3' size='24' />
+                            <BsFillClipboardFill color='#00B0F3' size='24' />
                         </Box>
                     </Box>
-                    <Text fontSize={'sm'} position={'absolute'}>Song Type</Text>
+                    <Text fontSize={'sm'} fontWeight={'bold'} position={'absolute'}>Song Info</Text>
                 </Box>
-            
-                <Divider w='52' orientation="horizontal" />
-
+                <Divider w='24' orientation="horizontal" />
                 <Box>
-                    <Box bg='#00B0F3' p='4' borderRadius={'full'}>
+                    <Box bg='#00B0F3' border='1px solid #00B0F3' p='2' borderRadius={'full'}>
                         <Box bg='white' p='1' borderRadius={'lg'}>
 
-                        <AiFillCheckCircle color='#00B0F3' size='24' />
+                            <AiFillCheckCircle color='#00B0F3' size='24' />
                         </Box>
                     </Box>
-                    <Text fontSize={'sm'} position={'absolute'}>Song Type</Text>
+                    <Text fontSize={'sm'} fontWeight={'bold'} position={'absolute'}>Checkout</Text>
                 </Box>
-          
 
             </Flex>
             <Box w='100%'>
                 <Flex justifyContent={'center'}>
-                    <Box py='10'>
-                        <Text my='10' textAlign={'center'}>Complete your song order</Text>
+                    <Box py='10' >
+                        <Text my='10' fontSize={'sm'} textAlign={'center'}>Complete your song order</Text>
+                        <Text py='2' fontWeight={'bold'} fontSize={'sm'}>Delivery Period</Text>
                         <Flex gap='5'>
-                                <Box bg='white' p='3' borderRadius={'lg'}>
-                                    <Radio display={'flex'} alignItems={'center'} value='1'>
-                                        <Box >
-                                          
-                                            <Text  fontSize={'sm'}>6-Day delivery - no extra charge</Text>
-                                        </Box>
-                                    </Radio>
+                            <Box bg='white' p='3' borderRadius={'lg'}>
+                                <Radio display={'flex'} alignItems={'center'} value='1'>
+                                    <Box >
+
+                                        <Text fontSize={'xs'}>6-Day delivery - no extra charge</Text>
                                     </Box>
-                                    <Box bg='white' p='3' borderRadius={'lg'}>
-                                    <Radio display={'flex'} alignItems={'center'} value='2'>
-                                        <Box >
-                                          
-                                            <Text  fontSize={'sm'}>6-Day delivery - no extra charge</Text>
-                                        </Box>
-                                    </Radio>
+                                </Radio>
+                            </Box>
+                            <Box bg='white' p='3' borderRadius={'lg'}>
+                                <Radio display={'flex'} alignItems={'center'} value='2'>
+                                    <Box >
+
+                                        <Text fontSize={'xs'}>4-Days delivery - + $30</Text>
                                     </Box>
-                                    <Box bg='white' p='3' borderRadius={'lg'}>
-                                    <Radio display={'flex'} alignItems={'center'} value='3'>
-                                        <Box >
-                                          
-                                            <Text  fontSize={'sm'}>6-Day delivery - no extra charge</Text>
-                                        </Box>
-                                    </Radio>
-                                </Box>
-                               
-                            </Flex>
-                            <Box pt='10'>
-                            <FormLabel fontWeight={'bold'}>Song Mood</FormLabel>
-                            <Select bg='white'>
-                                <option>Streaming Platform </option>
-                                <option>Email</option>
-                                <option>Flash drive</option>
-                               
-                            </Select>
-                        </Box>
+                                </Radio>
+                            </Box>
+                            <Box bg='white' p='3' borderRadius={'lg'}>
+                                <Radio display={'flex'} alignItems={'center'} value='3'>
+                                    <Box >
+
+                                        <Text fontSize={'xs'}>2-Days delivery - + $60</Text>
+                                    </Box>
+                                </Radio>
+                            </Box>
+
+                        </Flex>
+                        <Center>
+                            <Box pt='10' w='lg'>
+                                <FormLabel fontWeight={'bold'}>Delivery Method</FormLabel>
+                                <Select fontSize={'sm'} bg='white'>
+                                    <option>Streaming Platform </option>
+                                    <option>Email</option>
+                                    <option>Flash drive</option>
+
+                                </Select>
+                            </Box>
+                        </Center>
                         <Center pt='10'>
                             <Flex gap='5'>
                                 <Link to='/create-song/checkout'>
