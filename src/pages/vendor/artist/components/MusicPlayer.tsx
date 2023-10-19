@@ -4,6 +4,7 @@ import { FaPlay, FaPause, FaForward } from 'react-icons/fa';
 import DummyBanner from "../../../../assets/dummy-banner.png"
 import { Link } from 'react-router-dom';
 import { BsMusicNote } from 'react-icons/bs';
+import { MdGraphicEq } from 'react-icons/md';
 const MusicPlayer: React.FC = ({ background }: any) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -59,12 +60,12 @@ const MusicPlayer: React.FC = ({ background }: any) => {
                 <Text textAlign={'left'} fontSize="sm">Sample Song</Text>
                 <BsMusicNote size='18' />
             </Flex>
-            <Box pt='5' position={'relative'}>
-                <Flex top='3' pl='10' position={'absolute'} alignItems={'center'}>
+            <Box position={'relative'}>
+                <Flex top='1' pl='10' position={'absolute'} alignItems={'center'}>
                     <Text textAlign={'left'} fontWeight={'bold'} fontSize="xs">Let you Down</Text>
-                 
+
                 </Flex>
-                <Flex   alignItems={'center'}>
+                <Flex alignItems={'center'}>
 
 
                     <IconButton
@@ -77,21 +78,15 @@ const MusicPlayer: React.FC = ({ background }: any) => {
 
                     <Box w='xs'>
 
-                        <Slider
-                            value={currentTime}
-                            min={0}
-                            max={audioRef.current ? audioRef.current.duration : 0}
-                            onChange={(value) => handleSeek(value)}
-                        >
-                            <SliderTrack>
-                                <SliderFilledTrack />
+                        <Slider aria-label='slider-ex-4' defaultValue={30}>
+                            <SliderTrack >
+                                <SliderFilledTrack  />
                             </SliderTrack>
-                            <SliderThumb />
+                          
                         </Slider>
                     </Box>
                 </Flex>
-            </Box>
-            <Flex pl='14' justifyContent={'space-between'}>
+                <Flex bottom='-3' w='full' pl='10' position={'absolute'} justifyContent={'space-between'} alignItems={'center'}>
                 <Text fontSize="sm">
                     {Math.floor(currentTime)}
 
@@ -101,8 +96,9 @@ const MusicPlayer: React.FC = ({ background }: any) => {
                     {audioRef.current ? Math.floor(audioRef.current.duration) : '0'}
                 </Text>
             </Flex>
+            </Box>
             <Link to='/artist-profile'>
-                <Button mt='5' px='10' fontSize={'sm'} h='fit-content'>View Profile</Button>
+                <Button mt='5' px='7' py='2' fontSize={'sm'} h='fit-content'>View Profile</Button>
             </Link>
         </Box >
     );

@@ -1,23 +1,41 @@
 import { Box, Button, Flex, Image, Progress, Text } from "@chakra-ui/react"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import MusicBoard from "../../../assets/music-board.png"
+import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
 const MainArtistBooking = () => {
+
+    const navigation = useLocation();
+    console.log(navigation.pathname)
+
     const NavLink = [
-        { name: "Bookings", to: "/user-management-bookings" },
-        { name: "Donations", to: "/user-management-donation" },
-        { name: "Events", to: "/user-management-reward" },
+        { name: "Bookings", to: "/artist-booking" },
+        { name: "Donations", to: "/artist-donations" },
+        { name: "Events", to: "/artist-events" },
     ]
     return (
-        <Box bg='#E1EEF3' p='20'>
-            <Flex gap='10'>
+        <Box bg='#E1EEF3' >
+            <AfterLoginHeader />
+            <Flex gap='10' p='20'>
                 <Flex textAlign={'left'} flexDirection={'column'} w='sm' h='80' bg='white'>
                     <Text px='5' py='5' textTransform={'uppercase'} fontWeight={'600'}>Vendor Management</Text>
                     {NavLink.map((item, index,) => (
-                        <Text px='5' py='2' color='black' bg='none' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
-                            <Link to={item.to}>
-                                {item.name}
-                            </Link>
-                        </Text>
+                        <Box>
+                            {navigation.pathname == item.to  ? (
+                                <Text px='5' bg='#F1F5F9' py='2' color='#00B0F3' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
+                                    <Link to={item.to}>
+                                        {item.name}
+                                    </Link>
+                                </Text>
+                            ) :
+                              (
+                                <Text px='5' py='2' color='black' bg='none' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
+                                    <Link to={item.to}>
+                                        {item.name}
+                                    </Link>
+                                </Text>
+                              )
+                            }
+                        </Box>
                     ))}
                 </Flex>
                 <Flex px='5' flexDirection={'column'} gap='5' bg='white' py='10' h='auto' w='5xl'>
@@ -40,7 +58,7 @@ const MainArtistBooking = () => {
 
                         <Box mt='5' fontSize={'xs'}>
                             <Text fontWeight={'bold'}>Important Information</Text>
-                            <Box>
+                            <Box pl='2'>
                                 <li>18 year old </li>
                                 <li>mother of my kids</li>
                                 <li>Random things</li>
@@ -48,7 +66,7 @@ const MainArtistBooking = () => {
                         </Box>
                         <Box fontSize={'xs'}>
                             <Text fontWeight={'bold'}>Order Details</Text>
-                            <Flex py='10'  justifyContent={'space-between'}>
+                            <Flex py='10' justifyContent={'space-between'}>
                                 <Flex borderRadius={'md'} fontSize={'xs'} height={'fit-content'} gap='2' flexDirection={'column'} bg='#F1F5F9' p='5' w='60'>
                                     <Flex>
                                         <Text fontSize={'sm'} fontWeight={'bold'}>Song Type</Text>

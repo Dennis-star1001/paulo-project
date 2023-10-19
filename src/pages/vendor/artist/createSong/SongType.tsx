@@ -62,6 +62,7 @@ const SongType = () => {
                         <Box pt='10'>
                             <FormLabel fontWeight={'bold'}>Genre</FormLabel>
                             <Select fontSize={'sm'} bg='white'>
+                                <option>Select song genre</option>
                                 <option>Highlife</option>
                                 <option>Jazz</option>
                                 <option>RnB</option>
@@ -74,6 +75,7 @@ const SongType = () => {
                         <Box pt='10'>
                             <FormLabel fontWeight={'bold'}>Song Mood</FormLabel>
                             <Select fontSize={'sm'} bg='white'>
+                                <option>What type of mood do you want your song to convey </option>
                                 <option>Happy</option>
                                 <option>Sad</option>
                                 <option>Romantic</option>

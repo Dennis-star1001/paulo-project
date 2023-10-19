@@ -85,8 +85,9 @@ const Checkout = () => {
                         </Flex>
                         <Center>
                             <Box pt='10' w='lg'>
-                                <FormLabel fontWeight={'bold'}>Delivery Method</FormLabel>
+                                <FormLabel fontSize={'sm'} fontWeight={'bold'}>Delivery Method</FormLabel>
                                 <Select fontSize={'sm'} bg='white'>
+                                    <option>Select the method you want to receive your song</option>
                                     <option>Streaming Platform </option>
                                     <option>Email</option>
                                     <option>Flash drive</option>

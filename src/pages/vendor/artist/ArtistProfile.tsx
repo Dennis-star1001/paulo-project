@@ -25,9 +25,9 @@ const ArtistProfile = () => {
                             </Box>
                             <Flex w={{ base: 'auto', md: '100%' }} gap='5' mt='5' alignItems={'end'} position={['unset', 'absolute']} bottom='-24'>
                                 <Image ml='5' w={['16', '40']} objectFit={'cover'} border={['none', '5px solid white']} h={['16', '40']} borderRadius={'full'} src={Bannar} />
-                                <Flex w='full' justifyContent={'space-between'} >
+                                <Flex   w='full' justifyContent={'space-between'} >
 
-                                    <Box>
+                                    <Box >
                                         <Text fontSize={['14', 'sm']}>Stage name</Text>
                                         <Text fontSize={'lg'} w='fit-content' textAlign={'center'} fontWeight={'bold'} >B.BOy ATL</Text>
                                         <Flex alignItems={'center'} pt='1' gap='10'>
@@ -44,7 +44,7 @@ const ArtistProfile = () => {
                                             </Flex>
                                         </Flex>
                                     </Box>
-                                    <Flex gap='5'>
+                                    <Flex  mt='2' gap='5' >
                                         <Button bg='none'><BiChat size='28' color='#00B0F3' /></Button>
                                         <Link to='/create-song/song-type'>
                                             <Button>Create my song</Button>
@@ -64,20 +64,20 @@ const ArtistProfile = () => {
                             <Text bg='#F1F5F9' px='3' borderRadius={'sm'} color='#00B0F3'>Afro fusion</Text>
                         </Flex>
                     </Box>
-                    <Box bg='white' p='5' borderRadius={'8px'}>
-                        <Text mb='5'>Pricing</Text>
-                        <Flex justifyContent={'space-between'}>
+                    <Box bg='white' px='5' pt='2' pb='5' borderRadius={'8px'}>
+                        <Text fontSize={'sm'} fontWeight={'bold'} mb='5'>Pricing</Text>
+                        <Flex fontSize={'sm'} justifyContent={'space-between'}>
                             <Box>
                                 <Text fontWeight={'bold'}>2 Minutes Track - $50</Text>
                                 <Text pt='2' fontSize={'sm'} maxW='60' color='#4D4D4D'>Contains two verses and a repeated chorus. Approx. 120 words.</Text>
                             </Box>
                             <Box>
                                 <Text fontWeight={'bold'}>2 Minutes Track - $50</Text>
-                                <Text pt='2' fontSize={'sm'} maxW='60' color='#4D4D4D'>Contains two verses and a repeated chorus. Approx. 120 words.</Text>
+                                <Text pt='2' fontSize={'sm'} maxW='60' color='#4D4D4D'>Contains three verses (or two verses & a bridge), and a repeated chorus. Approx. 180 words.</Text>
                             </Box>
                             <Box>
                                 <Text fontWeight={'bold'}>2 Minutes Track - $50</Text>
-                                <Text pt='2' fontSize={'sm'} maxW='60' color='#4D4D4D'>Contains two verses and a repeated chorus. Approx. 120 words.</Text>
+                                <Text pt='2' fontSize={'sm'} maxW='60' color='#4D4D4D'>A short and brief shout out for your loved ones. Usually not more than 1min 30sec.</Text>
                             </Box>
                         </Flex>
                     </Box>

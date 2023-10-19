@@ -24,11 +24,11 @@ const ArtistScreen = () => {
     ];
 
     return (
-        <Box bg='#F1F5F9' >
+        <Box bg='#F1F5F9' w='100%'>
              <AfterLoginHeader />
             <Box position={'relative'}>
 
-                <Image src={ArtistImage} />
+                <Image w='full' src={ArtistImage} />
                 <Center>
 
                     <Flex gap={'5'} alignItems={'center'} flexDirection='column' color={'white'} textAlign={'center'} position={'absolute'} bottom={'20'}>
@@ -83,7 +83,7 @@ const ArtistScreen = () => {
                         </Flex>
                     </Flex>
                 </Box>
-                <Flex py='10' px='10'>
+                <Flex justifyContent={'center'} py='10' px='10'>
                     <Box py='5'>
                         <Text pb='2' textTransform={'uppercase'} fontWeight={'bold'} >Trending Genre</Text>
                         <Flex gap='5'>
