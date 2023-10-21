@@ -1,10 +1,11 @@
-import { Box, Button, Center, Divider, Flex, FormLabel, Input, Radio, Select, Text, Textarea, IconButton } from "@chakra-ui/react"
+import { Box, Button, Center, Divider, Flex, FormLabel, Input, Radio, Select, Text, Textarea, IconButton, InputRightElement, InputGroup } from "@chakra-ui/react"
 import { AiFillCheckCircle } from "react-icons/ai"
 import { BsFillClipboardFill, BsMusicNoteBeamed } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import React, { useRef } from 'react';
 import { MdAdd } from "react-icons/md";
 import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
+import { FaPlus } from "react-icons/fa6";
 
 const SongInfo = () => {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -25,7 +26,7 @@ const SongInfo = () => {
     };
 
     return (
-        <Box  bg='#F1F5F9'>
+        <Box bg='#F1F5F9'>
             <AfterLoginHeader />
             <Text py='10' fontSize={'3xl'} textAlign={'center'}>Tell us how to create a song for you</Text>
 
@@ -92,20 +93,49 @@ const SongInfo = () => {
                             <FormLabel fontWeight={'bold'}>Add Photo</FormLabel>
 
 
-                            <Flex bg='white' w='full' justifyContent='space-between'>
-                                <Input
-                                    type="file"
-                                    display="none"
-                                    ref={fileInputRef}
-                                    onChange={handleFileChange}
-                                />
-                                <IconButton
-                                    icon={<MdAdd />}
-                                    onClick={handleAddClick}
-                                    variant="outline"
-                                    bg="white"
-                                    float={'right'}
-                                />
+                            <Flex bg='white' w='full' position={'relative'} justifyContent='space-between'>
+                                {/* <InputGroup>
+                                    <Input
+                                        type="file"
+                                        display="none"
+                                        ref={fileInputRef}
+                                        onChange={handleFileChange}
+
+
+                                    />
+                                    <InputRightElement width="2rem">
+                                        <IconButton
+                                            icon={<MdAdd size='20' />}
+                                            aria-label="Add"
+                                            onClick={handleAddClick}
+                                            variant="outline"
+                                            bg="white"
+
+                                        />
+                                    </InputRightElement>
+                                </InputGroup> */}
+                                <InputGroup >
+                                    <Input
+                                    bg='white'
+                                        type="text"
+                                        // visibility={'hidden'}
+                                        // display="none"
+                                    
+                                        ref={fileInputRef}
+                                        onChange={handleFileChange}
+                                        placeholder="Upload a photo to serve as a track title"
+                                        pr="2rem" // Add padding to the right to make space for the icon
+                                    />
+                                    <InputRightElement width="2rem">
+                                        <IconButton
+                                            aria-label="Add"
+                                            icon={<FaPlus />}
+                                            size="xs"
+                                            borderRadius={'full'}
+                                            onClick={handleAddClick}
+                                        />
+                                    </InputRightElement>
+                                </InputGroup>
                             </Flex>
                         </Box>
                         <Center pt='10'>

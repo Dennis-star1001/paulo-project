@@ -60,7 +60,7 @@ const FinalCheckOut = () => {
                         </Flex>
                         <Box >
                             <Text fontWeight={'bold'}>Important Information</Text>
-                            <Box>
+                            <Box pl='1'>
                                 <li>18 year old</li>
                                 <li> mother of my kids</li>
                                 <li> Random things</li>
@@ -92,6 +92,7 @@ const FinalCheckOut = () => {
                     <Box textAlign={'center'} py='10' fontSize={'sm'}>
                         <Text fontWeight={'bold'}>Total Cost: $120</Text>
                         <Text>Select the payment option you would like to use</Text>
+                        <Text>Artist will iterate your song until a final version acceptable to the customer.<br></br> Money will be kept in escrow if paid in full</Text>
                     </Box>
                     <Flex justifyContent={'center'}>
                         <Box pt='5'>

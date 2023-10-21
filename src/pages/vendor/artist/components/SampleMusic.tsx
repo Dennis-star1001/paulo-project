@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Box, IconButton, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Flex, Image, Button } from '@chakra-ui/react';
 import { FaPlay, FaPause, FaForward } from 'react-icons/fa';
 import DummyBanner from "../../../../assets/dummy-banner.png"
-import { BsMusicNote } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-const ArtistMusic: React.FC = ({ background }: any) => {
+import { BsMusicNote } from 'react-icons/bs';
+import { MdGraphicEq } from 'react-icons/md';
+
+const SampleMusic: React.FC = ({ background }: any) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [currentTime, setCurrentTime] = useState(0);
@@ -39,7 +41,7 @@ const ArtistMusic: React.FC = ({ background }: any) => {
     };
 
     return (
-        <Box textAlign="center" w={'72'} bg={background || 'white'} px='2' py='5' borderRadius={'8px'}>
+        <Box textAlign="center" w={'64'} bg={background || 'white'} px='5' py='5' borderRadius={'8px'}>
             <Flex gap='3'>
 
                 <Image
@@ -50,25 +52,20 @@ const ArtistMusic: React.FC = ({ background }: any) => {
                 />
                 <Box>
 
-                    <Text pt='3' fontWeight={'medium'} textAlign={'left'} fontSize="sm">Sarah Matthew P.K.A Sarah </Text>
+                    <Text pt='3' fontWeight={'medium'} textAlign={'left'} fontSize="sm">Thanks ft J.cole</Text>
                     <Flex gap='3' pb='5' fontSize={'sm'}>
-                        <Text bg='white' px='3' borderRadius={'xl'} color='#00B0F3'>RnB</Text>
-                        <Text bg='white' px='3' borderRadius={'xl'} color='#00B0F3'>Hip Hop</Text>
+                        <Text bg='#F1F5F9' px='3' borderRadius={'xl'} color='#00B0F3'>RnB</Text>
+                        <Text bg='#F1F5F9' px='3' borderRadius={'xl'} color='#00B0F3'>Hip Hop</Text>
                     </Flex>
                 </Box>
             </Flex>
-
-
             <audio ref={audioRef}>
                 <source src="your-audio-file.mp3" />
             </audio>
-            <Flex alignItems={'center'}>
-                <Text textAlign={'left'} fontSize="sm">Sample Song</Text>
-                <BsMusicNote size='18' />
-            </Flex>
+
             <Box position={'relative'}>
-                <Flex top='0' pl='10' position={'absolute'} alignItems={'center'}>
-                    <Text textAlign={'left'} fontWeight={'bold'} fontSize="sm">Let you Down</Text>
+                <Flex pl='10' position={'absolute'} alignItems={'center'}>
+                    <Text textAlign={'left'} fontWeight={'bold'} fontSize="xs">Let you Down</Text>
 
                 </Flex>
                 <Flex alignItems={'center'}>
@@ -103,11 +100,11 @@ const ArtistMusic: React.FC = ({ background }: any) => {
                     </Text>
                 </Flex>
             </Box>
-            <Link to='/artist-profile'>
-                <Button mt='5' px='7' py='2' fontSize={'sm'} h='fit-content'>View Profile</Button>
-            </Link>
+
         </Box >
     );
 };
 
-export default ArtistMusic;
+
+
+export default SampleMusic

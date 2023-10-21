@@ -8,6 +8,7 @@ import ArtistMusic from "./components/ArtistMusic";
 import Reviews from "./components/Review";
 import { Link } from "react-router-dom";
 import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
+import SampleMusic from "./components/SampleMusic";
 const ArtistProfile = () => {
 
     const padding = [2, '50px'];
@@ -85,12 +86,12 @@ const ArtistProfile = () => {
                     <Box>
                         <Text py='5'>Sample Songs</Text>
                         <SimpleGrid gap='5' columns={[1, 3]}>
-                            <ArtistMusic />
-                            <ArtistMusic />
-                            <ArtistMusic />
-                            <ArtistMusic />
-                            <ArtistMusic />
-                            <ArtistMusic />
+                           <SampleMusic/>
+                           <SampleMusic/>
+                           <SampleMusic/>
+                           <SampleMusic/>
+                           <SampleMusic/>
+                           <SampleMusic/>
                         </SimpleGrid>
                     </Box>
                     <Box>

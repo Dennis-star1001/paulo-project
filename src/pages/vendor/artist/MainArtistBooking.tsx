@@ -20,35 +20,40 @@ const MainArtistBooking = () => {
                     <Text px='5' py='5' textTransform={'uppercase'} fontWeight={'600'}>Vendor Management</Text>
                     {NavLink.map((item, index,) => (
                         <Box>
-                            {navigation.pathname == item.to  ? (
+                            {navigation.pathname == item.to ? (
                                 <Text px='5' bg='#F1F5F9' py='2' color='#00B0F3' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
                                     <Link to={item.to}>
                                         {item.name}
                                     </Link>
                                 </Text>
                             ) :
-                              (
-                                <Text px='5' py='2' color='black' bg='none' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
-                                    <Link to={item.to}>
-                                        {item.name}
-                                    </Link>
-                                </Text>
-                              )
+                                (
+                                    <Text px='5' py='2' color='black' bg='none' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
+                                        <Link to={item.to}>
+                                            {item.name}
+                                        </Link>
+                                    </Text>
+                                )
                             }
                         </Box>
                     ))}
                 </Flex>
+
                 <Flex px='5' flexDirection={'column'} gap='5' bg='white' py='10' h='auto' w='5xl'>
 
                     <Text fontWeight={'bold'} textTransform={'uppercase'}>demo Afrobeats Happy song</Text>
                     <Flex alignItems={'center'} gap='5'>
                         <Image src={MusicBoard} />
-                        <Box>
-                            <Text fontSize={'xs'}>2 Minutes</Text>
-                            <Text fontWeight={'bold'} textTransform={'uppercase'}>demo Afrobeats Happy song</Text>
-                            <Text mt='3' borderRadius={'xl'} bg='#BEE7F7' w='fit-content' px='2' color={'#00B0F3'} fontSize={'xs'}>Active</Text>
-                            <Text color={'#00B0F3'} fontSize={'xs'}>Change Status</Text>
-                        </Box>
+                        <Flex justifyContent={'space-between'} w='full'>
+
+                            <Box>
+                                <Text fontSize={'xs'}>2 Minutes</Text>
+                                <Text fontWeight={'bold'} textTransform={'uppercase'}>demo Afrobeats Happy song</Text>
+                                <Text mt='3' borderRadius={'xl'} bg='#BEE7F7' w='fit-content' px='2' color={'#00B0F3'} fontSize={'xs'}>Active</Text>
+                                <Text color={'#00B0F3'} fontSize={'xs'}>Change Status</Text>
+                            </Box>
+                            <Button fontSize={'xs'}>Message Artist</Button>
+                        </Flex>
                     </Flex>
                     <Box>
                         <Box fontSize={'xs'}>
@@ -65,8 +70,8 @@ const MainArtistBooking = () => {
                             </Box>
                         </Box>
                         <Box fontSize={'xs'}>
-                            <Text fontWeight={'bold'}>Order Details</Text>
-                            <Flex py='10' justifyContent={'space-between'}>
+                            <Text pt='5' pb='2' fontWeight={'bold'}>Order Details</Text>
+                            <Flex pb='10' justifyContent={'space-between'}>
                                 <Flex borderRadius={'md'} fontSize={'xs'} height={'fit-content'} gap='2' flexDirection={'column'} bg='#F1F5F9' p='5' w='60'>
                                     <Flex>
                                         <Text fontSize={'sm'} fontWeight={'bold'}>Song Type</Text>
@@ -112,11 +117,7 @@ const MainArtistBooking = () => {
                                     </Flex>
                                     <Box >
                                         <Text fontWeight={'bold'}>Important Information</Text>
-                                        <Box>
-                                            <li>18 year old</li>
-                                            <li> mother of my kids</li>
-                                            <li> Random things</li>
-                                        </Box>
+                                       
                                     </Box>
                                 </Flex>
                                 <Flex borderRadius={'md'} height={'fit-content'} fontSize={'xs'} gap='2' flexDirection={'column'} bg='#F1F5F9' p='5' w='64'>
@@ -140,6 +141,8 @@ const MainArtistBooking = () => {
                         </Box>
                     </Box>
                 </Flex>
+
+
             </Flex>
         </Box>
     )

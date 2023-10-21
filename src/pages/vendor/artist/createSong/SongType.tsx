@@ -70,6 +70,7 @@ const SongType = () => {
                                 <option>Hip Hop</option>
                                 <option>Gospel</option>
                             </Select>
+                            <Text fontSize={'xs'}>You can add up to 3 genres</Text>
                         </Box>
 
                         <Box pt='10'>
