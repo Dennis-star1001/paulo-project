@@ -62,15 +62,15 @@ const ViewDonors = () => {
         <ModalContent bg={'rgba(241, 245, 249, 1)'}>
           <Flex alignItems={'center'}>
             <ModalHeader>
-              <Text textTransform={'uppercase'} w='80'>
-                Make Donation
+              <Text textTransform={'uppercase'} fontWeight={'medium'} w='80'>
+                Donations (1,325)
               </Text>
-              <Text textTransform={'uppercase'} mt='2' fontSize={'md'} fontWeight={'medium'}>
+              <Text  fontSize={'12'} fontWeight={'medium'}>
                 Help my life, landlord wan beat me
               </Text>
               <AvatarGroup gap='5'>
-                <Avatar size='xs' name='N' />
-                <Text fontWeight={'normal'} fontSize={'sm'}>
+                <Avatar h='5' w='5' objectFit={'contain'}  />
+                <Text fontWeight={'normal'} fontSize={'xs'}>
                   Nicholas Adams
                 </Text>
               </AvatarGroup>

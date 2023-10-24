@@ -45,7 +45,7 @@ const MakeDonation = () => {
   return (
     <>
       <Button onClick={openFirstModal} w='fit-content'>
-        Donate Again
+        Donate 
       </Button>
 
       <Modal

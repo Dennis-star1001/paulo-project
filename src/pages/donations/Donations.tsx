@@ -70,7 +70,7 @@ const Donations = () => {
           </Button>
         </Box>
       </Center>
-      <Box>
+      <Box mx={9} pb='3'>
         <Text
           color='#201E1F'
           fontFamily='Lato'
@@ -82,13 +82,13 @@ const Donations = () => {
           Categories
         </Text>
       </Box>
-      <Box m='4'>
-        <SimpleGrid columns={[2, 4, 7]}>
+      <Box   mb='10' mx='9'>
+        <SimpleGrid w='4xl' columns={[2, 4, 6]} >
           {eventLinks.map((eventLink, i) => (
             <Link href={eventLink.link} key={`eventlink_${i}`} justifyContent='space-around'>
               <Box
-                m='4'
-                p='4'
+                textTransform={'uppercase'}
+                px='4'
                 bg='#E1EEF3'
                 display='inline-flex'
                 borderRadius='4px'
@@ -104,7 +104,7 @@ const Donations = () => {
           ))}
         </SimpleGrid>
       </Box>
-      <Box m='4'>
+      <Box mb='20' mx='4'>
         <PanelHeader
           fontSize={{ base: 'sm', md: 'auto' }}
           mx={[0, spacing[1]]}
@@ -158,7 +158,7 @@ const Donations = () => {
           ))}
         </Grid>
       </Box>
-      <Box m='4'>
+      <Box mb='20' mx='4'>
         <PanelHeader
           mx={[0, spacing[1]]}
           header='Trending Donations'
@@ -210,7 +210,7 @@ const Donations = () => {
           ))}
         </Grid>
       </Box>
-      <Box m='4'>
+      <Box mb='20' mx='4'>
         <PanelHeader
           mx={[0, spacing[1]]}
           header='Donations'

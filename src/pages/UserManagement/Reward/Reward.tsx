@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Progress, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react"
 import { AiFillGift, AiFillHeart } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-
+import { IoIosPeople } from "react-icons/io"
 const RewardUserManagement = () => {
     const NavLink = [
 
@@ -31,7 +31,7 @@ const RewardUserManagement = () => {
         <Box bg='#E1EEF3' p='20'>
             <Flex gap='10'>
                 <Flex textAlign={'left'} flexDirection={'column'} w='sm' h='80' bg='white'>
-                    <Text px='5' py='5' fontWeight={'600'}>User Management</Text>
+                    <Text px='5' py='5' textTransform={'uppercase'} fontWeight={'600'}>User Management</Text>
                     {NavLink.map((item, index,) => (
                         <Text px='5' py='2' color='black' bg='none' textAlign={'left'} _hover={{ bg: '#F1F5F9', color: 'black' }}>
                             <Link to={item.to}>
@@ -42,27 +42,27 @@ const RewardUserManagement = () => {
                 </Flex>
                 <Flex flexDirection={'column'} gap='0' bg='white' h='auto' w='5xl'>
                     <Box bg='#EE8674' w='full' h='auto'>
-                        <Text px='5' pt='5' color='white'>MY REWARDS</Text>
+                        <Text fontWeight={'600'} px='5' pt='5' color='white'>MY REWARDS</Text>
 
                         <Flex alignItems={'center'} justifyContent={'center'} flexDirection={'column'} w='full'>
 
                             <Box>
-                                <Text fontSize={'sm'} textAlign={'center'} color='white'>Current Point</Text>
+                                <Text fontSize={'sm'} pb='1' textAlign={'center'} color='white'>Current Point</Text>
                                 <Button py='7' px='10' fontSize={'32'} fontWeight={'500'} color={'#00B0F3'} bg='white'>
                                     23,792
                                 </Button>
                             </Box>
                             <Flex color='black' gap='5' p='5'>
-                              
-                                <Button onClick={()=>navigate("/nigeria_local_government")} color='black' bg='#F2994A'>Deposit To Banks</Button>
-                                <Button onClick={()=>navigate("/buy-more-points")} color='black' bg='#4B8AE9'>Buy more Points</Button>
-                                <Button onClick={()=>navigate("/share-points")}  color='black' bg='#4BE97A'>Share Points</Button>
+
+                                <Button onClick={() => navigate("/nigeria_local_government")} color='black' bg='#F2994A'>Deposit To Banks</Button>
+                                <Button onClick={() => navigate("/buy-more-points")} color='black' bg='#4B8AE9'>Buy more Points</Button>
+                                <Button onClick={() => navigate("/share-points")} color='black' bg='#4BE97A'>Share Points</Button>
                             </Flex>
 
                         </Flex>
                     </Box>
                     <Tabs position="relative" variant="unstyled">
-                        <TabList  bg='#EBE9E9'>
+                        <TabList bg='#EBE9E9'>
                             <Tab fontSize={'sm'}>Points History</Tab>
                             <Tab fontSize={'sm'}>Wallet History</Tab>
                             <Tab fontSize={'sm'}>Redeem Points</Tab>
@@ -77,77 +77,95 @@ const RewardUserManagement = () => {
                             <TabPanel>
                                 <Flex flexDirection={'column'} gap='10'>
                                     <Box pt='10'>
-                                        <Text fontWeight={'600'}>Yesterday</Text>
+                                        <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
                                             <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
                                             <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
-                                    <Box>
-                                        <Text fontWeight={'600'}>A month ago</Text>
+                                    <Box mt='10'>
+                                        <Text fontSize={'sm'} fontWeight={'600'}>A month ago</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You referred a new user' icon={<IoIosPeople color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You referred a new user' icon={<IoIosPeople color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold your point' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
 
                                     <Box>
-                                        <Text fontWeight={'600'}>6 month</Text>
+                                        <Text fontSize={'sm'} fontWeight={'600'}>6 month</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You shared a point to Michael Jones' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
                                 </Flex>
                             </TabPanel>
                             <TabPanel>
-                            <Flex flexDirection={'column'} gap='10'>
+                                <Flex flexDirection={'column'} gap='10'>
                                     <Box pt='10'>
-                                        <Text fontWeight={'600'}>Yesterday</Text>
+                                        <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
                                     <Box>
-                                        <Text fontWeight={'600'}>A month ago</Text>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received 1000 points' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received 1000 points' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
 
                                     <Box>
-                                        <Text fontWeight={'600'}>6 month</Text>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received a bonus' icon={<AiFillHeart color='#E9634B' />} />
+
+                                        </Flex>
+                                    </Box>
+
+                                    <Box>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
+                                        <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
+                                            <PointHistoryNotification points='10' message='Sign up Bonus' icon={<AiFillHeart color='#E9634B' />} />
+
                                         </Flex>
                                     </Box>
                                 </Flex>
                             </TabPanel>
                             <TabPanel>
-                            <Flex flexDirection={'column'} gap='10'>
+                                <Flex flexDirection={'column'} gap='10'>
                                     <Box pt='10'>
-                                        <Text fontWeight={'600'}>Yesterday</Text>
+                                        <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You sold 1000 points and received $1' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
                                     <Box>
-                                        <Text fontWeight={'600'}>A month ago</Text>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received 1000 points' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received 1000 points' icon={<AiFillHeart color='#E9634B' />} />
                                         </Flex>
                                     </Box>
 
                                     <Box>
-                                        <Text fontWeight={'600'}>6 month</Text>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
                                         <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
-                                            <PointHistoryNotification points='10' message='You liked a post' icon={<AiFillHeart color='#E9634B' />} />
+                                            <PointHistoryNotification points='10' message='You received a bonus' icon={<AiFillHeart color='#E9634B' />} />
+
+                                        </Flex>
+                                    </Box>
+
+                                    <Box>
+                                      <Text fontSize={'sm'} fontWeight={'600'}>Yesterday</Text>
+                                        <Flex bg='#FCF1EF' flexDirection={'column'} gap='2' p='5'>
+                                            <PointHistoryNotification points='10' message='Sign up Bonus' icon={<AiFillHeart color='#E9634B' />} />
+
                                         </Flex>
                                     </Box>
                                 </Flex>
