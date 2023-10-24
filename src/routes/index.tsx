@@ -41,7 +41,7 @@ import SongType from '@/pages/vendor/artist/createSong/SongType';
 import SongInfo from '@/pages/vendor/artist/createSong/SongInfo';
 import Checkout from '@/pages/vendor/artist/createSong/Checkout';
 import FinalCheckOut from '@/pages/vendor/artist/createSong/FinalCheckOut';
-import MainArtistBooking from '@/pages/vendor/artist/MainArtistBooking';
+import MainArtistBooking from '@/pages/vendor/artist/ArtistDonation';
 import DonationUserManagement from '@/pages/UserManagement/Donation';
 import PointUserManagement from '@/pages/UserManagement/Point';
 import BookingUserManagement from '@/pages/UserManagement/Booking';
@@ -65,6 +65,7 @@ import VendorSaveItemPost from '@/pages/vendor/SaveItem.tsx/Post';
 import WithdrawalNigeriaLocalBank from '@/pages/vendor/Withdrawal/NigerianLocalBank';
 import WithdrawalNigerianDomiciallyAccount from '@/pages/vendor/Withdrawal/NigerianDomiciallyAccount';
 import WithdrawalUSAccount from '@/pages/vendor/Withdrawal/USAccount';
+import ArtistDonation from '@/pages/vendor/artist/ArtistDonation';
 
 export const router = createBrowserRouter([
   {
@@ -147,8 +148,8 @@ export const router = createBrowserRouter([
     element:<FinalCheckOut/>
   },
   {
-    path:path.ARTIST_MAIN_BOOKING,
-    element:<MainArtistBooking/>
+    path:path.ARTIST_DONATION,
+    element:<ArtistDonation/>
   },
   {
     path: path.DONATION_DETAILS,

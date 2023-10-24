@@ -2,14 +2,14 @@ import { Box, Button, Flex, Image, Progress, Text } from "@chakra-ui/react"
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import MusicBoard from "../../../assets/music-board.png"
 import AfterLoginHeader from "@/components/Header/AfterLoginHeader";
-const MainArtistBooking = () => {
+const ArtistDonation = () => {
 
     const navigation = useLocation();
     console.log(navigation.pathname)
 
     const NavLink = [
         { name: "Bookings", to: "/artist-booking" },
-        { name: "Donations", to: "/artist-donations" },
+        { name: "Donations", to: "/artist-donation" },
         { name: "Events", to: "/artist-events" },
     ]
     return (
@@ -148,4 +148,4 @@ const MainArtistBooking = () => {
     )
 }
 
-export default MainArtistBooking;
+export default ArtistDonation;

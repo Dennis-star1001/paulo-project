@@ -6,12 +6,16 @@ import { Box, Button, Divider, Flex, Image, Progress, Table, TableContainer, Tbo
 import { Link } from "react-router-dom";
 import Polygon from "../../assets/Polygon 3.png"
 import Clogo from "../../assets/Clogo.png"
-import { RiAwardFill } from "react-icons/ri";
-const  PointUserManagement = () => {
+import { RiAwardFill, RiWhatsappFill } from "react-icons/ri";
+import { PiWarningCircleFill } from "react-icons/pi";
+import { MdContentCopy } from "react-icons/md";
+import { BsFacebook, BsTwitter } from "react-icons/bs";
+import { FaInstagramSquare } from "react-icons/fa";
+const PointUserManagement = () => {
     const NavLink = [
         { name: "Bookings", to: "/user-management-bookings" },
         { name: "Donations", to: "/user-management-donation" },
-        { name: "Ticket", to: "/user-management-ticket" },
+
         { name: "Points", to: "/user-management-points" },
         { name: "Rewards", to: "/user-management-reward" },
     ]
@@ -30,18 +34,22 @@ const  PointUserManagement = () => {
                                 </Box>
                             </Box>
                             <Box>
-                                <Text fontSize={'20'} fontWeight={'600'} color='#00B0F3'>{point}</Text>
+                                <Text fontSize={'32'} fontWeight={'600'} color='#00B0F3'>{point}</Text>
                                 <Text fontSize={'sm'}>{category}</Text>
                                 {note &&
-                                    <Text fontSize={'sm'} position={'absolute'} bottom={'0'}>{note}</Text>
+                                    <Flex gap='2' mb='2' alignItems={'center'} position={'absolute'} bottom={'0'}>
+
+                                        <PiWarningCircleFill />
+                                        <Text fontSize={'sm'} >{note}</Text>
+                                    </Flex >
                                 }
                             </Box>
                         </Flex>
 
                     </Box>
-                    <Box position={'absolute'} right='5' bottom='1'>
+                    {/* <Box position={'absolute'} right='5' bottom='1'>
                         <Image src={Clogo} />
-                    </Box>
+                    </Box> */}
                 </Flex>
             </Box>
         )
@@ -50,7 +58,7 @@ const  PointUserManagement = () => {
     const Designation = ({ background, designation }: any) => {
         return (
             <Box>
-                <Text bg={background} px='5' w='fit-content' borderRadius={'5px'}>{designation}</Text>
+                <Text bg={background} py='1' px='5' w='fit-content' borderRadius={'5px'}>{designation}</Text>
 
             </Box>
         )
@@ -72,19 +80,26 @@ const  PointUserManagement = () => {
                     <Flex flexDirection={'column'} gap='1'>
                         <Text px='5' py='5' fontSize={'20'} textTransform={'uppercase'} fontWeight={'600'}>Total Points</Text>
 
-                        <PointCard point='38,470' category='point' note='Each point is equal to 10Cent' />
+                        <PointCard point='38,470' category='points' note='Each point is equal to 10Cent' />
 
                     </Flex>
 
                     <Box mt='5' px='5'>
                         <Text py='5' fontSize={'20'} textTransform={'uppercase'} fontWeight={'600'}>Referrals</Text>
 
-                        <Flex>
-
-                            <Text bg='#F1F5F9'>https//:cleaques.com/RND1234XYZjhf378473</Text>
+                        <Flex align={'center'} justifyContent={'space-between'}>
+                            <Flex  p='3' bg='#F1F5F9' gap='10'>
+                                <Text textTransform={'uppercase'} fontWeight={'600'}>https//:cleaques.com/RND1234XYZjhf378473</Text>
+                                <MdContentCopy color='#00B0F3' size='24'/>
+                            </Flex>
                             <Box>
                                 <Text fontSize={'xs'}>Share</Text>
-                                <Flex></Flex>
+                                <Flex gap='3'>
+                                    <FaInstagramSquare size='28' color='DE4474'/>
+                                    <RiWhatsappFill size='28' color='#60D669'/>
+                                    <BsFacebook size='28' color='#1877F2'/>
+                                    <BsTwitter size='28' color='#1D9BF0'/>
+                                </Flex>
                             </Box>
                         </Flex>
                     </Box>
@@ -115,8 +130,8 @@ const  PointUserManagement = () => {
                                 <Tr>
                                     <Td>feet</Td>
                                     <Td display={'flex'} gap='2'>
-                                        <Designation background='#00B0F3' designation='personal' />
-                                        <Designation background='#E9634B' designation='vendor' />
+                                        <Designation background='#00B0F3' designation='Personal' />
+                                        <Designation background='#E9634B' designation='Vendor' />
 
                                     </Td>
 
@@ -124,8 +139,8 @@ const  PointUserManagement = () => {
                                 <Tr>
                                     <Td>feet</Td>
                                     <Td display={'flex'} gap='2'>
-                                        <Designation background='#00B0F3' designation='personal' />
-                                        <Designation background='#E9634B' designation='vendor' />
+                                        <Designation background='#00B0F3' designation='Personal' />
+                                        <Designation background='#E9634B' designation='Vendor' />
 
                                     </Td>
 
@@ -133,8 +148,8 @@ const  PointUserManagement = () => {
                                 <Tr>
                                     <Td>feet</Td>
                                     <Td display={'flex'} gap='2'>
-                                        <Designation background='#00B0F3' designation='personal' />
-                                        <Designation background='#E9634B' designation='vendor' />
+                                        <Designation background='#00B0F3' designation='Personal' />
+                                        <Designation background='#E9634B' designation='Vendor' />
 
                                     </Td>
 
@@ -143,9 +158,9 @@ const  PointUserManagement = () => {
                             </Tbody>
 
                         </Table>
-                        <Box  px='40' pt='28' pb='10'>
+                        <Box px='40' pt='28' pb='10'>
 
-                        <Button w='full'>Load More</Button>
+                            <Button w='full'>Load More</Button>
                         </Box>
                     </TableContainer>
                 </Box>

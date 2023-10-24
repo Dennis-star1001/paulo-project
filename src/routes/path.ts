@@ -41,7 +41,7 @@ export const path = {
   SONG_INFO:'/create-song/song-info',
   CHECKOUT:'/create-song/checkout',
   FINAL_CHECKOUT:'/create-song/final-checkout',
-  ARTIST_MAIN_BOOKING:'/artist-booking',
+  ARTIST_DONATION:'/artist-donation',
 
   // VENDOR
  

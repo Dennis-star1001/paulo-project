@@ -5,7 +5,7 @@ const BookingUserManagement = () => {
     const NavLink = [
         { name: "Bookings", to: "/user-management-bookings" },
         { name: "Donations", to: "/user-management-donation" },
-        { name: "Ticket", to: "/user-management-ticket" },
+      
         { name: "Points", to: "/user-management-points" },
         { name: "Rewards", to: "/user-management-reward" },
     ]
